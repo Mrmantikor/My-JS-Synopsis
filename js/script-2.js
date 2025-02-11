@@ -1,30 +1,3 @@
-// #region parseFloat parseInt
-const str = '52.86';
-console.log(str);
-console.log(Number(str));
-console.log(Number.parseFloat(str));
-console.log(Number.parseInt(str));
-// #endregion
-// #region round floor ceil trunc
-// Math.round(x) – округление по правилам математики - Округляет число до ближайшего целого
-console.log(Math.round(24.23));
-console.log(Math.round(24.83));
-//Math.floor(x) – округление вниз (в меньшую сторону) Округляет всегда в меньшую сторону (к ближайшему меньшему целому)
-console.log(Math.floor(24.23));
-console.log(Math.floor(24.83));
-//Math.ceil(x) – округление вверх (в большую сторону) Округляет всегда в большую сторону (к ближайшему большему целому)
-console.log(Math.ceil(24.23));
-console.log(Math.ceil(24.83));
-//Math.trunc(x) – отбрасывание дробной части Просто убирает дробную часть, не округляя
-console.log(Math.trunc(24.23));
-console.log(Math.trunc(24.83));
-//
-console.log(Math.floor(-24.23));
-console.log(Math.floor(-24.83));
-//
-console.log(Math.trunc(-24.23));
-console.log(Math.trunc(-24.83));
-// #endregion
 // #region Преобразование строки в число
 const userInput = Number(prompt('Enter your username'));
 console.log(userInput);
@@ -32,12 +5,6 @@ console.log(userInput);
 let elementWidth = '50px';
 elementWidth = Number.parseInt(elementWidth);
 console.log('elementWidth:', elementWidth);
-// #endregion
-
-// #region Конкатенація радків
-const age = 24;
-const message = 'Polly ' + age + ' Yes!';
-console.log(message);
 // #endregion
 
 // #region Function
@@ -71,43 +38,6 @@ function checkPassword(pass) {
   return pass === userPassword;
 }
 console.log(checkPassword(password)); // true or false
-// #endregion
-// #region Min Max
-console.log(Math.max(2, 5, -4, 0));
-console.log(Math.min(2, 5, -4, 0));
-// #endregion
-// #region Random
-const min = -10;
-const max = 10;
-const random = Math.trunc(Math.random() * (max - min) + min);
-console.log(random);
-// #endregion
-// #region
-// #region
-const num = 24.3456;
-console.log(num);
-console.log(num * 100);
-console.log(Math.trunc(num));
-console.log(Math.trunc(num * 100));
-console.log(Math.trunc(num * 100) / 100);
-
-// #endregion
-// #endregion
-// #region
-// #endregion
-// #region Как определить Юникод
-console.log('a', 'a'.charCodeAt(0));
-console.log('b', 'b'.charCodeAt(0));
-// #endregion
-// #region
-// #endregion
-// #region
-// #endregion
-// #region
-// #endregion
-// #region
-// #endregion
-// #region
 // #endregion
 
 // #region Return >=

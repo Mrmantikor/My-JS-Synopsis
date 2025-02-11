@@ -146,22 +146,6 @@ let bananas = 7;
 bananas *= 2;
 console.log(bananas);
  */
-
-/* //! ${}
-TODO: Запросіть у користувача ім'я та прізвище і виведіть у консоль повідомлення: Hello <імʼя> <прізвище>, you are logged in.
-const firstName = prompt('Введіть ваше імʼя!');
-const lastName = prompt('Введіть ваше прізвище!');
-const message = `Hello ${firstName} ${lastName}, you are logged in.`;
-alert(message);
-// 
- TODO: Склади фразу за допомогою шаблонних рядків. A has B bots in stock, де A, B - змінні вставлені в рядок.
-const companyName = 'Cyberdyne Systems';
-const repairBots = 150;
-const defenceBots = 50;
-const msg = `${companyName} has ${repairBots + defenceBots} bots in stock`;
-console.log(msg); // "Cyberdyne Systems has 200 bots in stock"
-// 
-*/
 /* //! String
 TODO Явне перетворення типів
 console.log(String(5));
@@ -193,9 +177,76 @@ console.log(11n / 2n); // Особливість!
 Q: Який результат буде під час виконання console.log(15n / 4n)?
 A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
 */
+/* //! ${} Template Strings
+TODO: Запросіть у користувача ім'я та прізвище і виведіть у консоль повідомлення: Hello <імʼя> <прізвище>, you are logged in.
+const firstName = prompt('Введіть ваше імʼя!');
+const lastName = prompt('Введіть ваше прізвище!');
+const message = `Hello ${firstName} ${lastName}, you are logged in.`;
+alert(message);
+// 
+ TODO: Склади фразу за допомогою шаблонних рядків. A has B bots in stock, де A, B - змінні вставлені в рядок.
+const companyName = 'Cyberdyne Systems';
+const repairBots = 150;
+const defenceBots = 50;
+const msg = `${companyName} has ${repairBots + defenceBots} bots in stock`;
+console.log(msg); // "Cyberdyne Systems has 200 bots in stock"
+// 
+*/
+/* //! Math.Min, Math.Max
+console.log(Math.max(2, 5, -4, 0));
+console.log(Math.min(2, 5, -4, 0));
+*/
+/* //! Math.random()
+TODO від -10 до 10 рандомне число
+const min = -10;
+const max = 10;
+const random = Math.trunc(Math.random() * (max - min) + min);
+console.log(random);
+TODO
+const num = 24.3456;
+console.log(num);
+console.log(num * 100);
+console.log(Math.trunc(num));
+console.log(Math.trunc(num * 100));
+console.log(Math.trunc(num * 100) / 100);
+*/
+/* //! charCodeAt() Юнікод
+console.log('a', 'a'.charCodeAt(0));
+console.log('b', 'b'.charCodeAt(0));
+console.log('1'.charCodeAt(0));
+ */
+/* //! parseFloat(), parseInt()
+const str = '52.86';
+console.log(str);
+console.log(Number(str));
+console.log(Number.parseFloat(str));
+console.log(Number.parseInt(str));
+*/
+/* //! Math.ceil()
+TODO – округлення вгору (у більшу сторону) Округлює завжди у більшу сторону (до найближчого більшого цілого)
+console.log(Math.ceil(24.23));
+console.log(Math.ceil(24.83));
+*/
+/* //! Math.floor()
+TODO – округлення вниз (у меншу сторону) Округлює завжди в меншу сторону (до найближчого меншого цілого)
+console.log(Math.floor(24.23));
+console.log(Math.floor(24.83));
+console.log(Math.floor(-24.23));
+console.log(Math.floor(-24.83));
+*/
+/* //! Math.round()
+TODO – округлення за правилами математики - Округлює число до найближчого цілого
+console.log(Math.round(24.23));
+console.log(Math.round(24.83));
+*/
+/* //! Math.trunc() 
+TODO – відкидання дробової частини Просто прибирає дробову частину, не округляючи
+console.log(Math.trunc(24.23));
+console.log(Math.trunc(24.83));
+console.log(Math.trunc(-24.23));
+console.log(Math.trunc(-24.83));
+*/
 
-/* */
-/* */
 /* */
 /* */
 /* */
