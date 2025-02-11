@@ -123,7 +123,7 @@ TODO – залишок від ділення
 const x = 8;
 const y = 5;
 console.log(x % y);
-TODO – степінь
+TODO – степінь 
 const x = 8;
 const y = 5;
 console.log(x ** y);
@@ -182,6 +182,21 @@ console.log('10' - 5);
 console.log(5 + true);
 console.log(5 - true);
  */
+/* //! toFixed()
+TODO – використовується для округлення числа до заданої кількості знаків після коми та перетворення їх у рядок.
+-//! Округлює число за математичними правилами
+console.log((12.3456).toFixed(2)); // "12.35
+TODO
+console.log(0.1 + 0.2);
+console.log((0.1 + 0.2).toFixed(1));
+console.log(Number((0.1 + 0.2).toFixed(1)));
+console.log((12345.6459).toFixed(1));
+TODO
+let num = 12.3456;
+console.log(num.toFixed(2)); // "12.35"
+console.log(num.toFixed(0)); // "12"
+console.log(num.toFixed(5)); // "12.34560"
+*/
 /* //! BigInt
 console.log(Number.MIN_SAFE_INTEGER); //Мінімальне число в JS
 console.log(Number.MAX_SAFE_INTEGER); //Максимальне число в JS
@@ -350,4 +365,7 @@ console.log(num.toFixed(2));
 
 /* */
 /* */
-/* */
+
+//! Math.pow(2, 3); // Степінь
+//! console.log(Math.sqrt(8)); // Повертає квадратний корінь числа
+//! console.log(Math.cbrt(8)); // Повертає кубічний корінь числа
