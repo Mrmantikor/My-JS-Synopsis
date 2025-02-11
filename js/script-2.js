@@ -1,22 +1,3 @@
-// #region Простий вивід в Console
-function Detected() {
-  console.log('Java Script Detected');
-}
-Detected();
-// #endregion
-// #region Перевизначення значення
-let username = 'Mango';
-username = 'poly';
-console.log(username);
-// #endregion
-// #region Null
-let value = null;
-console.log(value);
-// #endregion
-// #region Undefined
-let value;
-console.log(value);
-// #endregion
 // #region Infinity
 console.log(1e1000);
 

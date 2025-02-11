@@ -1,6 +1,24 @@
-H;
-/* 3.10 Строки
-//Method length
+// #region Простий вивід в Console
+function Detected() {
+  console.log('Java Script Detected');
+}
+Detected();
+// #endregion
+// #region Перевизначення значення
+let username = 'Mango';
+username = 'poly';
+console.log(username);
+// #endregion
+// #region Null
+let value = null;
+console.log(value);
+// #endregion
+// #region Undefined
+let value;
+console.log(value);
+// #endregion
+/* //! 3.10 Строки
+TODO Method length
 const str = 'Love is Java Skript';
 console.log(str.length);
 console.log(str[0]);
@@ -11,18 +29,18 @@ console.log(str[str.length - 1]);
 const num = 25.25;
 console.log(String(num));
 
-//Method toLocaleLowerCase(), toLocaleUpperCase()
+TODO Method toLocaleLowerCase(), toLocaleUpperCase()
 const strLowerCase = 'You NOT Love is Java Skript?!';
 console.log(strLowerCase.toLowerCase());
 console.log(strLowerCase.toLocaleLowerCase()); // Коррекиніше працює з нестандартними буквами
 console.log(strLowerCase.toUpperCase());
 console.log(strLowerCase.toLocaleUpperCase()); // Коррекиніше працює з нестандартними буквами
 
-//Method trim()
+TODO Method trim()
 const methodTrim = '  You NOT Love is Java Skript?!  '; // Прибирає пробілі спочатку і в кінці
 console.log(methodTrim.trim());
 
-//Method repeat()
+TODO Method repeat()
 const methodRepeat = 'You NOT Love is Java Skript?!';
 console.log(methodRepeat.repeat(3));
 
@@ -35,8 +53,7 @@ const str1 = '  Як у тебе справи?  ';
 console.log(str1.length);
 console.log(str1.trim().length);
  */
-
-/* 3.11 BigInt - Великі цілі числа
+/* //! 3.11 BigInt - Великі цілі числа
 console.log(Number.MIN_SAFE_INTEGER); //Мінімальне число в JS
 console.log(Number.MAX_SAFE_INTEGER); //Максимальне число в JS
 
@@ -52,4 +69,23 @@ console.log(11n / 2n); // Особливість!
 Q: Який результат буде під час виконання console.log(15n / 4n)?
 A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
 */
-H;
+
+// alert('Hello World!');
+
+// const firstName = prompt('Як вас звати?');
+
+// console.log(firstName);
+
+// const isAdult = confirm('Чи є вам 18?');
+
+// console.log(isAdult);
+
+// const numA = prompt('Введіть перше число');
+// const numB = prompt('Введіть друге число');
+
+// console.log(typeof numA);
+// console.log(typeof numB);
+
+// const result = numA + numB;
+
+// console.log(result);
