@@ -33,29 +33,10 @@ let elementWidth = '50px';
 elementWidth = Number.parseInt(elementWidth);
 console.log('elementWidth:', elementWidth);
 // #endregion
-// #region Комбіновані оператори
-let age = 25;
-age += 1;
-console.log(age);
-let apples = 10;
-apples += 3;
-console.log(apples);
-let oranges = 5;
-oranges -= 2;
-console.log(oranges);
-let bananas = 7;
-bananas *= 2;
-console.log(bananas);
 
-// #endregion
 // #region Конкатенація радків
 const age = 24;
 const message = 'Polly ' + age + ' Yes!';
-console.log(message);
-// #endregion
-// #region Довжина рядка
-const username = 'Poly';
-const message = `Username ${username} is ${username.length} characters long`;
 console.log(message);
 // #endregion
 

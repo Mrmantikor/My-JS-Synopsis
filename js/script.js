@@ -59,8 +59,47 @@ console.log(typeof r);
 let t = null;
 console.log(typeof t);
 */
+/* //! length
+const str = 'Love is Java Skript';
+console.log(str.length);
+console.log(str[0]);
+console.log(str.at(0));
+console.log(str.at(-1));
+console.log(str[str.length - 1]);
 
-/* //!Арифметичні операції +-/*%**
+const num = 25.25;
+console.log(String(num));
+
+TODO: Дізнайтесь довжину рядка message.
+const message = 'This string is 28 chars long';
+const messageLength = message.length;
+console.log(message);
+console.log(messageLength);
+
+*/
+/* //! toLocaleLowerCase(), toLocaleUpperCase()
+const strLowerCase = 'You NOT Love is Java Skript?!';
+console.log(strLowerCase.toLowerCase());
+console.log(strLowerCase.toLocaleLowerCase()); // Коррекиніше працює з нестандартними буквами
+console.log(strLowerCase.toUpperCase());
+console.log(strLowerCase.toLocaleUpperCase()); // Коррекиніше працює з нестандартними буквами*/
+/* //! trim() 
+const methodTrim = '  You NOT Love is Java Skript?!  '; // Прибирає пробілі спочатку і в кінці
+console.log(methodTrim.trim());
+//
+const str = '    Вже полюбив JS? :)    ';
+console.log(str.length);
+console.log(str.trim().length);
+//
+const str1 = '  Як у тебе справи?  ';
+console.log(str1.length);
+console.log(str1.trim().length);
+*/
+/* //! repeat() 
+const methodRepeat = 'You NOT Love is Java Skript?!';
+console.log(methodRepeat.repeat(3));
+*/
+/* //! + - / * % **
 TODO додавання
 const x = 8;
 const y = 5;
@@ -93,44 +132,52 @@ console.log(hours);
 console.log(minutes);
 console.log(hours, ':', minutes); 
 */
-
-/* //! 3.10 Строки
-TODO Method length
-const str = 'Love is Java Skript';
-console.log(str.length);
-console.log(str[0]);
-console.log(str.at(0));
-console.log(str.at(-1));
-console.log(str[str.length - 1]);
-
-const num = 25.25;
-console.log(String(num));
-
-TODO Method toLocaleLowerCase(), toLocaleUpperCase()
-const strLowerCase = 'You NOT Love is Java Skript?!';
-console.log(strLowerCase.toLowerCase());
-console.log(strLowerCase.toLocaleLowerCase()); // Коррекиніше працює з нестандартними буквами
-console.log(strLowerCase.toUpperCase());
-console.log(strLowerCase.toLocaleUpperCase()); // Коррекиніше працює з нестандартними буквами
-
-TODO Method trim()
-const methodTrim = '  You NOT Love is Java Skript?!  '; // Прибирає пробілі спочатку і в кінці
-console.log(methodTrim.trim());
-
-TODO Method repeat()
-const methodRepeat = 'You NOT Love is Java Skript?!';
-console.log(methodRepeat.repeat(3));
-
-
-const str = '    Вже полюбив JS? :)    ';
-console.log(str.length);
-console.log(str.trim().length);
-
-const str1 = '  Як у тебе справи?  ';
-console.log(str1.length);
-console.log(str1.trim().length);
+/* //! += -= /= *= %= **=
+let age = 25;
+age += 1;
+console.log(age);
+let apples = 10;
+apples += 3;
+console.log(apples);
+let oranges = 5;
+oranges -= 2;
+console.log(oranges);
+let bananas = 7;
+bananas *= 2;
+console.log(bananas);
  */
-/* //! 3.11 BigInt - Великі цілі числа
+
+/* //! ${}
+TODO: Запросіть у користувача ім'я та прізвище і виведіть у консоль повідомлення: Hello <імʼя> <прізвище>, you are logged in.
+const firstName = prompt('Введіть ваше імʼя!');
+const lastName = prompt('Введіть ваше прізвище!');
+const message = `Hello ${firstName} ${lastName}, you are logged in.`;
+alert(message);
+// 
+ TODO: Склади фразу за допомогою шаблонних рядків. A has B bots in stock, де A, B - змінні вставлені в рядок.
+const companyName = 'Cyberdyne Systems';
+const repairBots = 150;
+const defenceBots = 50;
+const msg = `${companyName} has ${repairBots + defenceBots} bots in stock`;
+console.log(msg); // "Cyberdyne Systems has 200 bots in stock"
+// 
+*/
+/* //! String
+TODO Явне перетворення типів
+console.log(String(5));
+console.log(String(true));
+console.log(String(false));
+console.log(String(null));
+console.log(String(undefined));
+TODO Неявне перетворення типів
+console.log('5' + 3);
+console.log(3 + '5');
+console.log('5' + true);
+console.log('5' + false);
+console.log('5' + null);
+console.log('5' + undefined);
+ */
+/* //! BigInt
 console.log(Number.MIN_SAFE_INTEGER); //Мінімальне число в JS
 console.log(Number.MAX_SAFE_INTEGER); //Максимальне число в JS
 
@@ -147,8 +194,12 @@ Q: Який результат буде під час виконання console
 A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
 */
 
-/*
-
-*/
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
 /* */
 /* */
