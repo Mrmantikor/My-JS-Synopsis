@@ -1,22 +1,52 @@
-// #region Простий вивід в Console
+/* //! Console
 function Detected() {
   console.log('Java Script Detected');
 }
 Detected();
-// #endregion
-// #region Перевизначення значення
+*/
+/* //! Let
 let username = 'Mango';
 username = 'poly';
 console.log(username);
-// #endregion
-// #region Null
+ */
+/* //! Null
 let value = null;
 console.log(value);
-// #endregion
-// #region Undefined
+*/
+/* //! Undefined
 let value;
 console.log(value);
-// #endregion
+*/
+/* //! Infinity
+console.log(1e1000);
+
+const num1 = 50 / 2;
+console.log(Number.isFinite(num1));
+const num2 = 50 / 0;
+console.log(Number.isFinite(num2));
+*/
+/* //! Million 1е6 1е-6
+const million = 1e6;
+console.log(million);
+
+const mil = 1e-6;
+console.log(mil);
+*/
+/* //! Alert
+alert('Hello World!');
+*/
+/* //! Prompt
+prompt(`yes or no`); 
+
+const firstName = prompt('Як вас звати?');
+console.log(firstName);
+*/
+/* //! Confirm
+confirm(`yes and text`); 
+
+const isAdult = confirm('Чи є вам 18?');
+console.log(isAdult);
+*/
 /* //! 3.10 Строки
 TODO Method length
 const str = 'Love is Java Skript';
@@ -70,16 +100,6 @@ Q: Який результат буде під час виконання console
 A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
 */
 
-// alert('Hello World!');
-
-// const firstName = prompt('Як вас звати?');
-
-// console.log(firstName);
-
-// const isAdult = confirm('Чи є вам 18?');
-
-// console.log(isAdult);
-
 // const numA = prompt('Введіть перше число');
 // const numB = prompt('Введіть друге число');
 
@@ -89,3 +109,7 @@ A: Все так, при розподілі BigInt чисел дробова ч�
 // const result = numA + numB;
 
 // console.log(result);
+
+/* */
+/* */
+/* */

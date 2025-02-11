@@ -1,18 +1,3 @@
-// #region Infinity
-console.log(1e1000);
-
-const num1 = 50 / 2;
-console.log(Number.isFinite(num1));
-const num2 = 50 / 0;
-console.log(Number.isFinite(num2));
-// #endregion
-// #region Как записывать миллион 1е6 1е-6
-const million = 1e6;
-console.log(million);
-
-const mil = 1e-6;
-console.log(mil);
-// #endregion
 // #region Typeof
 const q = 1;
 console.log(typeof q);
@@ -100,12 +85,7 @@ const username = 'Poly';
 const message = `Username ${username} is ${username.length} characters long`;
 console.log(message);
 // #endregion
-// #region Alert
-alert(`Hello!!!`);
-prompt(`yes or no`);
-confirm(`yes and text`);
 
-// #endregion
 // #region Function
 function greatUser(firstName) {
   console.log(firstName);
