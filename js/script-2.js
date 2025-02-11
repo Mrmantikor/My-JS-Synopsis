@@ -1,30 +1,3 @@
-// #region Typeof
-const q = 1;
-console.log(typeof q);
-const w = 'Jaca';
-console.log(typeof w);
-const e = false;
-console.log(typeof e);
-let r;
-console.log(typeof r);
-let t = null;
-console.log(typeof t);
-
-// #endregion
-// #region Арифметичні операції +-/*%**
-// додавання
-const x = 8;
-const y = 5;
-console.log(x + y);
-// залишок від ділення
-const x = 8;
-const y = 5;
-console.log(x % y);
-// степінь
-const x = 8;
-const y = 5;
-console.log(x ** y);
-// #endregion
 // #region parseFloat parseInt
 const str = '52.86';
 console.log(str);

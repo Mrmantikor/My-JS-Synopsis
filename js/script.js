@@ -47,6 +47,53 @@ confirm(`yes and text`);
 const isAdult = confirm('Чи є вам 18?');
 console.log(isAdult);
 */
+/* //! Typeof
+const q = 1;
+console.log(typeof q);
+const w = 'Jaca';
+console.log(typeof w);
+const e = false;
+console.log(typeof e);
+let r;
+console.log(typeof r);
+let t = null;
+console.log(typeof t);
+*/
+
+/* //!Арифметичні операції +-/*%**
+TODO додавання
+const x = 8;
+const y = 5;
+console.log(x + y);
+TODO відімання
+const x = 8;
+const y = 5;
+console.log(x - y);
+TODO множення
+const x = 8;
+const y = 5;
+console.log(x * y);
+TODO ділення
+const x = 8;
+const y = 5;
+console.log(x / y);
+TODO залишок від ділення
+const x = 8;
+const y = 5;
+console.log(x % y);
+TODO степінь
+const x = 8;
+const y = 5;
+console.log(x ** y);
+TODO: Дано 90 хвилин, дізнайтеся скільки в цьому числі міститься годин і хвилин. Результат виведіть у консоль.
+const totalMinutes = 90;
+const hours = Math.floor(totalMinutes / 60);
+const minutes = totalMinutes % 60;
+console.log(hours);
+console.log(minutes);
+console.log(hours, ':', minutes); 
+*/
+
 /* //! 3.10 Строки
 TODO Method length
 const str = 'Love is Java Skript';
@@ -100,16 +147,8 @@ Q: Який результат буде під час виконання console
 A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
 */
 
-// const numA = prompt('Введіть перше число');
-// const numB = prompt('Введіть друге число');
+/*
 
-// console.log(typeof numA);
-// console.log(typeof numB);
-
-// const result = numA + numB;
-
-// console.log(result);
-
-/* */
+*/
 /* */
 /* */
