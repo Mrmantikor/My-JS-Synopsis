@@ -363,9 +363,277 @@ const num = 10;
 console.log(num.toFixed(2));
 */
 
-/* */
-/* */
+/* //! Lesson 2-1 practical
+//? Логічні оператори
+// console.log(true && 3);
+// console.log(false && 3);
+// console.log(true && 4 && "kiwi");
+// console.log((true && 0) || "kiwi");
+// console.log(true || 3);
+// console.log(true || 3 || 4);
+// console.log(true || false || 7);
+// console.log(null || 2 || undefined);
+// console.log((1 && null && 2) >= 0);
+// console.log(null || (2 && 3) || 4);
+
+//? Перетворення типів
+// console.log(2 + 5 + "" + 1 + 0);
+// console.log("" + 1 - 0);
+// console.log(true + false);
+// console.log(6 / Number.parseInt("3px"));
+// console.log("2" * "3");
+// console.log(4 + 5 + "px");
+// console.log("$" + 4 + 5);
+// console.log("4" - 2);
+// console.log("4px" - 2);
+// console.log(7 / 0);
+// console.log("  -9  " + 5);
+// console.log(null + 1);
+// console.log(undefined + 1);
+// console.log("" + 1);
+// console.log(3 > 2 > 1);
+// console.log(3 > 2 && 2 > 1);
+////////////////////////////////////////////////////////////////
+
+// const str = 'abcdea';
+// if (str.indexOf("a") === 0) {
+//     console.log("так");
+// }
+// else{
+//     console.log("ні");
+// }
+// 4 variant
+// const message = str[0]==="a" ? "так":"Hi";
+// console.log(message);
+// 3 variant
+// const message = str.startsWith("a") ? "так":"Hi";
+// console.log(message);
+
+// 2 variant
+// str.startsWith("a") ? console.log("так") : console.log("ні");
+// 1 variant
+// if (str.startsWith("a")){
+//     console.log("так");
+// }
+// else {
+//     console.log("ні");
+// }
+
+// Якщо ваше ім’я містить більше 4 букв і прізвище більше 5, то виведіть на екран число, яке дорівнює сумі букв імені і прізвища.
+// Якщо умова не виконується - вивести “неможливо виконати умову”.
+// Наприклад: “Віктор Сташко” Віктор - 6 літер, Сташко - 6 літер. Виводимо 12.
+// Використовувати вбудований метод length.
+
+const firstName = "Bobys";
+const lastName = "Marleys";
+// if (firstName.length > 4 && lastName.length > 5) {
+//    console.log(firstName.length + lastName.length)
+// }
+// else {
+//     console.log('неможливо виконати умову')
+//     }
+// const resolt =
+//   firstName.length > 4 && lastName.length > 5
+//     ? firstName.length + lastName.length
+//     : "неможливо виконати умову";
+// console.log(resolt);
+// function checkNameLength(firstName, lastName) {
+//   return firstName.length > 4 && lastName.length > 5
+//     ? firstName.length + lastName.length
+//     : "неможливо виконати умову";
+// }
+// const resolt = checkNameLength(firstName, lastName);
+// console.log(resolt);
+// Є 3 вікові групи : діти (0-16), дорослі(17-60), пенсіонери (61-100).
+// До якої групи відноситься Максим, якщо йому 55 років.Назву групи вивести на екран.
+
+// const ageMaxim = prompt('Введіть вік Максима');
+
+// if (ageMaxim >= 0 && ageMaxim <= 16) {
+// console.log('Діти');
+// }
+
+// else if (ageMaxim >= 17 && ageMaxim <= 60) {
+//   console.log('Дорослі');
+// }
+
+// else if (ageMaxim >= 61 && ageMaxim <= 100) {
+//   console.log(Пенсіонери);
+// }
+// else {
+//   console.log('Жодна з груп');
+// }
+ 
+
+// function checkAgeMaksim(age) {
+//   switch (age) {
+//     case age >= 0 && age <= 16 && age :
+//       console.log('Діти');
+//       break;
+//     case age >= 17 && age <= 60 && age:
+//       console.log('Дорослі');
+//       break;
+//     case age >= 61 && age <= 100 && age:
+//       console.log('Пенсіонери');
+//       break;
+//     default:
+//       console.log('Жодна з груп');
+//       break;
+//   }
+
+// }
+
+// checkAgeMaksim(155);
+
+
+// function checkAgeMaksim(age) {
+//   return age >= 0 && age <= 16 ? 'Діти' :
+//     age >= 17 && age <= 60 ? 'Дорослі' :
+//       age >= 61 && age <= 100 ? 'Пенсіонери' :
+//         'Жодна з груп'
+
+// }
+
+// console.log(checkAgeMaksim(17));
+ */
+/* //! Lesson 2-2 Practical
+
+
+TODO Потрібно перевітири чи є речення палінром*/
+
+
+// function isPalindrom(string){
+//   const newStr = string.replaceAll(" ", "").toLowerCase();
+//   let reversedString = "";
+//   for (let i=newStr.length-1; i>=0; i--){
+//     reversedString += newStr[i];
+//   }
+//   console.log(newStr);
+//   console.log(reversedString);
+//   return newStr === reversedString;
+// }
+//  console.log(isPalindrom(str));
+
+// function isPalindrom(string){
+//   const newStr = string.replaceAll(" ", "").toLowerCase();
+//  for (let i=0; i<Math.floor(newStr.length/2); i++){
+//   if (newStr[i] !== newStr[newStr.length-1-i]){
+//     return false;
+//   }
+//   // console.log(i);
+//   // console.log(newStr.length-1-i);
+//   // console.log('-------');
+//  }
+//   return true;
+// }
+//  console.log(isPalindrom(str));
+
+// Виведіть методом console.log() зірочки від 1 до 7 штук у вигляді трикутника таким чино
+// *
+// **
+// ***
+// ****
+// *****
+
+// let str='*';
+// while(str.length<8){
+//   console.log(str);
+//   str+='*';
+// }
+// let str='*';
+// do{
+//   console.log(str);
+//   str+='*';
+// }
+// while(str.length<8);
+// let str='*';
+// for(let i=0; i<7; i++){
+//   console.log(str);
+//   str+='*';
+// }
+
+// Порахуйте суму чисел від 12 до 27
+// const num1 = 12;
+// const num2 = 27;
+// let sum = 0;
+// // for(let i=num1; i<num2; i++){
+// //   if (i%2!==0){
+// //     sum+=i;
+// //   }
+// // }
+// for (let i = num1; i < num2; i++) {
+//   if (i % 2 === 0) {
+//     continue;
+//   }
+//   sum += i;
+// }
+// console.log(sum);
+
+// Запитай користувача у модальному вікні, який з напоїв він бажає придбати - "Кава", "Чай" чи "Сік",
+// та залежно від виду напою оголоси суму досплати.Використовувати switch.
+
+// let drink = prompt("Що бажаєте?")?.toLowerCase();
+// // if (typeof drink === "string") {
+// //   drink = drink.toLowerCase();
+// // }
+
+// let price = 0;
+
+// switch (drink) {
+//   case "кава":
+//     price = 1;
+//     break;
+//   case "чай":
+//     price = 2;
+//     break;
+//   case "сік":
+//     price = 3;
+//     break;
+//   default:
+//     "Що це?";
+// }
+// console.log(price);
+
+/*
+Опис:
+Тіммі та Сара думають, що вони закохані, але в тому місці, де вони живуть, вони дізнаються лише тоді, коли зірвуть по одній квітці. Якщо одна з квіток має парну кількість пелюсток, а інша - непарну, то це означає, що вони закохані.
+
+Напишіть функцію, яка отримує кількість пелюсток кожної квітки і повертає true, якщо вони закохані, і false, якщо ні.
+*/
+
+// function checkLove(flower1, flower2) {
+//   // if (
+//   //   (flower1 % 2 === 0 && flower2 % 2 !== 0) ||
+//   //   (flower1 % 2 !== 0 && flower2 % 2 === 0)
+//   // ) {
+//   //   return true;
+//   // }
+//   // return false;
+//   return flower1 % 2 !== flower2 % 2;
+// }
+
+// console.log(checkLove(2, 3));
+
+*/
 
 //! Math.pow(2, 3); // Степінь
 //! console.log(Math.sqrt(8)); // Повертає квадратний корінь числа
 //! console.log(Math.cbrt(8)); // Повертає кубічний корінь числа
+
+const str = 'Я несу гусеня';
+янесугусеня
+// const str = 'Де помити мопед';
+// const str = 'І була пані на палубІ';
+// const str = 'Поліна неси Ром!';
+
+function isPalindrom(string){
+  const newStr = string.replaceAll(" ", "").toLowerCase();
+  let reversedString = "";
+  for (let i=0; i<newStr.length; i++){
+    reversedString += newStr[newStr.length-1-i];
+  }
+  console.log(newStr);
+  console.log(reversedString);
+  return newStr === reversedString;
+}
+console.log(isPalindrom(str));
