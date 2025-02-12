@@ -515,21 +515,11 @@ console.log(3 > 2 > 1);
 console.log(3 > 2 && 2 > 1);
  */
 /* //! Question 10
-TODO Якщо ваше ім’я містить більше 4 букв і прізвище більше 5, то виведіть на екран число, яке дорівнює сумі букв імені і прізвища. Якщо умова не виконується - вивести “неможливо виконати умову”.Наприклад: “Віктор Сташко” Віктор - 6 літер, Сташко - 6 літер. Виводимо 12. Використовувати вбудований метод length.
-const firstName = 'Bobys';
-const lastName = 'Marleys';
-if (firstName.length > 4 && lastName.length > 5) {
-  console.log(firstName.length + lastName.length);
-} else {
-  console.log('неможливо виконати умову');
-}
-
  */
 /* //! Question 10
  */
 /* //! Question 10
  */
-
 /* //! Question Function
 TODO – Напишіть функцію isAdult(age), яка буде перевіряти вік користувач. Якщо користувачу більше 18 років, то функція повертає true інакше false.
 function isAdult(userAge) {
@@ -574,72 +564,3 @@ console.log(bmi); // 28.8
 const num = 10;
 console.log(num.toFixed(2));
 */
-
-/* //! Lesson 2-1 practical
-
-function checkNameLength(firstName, lastName) {
-  return firstName.length > 4 && lastName.length > 5
-    ? firstName.length + lastName.length
-    : "неможливо виконати умову";
-}
-const resolt = checkNameLength(firstName, lastName);
-console.log(resolt);
-
-// Є 3 вікові групи : діти (0-16), дорослі(17-60), пенсіонери (61-100).
-// До якої групи відноситься Максим, якщо йому 55 років.Назву групи вивести на екран.
-
-// const ageMaxim = prompt('Введіть вік Максима');
-
-// if (ageMaxim >= 0 && ageMaxim <= 16) {
-// console.log('Діти');
-// }
-
-// else if (ageMaxim >= 17 && ageMaxim <= 60) {
-//   console.log('Дорослі');
-// }
-
-// else if (ageMaxim >= 61 && ageMaxim <= 100) {
-//   console.log(Пенсіонери);
-// }
-// else {
-//   console.log('Жодна з груп');
-// }
- 
-
-// function checkAgeMaksim(age) {
-//   switch (age) {
-//     case age >= 0 && age <= 16 && age :
-//       console.log('Діти');
-//       break;
-//     case age >= 17 && age <= 60 && age:
-//       console.log('Дорослі');
-//       break;
-//     case age >= 61 && age <= 100 && age:
-//       console.log('Пенсіонери');
-//       break;
-//     default:
-//       console.log('Жодна з груп');
-//       break;
-//   }
-
-// }
-
-// checkAgeMaksim(155);
-
-
-// function checkAgeMaksim(age) {
-//   return age >= 0 && age <= 16 ? 'Діти' :
-//     age >= 17 && age <= 60 ? 'Дорослі' :
-//       age >= 61 && age <= 100 ? 'Пенсіонери' :
-//         'Жодна з груп'
-
-// }
-
-// console.log(checkAgeMaksim(17));
- */
-
-
-const resolt = firstName.length > 4 && lastName.length > 5;
-    ? firstName.length + lastName.length
-    : "неможливо виконати умову";
-console.log(resolt);
