@@ -317,189 +317,20 @@ console.log('6' != 5);
 console.log('6' !== 5);
 
 */
-
-/* //! Function
-TODO – Напишіть функцію isAdult(age), яка буде перевіряти вік користувач. Якщо користувачу більше 18 років, то функція повертає true інакше false.
-function isAdult(userAge) {
-  return userAge >= 18;
-}
-console.log(isAdult(29)); // true
-console.log(isAdult(18)); // true
-console.log(isAdult(7)); // false
-
-TODO – Напишіть функцію isNumberEven(num), яка перевіряє число на парність. Якщо число парне, то функція повертає true інакше false.
-function isNumberEven(num) {
-  return num % 2 === 0;
-}
-console.log(isNumberEven(10)); // true
-console.log(isNumberEven(15)); // false
-console.log(isNumberEven(100)); // true
-TODO – Напишіть функцію getRectArea(sideA, sideB) для обчислення площі прямокутника. Сторони прямокутника будуть переденні до параметрів sideA та sideB.
-function getRectArea(sideA, sideB) {
-  return sideA * sideB;
-}
-console.log(getRectArea(8, 11)); // 88
-console.log(getRectArea(18, 11)); // 198
-console.log(getRectArea(8, 21)); // 168
-TODO: Напишіть функцію toCelsius(fahrenheit), яка буде переводити градуси Фаренгейта в градуси Цельсія.Заокругліть значення до однієї цифри після коми.
-function toCelsius(fahrenheit) {
-  const celsius = (fahrenheit - 32) * (5 / 9);
-
-  return Number(celsius.toFixed(1));
-}
-console.log(toCelsius(10)); // -12.2
-console.log(toCelsius(0)); // -17.8
-console.log(toCelsius(-10)); // -23.3
-TODO: Напиши функцію calcBMI(weight, height) яка розраховує та повертає індекс маси тіла людини. Для цього необхідно розділити вагу на квадрат висоти. Вага та висота будуть спеціально передані як рядки. Не цілі числа можуть бути задані у вигляді 24.7 або 24,7, тобто як роздільник дробової частини може бути кома. Індекс маси тіла необхідно округлити до однієї цифри після коми.
-function calcBMI(weight, height) {
-  weight = Number(weight.replace(',', '.'));
-  height = Number(height.replace(',', '.'));
-  const bodyIndex = weight / height ** 2;
-  return bodyIndex.toFixed(1);
-}
-const bmi = calcBMI('88,3', '1.75');
-console.log(bmi); // 28.8
-const num = 10;
-console.log(num.toFixed(2));
-*/
-
-/* //! Lesson 2-1 practical
-//? Логічні оператори
-// console.log(true && 3);
-// console.log(false && 3);
-// console.log(true && 4 && "kiwi");
-// console.log((true && 0) || "kiwi");
-// console.log(true || 3);
-// console.log(true || 3 || 4);
-// console.log(true || false || 7);
-// console.log(null || 2 || undefined);
-// console.log((1 && null && 2) >= 0);
-// console.log(null || (2 && 3) || 4);
-
-//? Перетворення типів
-// console.log(2 + 5 + "" + 1 + 0);
-// console.log("" + 1 - 0);
-// console.log(true + false);
-// console.log(6 / Number.parseInt("3px"));
-// console.log("2" * "3");
-// console.log(4 + 5 + "px");
-// console.log("$" + 4 + 5);
-// console.log("4" - 2);
-// console.log("4px" - 2);
-// console.log(7 / 0);
-// console.log("  -9  " + 5);
-// console.log(null + 1);
-// console.log(undefined + 1);
-// console.log("" + 1);
-// console.log(3 > 2 > 1);
-// console.log(3 > 2 && 2 > 1);
-////////////////////////////////////////////////////////////////
-
-// const str = 'abcdea';
-// if (str.indexOf("a") === 0) {
-//     console.log("так");
-// }
-// else{
-//     console.log("ні");
-// }
-// 4 variant
-// const message = str[0]==="a" ? "так":"Hi";
-// console.log(message);
-// 3 variant
-// const message = str.startsWith("a") ? "так":"Hi";
-// console.log(message);
-
-// 2 variant
-// str.startsWith("a") ? console.log("так") : console.log("ні");
-// 1 variant
-// if (str.startsWith("a")){
-//     console.log("так");
-// }
-// else {
-//     console.log("ні");
-// }
-
-// Якщо ваше ім’я містить більше 4 букв і прізвище більше 5, то виведіть на екран число, яке дорівнює сумі букв імені і прізвища.
-// Якщо умова не виконується - вивести “неможливо виконати умову”.
-// Наприклад: “Віктор Сташко” Віктор - 6 літер, Сташко - 6 літер. Виводимо 12.
-// Використовувати вбудований метод length.
-
-const firstName = "Bobys";
-const lastName = "Marleys";
-// if (firstName.length > 4 && lastName.length > 5) {
-//    console.log(firstName.length + lastName.length)
-// }
-// else {
-//     console.log('неможливо виконати умову')
-//     }
-// const resolt =
-//   firstName.length > 4 && lastName.length > 5
-//     ? firstName.length + lastName.length
-//     : "неможливо виконати умову";
-// console.log(resolt);
-// function checkNameLength(firstName, lastName) {
-//   return firstName.length > 4 && lastName.length > 5
-//     ? firstName.length + lastName.length
-//     : "неможливо виконати умову";
-// }
-// const resolt = checkNameLength(firstName, lastName);
-// console.log(resolt);
-// Є 3 вікові групи : діти (0-16), дорослі(17-60), пенсіонери (61-100).
-// До якої групи відноситься Максим, якщо йому 55 років.Назву групи вивести на екран.
-
-// const ageMaxim = prompt('Введіть вік Максима');
-
-// if (ageMaxim >= 0 && ageMaxim <= 16) {
-// console.log('Діти');
-// }
-
-// else if (ageMaxim >= 17 && ageMaxim <= 60) {
-//   console.log('Дорослі');
-// }
-
-// else if (ageMaxim >= 61 && ageMaxim <= 100) {
-//   console.log(Пенсіонери);
-// }
-// else {
-//   console.log('Жодна з груп');
-// }
- 
-
-// function checkAgeMaksim(age) {
-//   switch (age) {
-//     case age >= 0 && age <= 16 && age :
-//       console.log('Діти');
-//       break;
-//     case age >= 17 && age <= 60 && age:
-//       console.log('Дорослі');
-//       break;
-//     case age >= 61 && age <= 100 && age:
-//       console.log('Пенсіонери');
-//       break;
-//     default:
-//       console.log('Жодна з груп');
-//       break;
-//   }
-
-// }
-
-// checkAgeMaksim(155);
-
-
-// function checkAgeMaksim(age) {
-//   return age >= 0 && age <= 16 ? 'Діти' :
-//     age >= 17 && age <= 60 ? 'Дорослі' :
-//       age >= 61 && age <= 100 ? 'Пенсіонери' :
-//         'Жодна з груп'
-
-// }
-
-// console.log(checkAgeMaksim(17));
+/* //! Math.pow()
+TODO: Степінь
+console.log(Math.pow(2, 2));
  */
-
-//! Math.pow(2, 3); // Степінь
-//! console.log(Math.sqrt(8)); // Повертає квадратний корінь числа
-//! console.log(Math.cbrt(8)); // Повертає кубічний корінь числа
+/* //! Math.sqrt()
+TODO: Повертає квадратний корінь числа
+console.log(Math.sqrt(8));
+ */
+/* //! Math.cbrt()
+TODO: Повертає кубічний корінь числа
+console.log(Math.cbrt(8));
+ */
+/* //!
+ */
 
 /* //! Question 1
 TODO Потрібно перевітири чи є речення палінром
@@ -653,5 +484,162 @@ const str = 'The quick brown fox jumps over the lazy dog. If the dog reacted, wa
 console.log(str.replace('The', 'On'));
 console.log(str.replaceAll('dog', 'monkey'));
  */
-/* //! Question 9
+/* //! Question 9 Логічні оператори
+console.log(true && 3);
+console.log(false && 3);
+console.log(true && 4 && "kiwi");
+console.log((true && 0) || "kiwi");
+console.log(true || 3);
+console.log(true || 3 || 4);
+console.log(true || false || 7);
+console.log(null || 2 || undefined);
+console.log((1 && null && 2) >= 0);
+console.log(null || (2 && 3) || 4);
  */
+/* //! Question 10 Перетворення типів
+console.log(2 + 5 + '' + 1 + 0);
+console.log('' + 1 - 0);
+console.log(true + false);
+console.log(6 / Number.parseInt('3px'));
+console.log('2' * '3');
+console.log(4 + 5 + 'px');
+console.log('$' + 4 + 5);
+console.log('4' - 2);
+console.log('4px' - 2);
+console.log(7 / 0);
+console.log('  -9  ' + 5);
+console.log(null + 1);
+console.log(undefined + 1);
+console.log('' + 1);
+console.log(3 > 2 > 1);
+console.log(3 > 2 && 2 > 1);
+ */
+/* //! Question 10
+TODO Якщо ваше ім’я містить більше 4 букв і прізвище більше 5, то виведіть на екран число, яке дорівнює сумі букв імені і прізвища. Якщо умова не виконується - вивести “неможливо виконати умову”.Наприклад: “Віктор Сташко” Віктор - 6 літер, Сташко - 6 літер. Виводимо 12. Використовувати вбудований метод length.
+const firstName = 'Bobys';
+const lastName = 'Marleys';
+if (firstName.length > 4 && lastName.length > 5) {
+  console.log(firstName.length + lastName.length);
+} else {
+  console.log('неможливо виконати умову');
+}
+
+ */
+/* //! Question 10
+ */
+/* //! Question 10
+ */
+
+/* //! Question Function
+TODO – Напишіть функцію isAdult(age), яка буде перевіряти вік користувач. Якщо користувачу більше 18 років, то функція повертає true інакше false.
+function isAdult(userAge) {
+  return userAge >= 18;
+}
+console.log(isAdult(29)); // true
+console.log(isAdult(18)); // true
+console.log(isAdult(7)); // false
+
+TODO – Напишіть функцію isNumberEven(num), яка перевіряє число на парність. Якщо число парне, то функція повертає true інакше false.
+function isNumberEven(num) {
+  return num % 2 === 0;
+}
+console.log(isNumberEven(10)); // true
+console.log(isNumberEven(15)); // false
+console.log(isNumberEven(100)); // true
+TODO – Напишіть функцію getRectArea(sideA, sideB) для обчислення площі прямокутника. Сторони прямокутника будуть переденні до параметрів sideA та sideB.
+function getRectArea(sideA, sideB) {
+  return sideA * sideB;
+}
+console.log(getRectArea(8, 11)); // 88
+console.log(getRectArea(18, 11)); // 198
+console.log(getRectArea(8, 21)); // 168
+TODO: Напишіть функцію toCelsius(fahrenheit), яка буде переводити градуси Фаренгейта в градуси Цельсія.Заокругліть значення до однієї цифри після коми.
+function toCelsius(fahrenheit) {
+  const celsius = (fahrenheit - 32) * (5 / 9);
+
+  return Number(celsius.toFixed(1));
+}
+console.log(toCelsius(10)); // -12.2
+console.log(toCelsius(0)); // -17.8
+console.log(toCelsius(-10)); // -23.3
+TODO: Напиши функцію calcBMI(weight, height) яка розраховує та повертає індекс маси тіла людини. Для цього необхідно розділити вагу на квадрат висоти. Вага та висота будуть спеціально передані як рядки. Не цілі числа можуть бути задані у вигляді 24.7 або 24,7, тобто як роздільник дробової частини може бути кома. Індекс маси тіла необхідно округлити до однієї цифри після коми.
+function calcBMI(weight, height) {
+  weight = Number(weight.replace(',', '.'));
+  height = Number(height.replace(',', '.'));
+  const bodyIndex = weight / height ** 2;
+  return bodyIndex.toFixed(1);
+}
+const bmi = calcBMI('88,3', '1.75');
+console.log(bmi); // 28.8
+const num = 10;
+console.log(num.toFixed(2));
+*/
+
+/* //! Lesson 2-1 practical
+
+function checkNameLength(firstName, lastName) {
+  return firstName.length > 4 && lastName.length > 5
+    ? firstName.length + lastName.length
+    : "неможливо виконати умову";
+}
+const resolt = checkNameLength(firstName, lastName);
+console.log(resolt);
+
+// Є 3 вікові групи : діти (0-16), дорослі(17-60), пенсіонери (61-100).
+// До якої групи відноситься Максим, якщо йому 55 років.Назву групи вивести на екран.
+
+// const ageMaxim = prompt('Введіть вік Максима');
+
+// if (ageMaxim >= 0 && ageMaxim <= 16) {
+// console.log('Діти');
+// }
+
+// else if (ageMaxim >= 17 && ageMaxim <= 60) {
+//   console.log('Дорослі');
+// }
+
+// else if (ageMaxim >= 61 && ageMaxim <= 100) {
+//   console.log(Пенсіонери);
+// }
+// else {
+//   console.log('Жодна з груп');
+// }
+ 
+
+// function checkAgeMaksim(age) {
+//   switch (age) {
+//     case age >= 0 && age <= 16 && age :
+//       console.log('Діти');
+//       break;
+//     case age >= 17 && age <= 60 && age:
+//       console.log('Дорослі');
+//       break;
+//     case age >= 61 && age <= 100 && age:
+//       console.log('Пенсіонери');
+//       break;
+//     default:
+//       console.log('Жодна з груп');
+//       break;
+//   }
+
+// }
+
+// checkAgeMaksim(155);
+
+
+// function checkAgeMaksim(age) {
+//   return age >= 0 && age <= 16 ? 'Діти' :
+//     age >= 17 && age <= 60 ? 'Дорослі' :
+//       age >= 61 && age <= 100 ? 'Пенсіонери' :
+//         'Жодна з груп'
+
+// }
+
+// console.log(checkAgeMaksim(17));
+ */
+
+
+const resolt = firstName.length > 4 && lastName.length > 5;
+    ? firstName.length + lastName.length
+    : "неможливо виконати умову";
+console.log(resolt);
