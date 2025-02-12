@@ -335,6 +335,10 @@ const num = +prompt('Enter a number');
 console.log(`Введіть ${num} і вийде ${num + 10}`);
  */
 
+/* //! localeCompare()
+TODO: Правильне порівняння строк
+console.log('Hallo'.localeCompare('Hello'));
+*/
 /* //! Question 1
 TODO Потрібно перевітири чи є речення палінром
 const str = 'Я несу гусеня'; //! янесугусеня
@@ -527,6 +531,16 @@ TODO – Var 1
 console.log(Math.trunc((num % 100) / 10));
 
  */
+/* //! Question 11
+TODO: Задана змінна num, яка містить кілька. Вам необхідно вивести в консоль true, якщо це число знаходиться поза діапазоном: від 10 до 20 включно, інакше потрібно вивести false.
+TODO: Примітка!!! 1) Число вважається поза діапазоном, якщо воно строго менше 10 або строго більше 20. 2) Створювати змінну num не потрібно, вона вже створена за вас.
+let num = 25; // true
+let num = 10; // false
+TODO – Var 1
+console.log(num < 10 || num > 20);
+TODO – Var 2
+console.log(!(num >= 10 && num <= 20));
+*/
 /* //! Question 10
  */
 /* //! Question 10
@@ -574,4 +588,15 @@ const bmi = calcBMI('88,3', '1.75');
 console.log(bmi); // 28.8
 const num = 10;
 console.log(num.toFixed(2));
+*/
+/* //! 
+let num = 5;
+const prefix = ++num;
+console.log('num: ', num);
+console.log('prefix: ', prefix);
+
+let num1 = 5;
+const postfix = num1++;
+console.log('num1: ', num1);
+console.log('postfix: ', postfix);
 */
