@@ -590,13 +590,14 @@ const num = 10;
 console.log(num.toFixed(2));
 */
 /* //! 
+
 let num = 5;
 const prefix = ++num;
 console.log('num: ', num);
 console.log('prefix: ', prefix);
 
-let num1 = 5;
-const postfix = num1++;
-console.log('num1: ', num1);
+let num = 5;
+const postfix = num++;
+console.log('num: ', num);
 console.log('postfix: ', postfix);
 */
