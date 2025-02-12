@@ -329,7 +329,10 @@ console.log(Math.sqrt(8));
 TODO: Повертає кубічний корінь числа
 console.log(Math.cbrt(8));
  */
-/* //!
+/* //! Concat()
+TODO: Краще використовувати + замість Concat()
+const num = +prompt('Enter a number');
+console.log(`Введіть ${num} і вийде ${num + 10}`);
  */
 
 /* //! Question 1
@@ -514,7 +517,15 @@ console.log('' + 1);
 console.log(3 > 2 > 1);
 console.log(3 > 2 && 2 > 1);
  */
-/* //! Question 10
+/* //! Question 10 Передостання цифра
+TODO У вас є змінна num, вам необхідно отримати передостанню цифру з цього числа і вивести цифру в консоль.
+TODO Умова: 1) Змінна num вже створена для вас у коді. 2) Якщо число немає передостанньої цифри, потрібно вивести 0. 3) Використовувати тількі методи * / - + % , Math.floor, Math.round, Math.trunc, Math.ceil
+let num = 528;
+let num = 18;
+let num = 6;
+TODO – Var 1
+console.log(Math.trunc((num % 100) / 10));
+
  */
 /* //! Question 10
  */
