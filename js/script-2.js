@@ -335,6 +335,127 @@ const num = +prompt('Enter a number');
 console.log(`Введіть ${num} і вийде ${num + 10}`);
  */
 
+// #region //?_Массиви_Теоргія?//
+/* //! join()
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+const result = courses.join('-');
+console.log('courses:', courses);
+console.log('result:', result);
+*/
+/* //! split()
+const phoneNumbers = '+380961111111,+380961111111,+380961111111,+380961111111';
+
+const phoneNumbersArr = phoneNumbers.split(',');
+
+console.log('phoneNumbers:', phoneNumbers);
+console.log('phoneNumbersArr:', phoneNumbersArr);
+*/
+/* //! slice()
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+const coursesCopy = courses.slice(1, 3);
+
+console.log('courses:', courses);
+console.log('coursesCopy:', coursesCopy);
+
+coursesCopy[0] = 'SASS';
+
+console.log('courses:', courses);
+console.log('coursesCopy:', coursesCopy);
+*/
+/* //! concat()
+const oldCourses = ['HTML', 'CSS'];
+const newCourses = ['JavaScript', 'React', 'PostgreSQL'];
+const allCourses = oldCourses.concat(newCourses);
+
+console.log('oldCourses:', oldCourses);
+console.log('newCourses:', newCourses);
+console.log('allCourses:', allCourses);
+*/
+/* //! indexOf()
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+console.log('courses:', courses);
+console.log(courses.indexOf('NodeJS'));
+*/
+/* //! push()/pop() та unshift()/shift()
+
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+console.log('courses:', courses);
+
+courses.unshift('NodeJS', 'PHP');
+
+console.log('courses:', courses);
+
+courses.shift();
+
+console.log('courses:', courses);
+*/
+// #endregion
+// #region //?_Массиви_Практика?//
+/* //! Основні положення
+TODO: Оголошення масиву
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+console.log('courses: ', courses);
+console.log(courses[0]);
+TODO: Перезапис масиву
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+courses[4] = 'Node.js';
+console.log(courses);
+TODO: Довжина масиву
+const coursesLength = courses.length;
+console.log(coursesLength);
+TODO: Перший 'Статичний'
+const firstElementOfCourse = courses[0];
+console.log(firstElementOfCourse);
+TODO: Останній 'Статичний'
+const lastElementOfCourse = courses[4];
+console.log(lastElementOfCourse);
+TODO: Останній 'Динамічний'
+const lastElementOfCourse = courses[courses.length - 1];
+console.log(lastElementOfCourse);
+TODO: Додавати 'Статично'
+courses[courses.length] = 'SASS';
+console.log(courses);
+TODO: Додавати 'Динамічно'
+courses[20] = 'SASS';
+console.log(courses);
+*/
+/* //! Task #1
+TODO: Створіть масив arr1 = [1, 2, 3]. Створіть та привласніть масиву arr2 -> масив arr1. Виведіть до консолі обидва цих масива. Додайте елемент в масив arr1 і ще раз виведете обидва масиви в консоль
+const arr1 = [1, 2, 3];
+const arr2 = arr1;
+
+console.log('arr1:', arr1);
+console.log('arr2:', arr2);
+
+arr1[arr1.length] = 20;
+
+console.log('arr1:', arr1);
+console.log('arr2:', arr2);
+
+console.log(arr1 === arr2);
+*/
+/* //! Task #2 for()
+TODO: Напиши скрипт для перебору масиву fruits. Для кожного елемента масиву виведи в консоль рядок у форматі номер_елемента: значення_елемента. Нумерація елементів повинна починатися з 1.
+
+TODO – Var 1
+const fruits = ['🍎', '🍇', '🍑', '🍌', '🍎', '🍋'];
+console.log('fruits:', fruits);
+let fruitNumber = 1;
+for (const fruit of fruits) {
+  console.log(`${fruitNumber}: ${fruit}`);
+  fruitNumber++;
+}
+TODO – Var 2
+const fruits = ['🍎', '🍇', '🍑', '🍌', '🍎', '🍋'];
+console.log('fruits:', fruits);
+for (let i = 0; i < fruits.length; i++) {
+  console.log(`${i + 1}: ${fruits[i]}`);
+}
+*/
+
+// #endregion
 /* //! localeCompare()
 TODO: Правильне порівняння строк
 console.log('Hallo'.localeCompare('Hello'));
