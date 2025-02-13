@@ -454,6 +454,19 @@ for (let i = 0; i < fruits.length; i++) {
   console.log(`${i + 1}: ${fruits[i]}`);
 }
 */
+/* //! Task #3 for(of)
+TODO – Var 1
+const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax'];
+console.log('friends:', friends);
+for (let i = 0; i < friends.length; i++) {
+  console.log(friends[i]);
+}
+TODO – Var 2
+const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax'];
+for (const item of friends) {
+  console.log(item);
+}
+*/
 
 // #endregion
 /* //! localeCompare()
