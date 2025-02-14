@@ -723,12 +723,163 @@ for (const element of newArray) {
 console.log(evenNumbers);
 console.log(oddNumbers);
  */
-/* //! Task #18
+/* //! Task #18 for() if() function()
+TODO: Напиши функцію findSmallerNumber(numbers) яка шукає найменше число в масиві. Додай перевірку що функція отримує масив console.log(Array.isArray(0));
+TODO – Var 1 (Шукає саму найменьшу строку)
+const findSmallerNumber = function(numbers){
+    if(!Array.isArray(numbers)){
+       return 'number is not Array'; 
+    }
+    let smallNumber = numbers[0];
+    for(let i = 0; i < numbers.length; i++){
+        if(smallNumber > numbers[i]){
+            smallNumber = numbers[i];
+        }
+    }
+    return smallNumber;
+}
+console.log(findSmallerNumber(0));
+console.log(findSmallerNumber([5,'-13',-7,-11,'a']));
+TODO – Var 2 (Шукає саме найменьше число)
+const findSmallerNumber = function(numbers){
+    if(!Array.isArray(numbers)){
+        return 'number is not Array';
+    }
+    let smallNumber = numbers[0];
+    for(let number of numbers){
+        if(typeof number !== 'number'){
+            continue;
+        }
+        if(smallNumber > number){
+            smallNumber = number;
+        }
+    }
+    return smallNumber;
+}
+console.log(findSmallerNumber(0));
+console.log(findSmallerNumber([5,'-13',-7,-11,'a']));
  */
-/* //! Task #19
+/* //! Task #19 function()
+TODO: Напишіть функцію min(a, b), яка повертає менше з чисел a, b Потрібно додати перевірку, що функція отримує числа
+const compareNumbers = function (a, b) {
+  return typeof a === "number" && typeof b === "number"
+    ? Math.min(a, b)
+    : "One of parameters is not a number";
+};
+console.log(compareNumbers());
  */
-/* //! Task #20
+/* //! Task #20 Палінром
+TODO: Потрібно перевітири чи є речення палінром
+const str = 'Я несу гусеня';
+янесугусеня
+const str = 'Де помити мопед';
+const str = 'І була пані на палубІ';
+const str = 'Поліна неси Ром!'
+const isPalindrom = function (str) {
+  const updateSring = str.toLowerCase().replaceAll(" ", "");
+  const array = [];
+  for (let i = 0; i < updateSring.length; i++) {
+    array.push(updateSring[updateSring.length - 1 - i]);
+  }
+  let reversedString = array.join("");
+  return updateSring === reversedString;
+};
+console.log(isPalindrom(str));
  */
+/* //! Task #21 function() for() if()
+TODO: напиши функцію яка перевірить чи однакові масиви елементи з першого масива це елементи другого масива в квадраті
+TODO – Var 1 
+const numbers = [11, 9, 3, 121, 33, 24, 20];
+const numbers2 = [121, 81, 9, 14641, 1089, 576, 576];
+
+function check(numbers, numbers2) {
+  const powNumbers = [];
+  if (numbers.length !== numbers2.length) {
+    return false;
+  }
+  for (let i = 0; i < numbers.length; i++) {
+    powNumbers.push(numbers[i] * numbers[i]);
+  }
+  for (let i = 0; i < numbers.length; i++) {
+    if (powNumbers[i] !== numbers2[i]) {
+      return false;
+    }
+  }
+  return true;
+  console.log(powNumbers);
+}
+console.log(check(numbers, numbers2));
+TODO – Var 2
+const numbers = [11, 9, 3, 121, 33, 24, 20];
+const numbers2 = [121, 81, 9, 14641, 1089, 576, 576];
+function check(numbers, numbers2) {
+  if (numbers.length !== numbers2.length) {
+    return false;
+  }
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] !== Math.sqrt(numbers2[i])) {
+      return false;
+    }
+  }
+  return true;
+    console.log(powNumbers);
+}
+console.log(check(numbers, numbers2));
+ */
+/* //! Task #22 function() for()
+TODO: напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
+TODO – Var 1
+const someArr = [22, 11, 34, 5, 12];
+function sumNeighbors(array) {
+  const sum = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    console.log("first", array[i]);
+    console.log("second", array[i + 1]);
+    console.log("---");
+    sum.push(array[i] + array[i + 1]);
+  }
+  return sum;
+}
+console.log(sumNeighbors(someArr));
+TODO – Var 2
+const someArr = [22, 11, 34, 5, 12];
+function sumNeighbors(array) {
+  const sum = [];
+  for (let i = 0; i < array.length; i += 2) {
+    console.log("first", array[i]);
+    console.log("second", array[i + 1] || 0);
+    console.log("---");
+    sum.push(array[i] + (array[i + 1] || 0));
+  }
+  return sum;
+}
+console.log(sumNeighbors(someArr));
+ */
+/* //! Task #23
+ */
+/* //! Task #24
+ */
+/* //! Task #25
+ */
+/* //! Task #26
+ */
+/* //! Task #27
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // #endregion
 /* //! localeCompare()
