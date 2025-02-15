@@ -39,21 +39,6 @@ if (size === 'small') {
 */
 
 
-/*
-Напишіть функцію, яка приймає масив чисел та повертає суму чисел. Числа можуть бути негативними чи нецілими. Якщо масив не містить чисел, слід повернути 0.
-*/
-
-function sum(numbers) {
-  let total = 0;
-  for (let num of numbers) {
-    total += num;
-  }
-  return total;
-}
-
-console.log(sum([1, 5.2, 4, 0, -1]));
-console.log(sum([0]));
-console.log(sum([-2.398]));
 
 
 

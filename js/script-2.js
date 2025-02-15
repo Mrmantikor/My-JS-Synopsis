@@ -906,8 +906,27 @@ TODO: У коді вже є змінна arr, яка містить масив. 
 const arr = [35, 9, -25, 0];
 console.log(arr.length >= 2 ? arr[arr.length - 2] : null);
  */
-/* //! Task #24
- */
+/* //! Task #24 for() of() reduce()
+TODO: Напишіть функцію, яка приймає масив чисел та повертає суму чисел. Числа можуть бути негативними чи нецілими. Якщо масив не містить чисел, слід повернути 0.
+TODO – Var 1
+function sum(numbers) {
+  let total = 0;
+  for (let num of numbers) {
+    total += num;
+  }
+  return total;
+}
+console.log(sum([1, 5.2, 4, 0, -1]));
+console.log(sum([0]));
+console.log(sum([-2.398]));
+TODO – Var 2
+function sum(numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum([1, 5.2, 4, 0, -1]));
+console.log(sum([0]));
+console.log(sum([-2.398]));
+*/
 /* //! Task #25
  */
 /* //! Task #26
