@@ -855,7 +855,10 @@ function sumNeighbors(array) {
 }
 console.log(sumNeighbors(someArr));
  */
-/* //! Task #23
+/* //! Task #23 length() ? :
+TODO: У коді вже є змінна arr, яка містить масив. Необхідно вивести передостаннє значення масиву змінної arr, якщо воно є. Якщо такого значення в масиві немає, потрібно вивести null. Примітка: Змінна arr вже створена, вам створювати її не потрібно.
+const arr = [35, 9, -25, 0];
+console.log(arr.length >= 2 ? arr[arr.length - 2] : null);
  */
 /* //! Task #24
  */
