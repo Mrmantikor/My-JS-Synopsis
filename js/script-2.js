@@ -334,7 +334,53 @@ TODO: Краще використовувати + замість Concat()
 const num = +prompt('Enter a number');
 console.log(`Введіть ${num} і вийде ${num + 10}`);
  */
+// #region //?_Function_Теоргія?//
+/* //! Function Declaration() 
+TODO: (Можна викликати ДО оголошення функції в коді). Перевага в тому, що окремо в коді можна створити "Регіон" з аргументами і окремо "Регіон" з функціями
+greetUser('Oleksii', 'Repin');
+greetUser1('Phoebe', 'Howell');
+greetUser2('Garrett', 'Cooper');
 
+function greetUser(firstName, lastName) {
+  console.log(`Welcome ${firstName} ${lastName}`);
+}
+function greetUser1(firstName, lastName) {
+  console.log(`Welcome ${firstName} ${lastName}`);
+}
+function greetUser2(firstName, lastName) {
+  console.log(`Welcome ${firstName} ${lastName}`);
+}
+*/
+/* //! Function expression ()
+TODO: Викликати тільки ПІСЛЯ оголошення в коді. Все те саме, що і в Function Declaration(), тільки навпаки, інтерпретатор спочатку прочитає функцію і потім виведе її результат.
+const greetUser = function (firstName, lastName) {
+  console.log(`Welcome ${firstName} ${lastName}`);
+};
+const greetUser1 = function (firstName, lastName) {
+  console.log(`Welcome ${firstName} ${lastName}`);
+};
+const greetUser2 = function (firstName, lastName) {
+  console.log(`Welcome ${firstName} ${lastName}`);
+};
+
+greetUser('Oleksii', 'Repin');
+greetUser1('Phoebe', 'Howell');
+greetUser2('Garrett', 'Cooper');
+*/
+
+/* //!
+*/
+
+/* //!
+*/
+
+/* //!
+*/
+// #endregion
+// #region //?_Function_Практика?//
+/* //! 
+*/
+// #endregion
 // #region //?_Массиви_Теоргія?//
 /* //! join()
 const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
