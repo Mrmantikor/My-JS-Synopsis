@@ -43,6 +43,7 @@ if (size === 'small') {
 
 
 
+
 // ~ Псевдомасив arguments
 // const foo = function () {
 //   console.log('arguments:', arguments);
@@ -280,34 +281,5 @@ TODO: В параметр str будуть передавати рядок.
 // console.log(countVowels('I love JavaScript!')); // 6
 // console.log(countVowels('JavaScript is a lightweight interpreted programming language.')); // 19
 
-/*
- * - Стек викликів
- * - Порядок виконання
- * 
- * const fn1 = function () {
-  console.log('fn1 execution');
 
-  console.log('Before fn2 execution');
-  fn2();
-  console.log('After fn2 execution');
-};
-
-const fn2 = function () {
-  console.log('fn2 execution');
-
-  console.log('Before fn3 execution');
-  fn3();
-  console.log('After fn3 execution');
-};
-
-const fn3 = function () {
-  console.log('fn3 execution');
-};
-
-console.log('Before fn1 execution');
-fn1();
-console.log('After fn1 execution');
- */
-
-//http://latentflip.com/loupe/
 

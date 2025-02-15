@@ -367,9 +367,32 @@ greetUser('Oleksii', 'Repin');
 greetUser1('Phoebe', 'Howell');
 greetUser2('Garrett', 'Cooper');
 */
+/* //! Стек викликів, Порядок виконання
+TODO: http://latentflip.com/loupe/
+const fn1 = function () {
+  console.log('fn1 execution');
 
-/* //!
-*/
+  console.log('Before fn2 execution');
+  fn2();
+  console.log('After fn2 execution');
+};
+
+const fn2 = function () {
+  console.log('fn2 execution');
+
+  console.log('Before fn3 execution');
+  fn3();
+  console.log('After fn3 execution');
+};
+
+const fn3 = function () {
+  console.log('fn3 execution');
+};
+
+console.log('Before fn1 execution');
+fn1();
+console.log('After fn1 execution');
+
 
 /* //!
 */
@@ -382,6 +405,29 @@ greetUser2('Garrett', 'Cooper');
 */
 // #endregion
 // #region //?_Массиви_Теоргія?//
+/* //! Псевдомасив, Масив, Перебір масиву
+TODO: Псевдомасив
+const foo = function () {
+  console.log('arguments:', arguments);
+}
+foo('Hello', 'World', 'World', 'World', 'World', 'World');
+TODO: Створення масиву args
+const foo = function () {
+  const args = Array.from(arguments); 
+  console.log('args:', args);
+};
+foo('Hello', 'World', 'World1', 'World2', 'World3', 'World4');
+TODO: Перебирає кожен аргумент МАСИВУ і виводить в консоль
+const foo = function () {
+  const args = Array.from(arguments); 
+  console.log('args:', args);
+
+  for (const arg of arguments) {
+  console.log(arg);
+  }
+};
+foo('Hello', 'World', 'World1', 'World2', 'World3', 'World4');
+*/
 /* //! join()
 const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 const result = courses.join('-');
@@ -933,20 +979,6 @@ console.log(sum([-2.398]));
  */
 /* //! Task #27
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // #endregion
