@@ -143,8 +143,9 @@ console.log(totalFeedbacks);
 */
 // #endregion
 // #region //?_Об'єкти_Практика?//
-/*
+/* //! Task #1 Object.keys()
 TODO: Потрібно написати функцію, яка приймає 2 параметри obj і key, яка буде перебирати об'єкт. Якщо об'єкт має такий ключ - поверне true
+TODO – Var 1
 const obj = {
     name: 'Igor',
     car: 'Mercedes',
@@ -162,23 +163,29 @@ const obj = {
 }
  
 console.log(checkObj(obj, "car"));
+TODO – Var 2
+const obj = {
+    name: 'Igor',
+    car: 'Mercedes',
+    carColor: 'black',
+  };
+
+ const checkObj = function (obj, key){
+     return Object.keys(obj).includes(key);
+ }
+console.log(checkObj(obj, "car"));
 */
 //#endregion
 
 
 
 
+// У нас є об'єкт, у якому зберігатимуться зарплати
+// нашої команди
+// Напишіть код для сумування всіх зарплат і
+// збережіть його результат у змінній sum.
+// Якщо об'єкт salaries порожній, то результат має бути 0
 
-
-//
-// // const checkObj = function (obj, key){
-// //     return Object.keys(obj).includes(key);
-// // }
-//
-// const checkObj = function (obj, key){
-//     return key in obj;
-// }
-// console.log(checkObj(obj, "ca"));
 //
 //const
 // const salaries = {
@@ -231,11 +238,6 @@ console.log(checkObj(obj, "car"));
 
 
 
-// У нас є об'єкт, у якому зберігатимуться зарплати
-// нашої команди
-// Напишіть код для сумування всіх зарплат і
-// збережіть його результат у змінній sum.
-// Якщо об'єкт salaries порожній, то результат має бути 0
 
 // Напишіть функцію, яка приймає як параметр об'єкт
 // та формує об'єкти у новому масиві у форматі [key, value]
