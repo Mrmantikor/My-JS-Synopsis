@@ -24,7 +24,6 @@ if (weather === 'rainy') {
 }
 */
 
-
 /*
 const size = prompt('pizza size').trim().toLowerCase();
 
@@ -36,7 +35,6 @@ if (size === 'small') {
   console.log('Price: $1500');
 } else { console.log(); }
 */
-
 
 /*
 
@@ -177,8 +175,6 @@ console.log(checkObj(obj, "car"));
 */
 //#endregion
 
-
-
 /*
 TODO: У нас є об'єкт, у якому зберігатимуться зарплати нашої команди. Напишіть код для сумування всіх зарплат і збережіть його результат у змінній sum. Якщо об'єкт salaries порожній, то результат має бути 0
 TODO – Var 1 Object.entries()
@@ -209,17 +205,12 @@ for (let i = 0; i < keys.length; i++) {
 console.log(sum);
 */
 
-
 // const values = Object.values(salaries);
 // for (let i = 0; i < values.length; i++) {
 //   sum += values[i];
 // }
 
-
 // console.log (sum);
-
-
-
 
 // let sum = 0;
 // for (const salariesKey in salaries) {
@@ -227,12 +218,8 @@ console.log(sum);
 // }
 // console.log(sum);
 
-
 // let sum =salaries.Ajax + salaries.Mango + salaries.Poly ;
 // console.log(sum|| 0);
-
-
-
 
 // Напишіть функцію, яка приймає як параметр об'єкт
 // та формує об'єкти у новому масиві у форматі [key, value]
@@ -261,9 +248,6 @@ const getArray = function (obj) {
 
 console.log(getArray(user));
 */
-
-
-
 
 /*
 TODO: Пошук друга по імені
@@ -383,11 +367,42 @@ changePlayList(playlist, 23)
 console.log(playlist);
 */
 
-
-
 // console.log(typeof playlist.name);
 // console.log(Array.isArray(playlist.name));
 
+/*
+TODO: Створіть обєкт з властивостями "довжина" та "ширина", напишіть метод "CalculateArea", який буде обчислювати площу прямокутника на основі його довжини та ширини
+const rectangle = {
+  width: 27,
+  height: 23,
+  calculateArea() {
+    return this.width * this.height;
+  }
+}
+console.log(rectangle.calculateArea());
+*/
 
- 
+/*
+Створіть об'єкт "bankAccount" з властивостями "ownerName", "accountNumber", "balance".
+ Додайте до об'єкту метод "deposit", який дозволяє додавати гроші на рахунок,
+ та метод "withdraw", який дозволяє знімати гроші з рахунку.
+ Методи повинні спрацьовувати при натисканні на кнопки “поповнити рахунок”
+та отримати ‘готівку’ відповідно.Після проведення операції виводити повідомлення про залишок на рахунку.
+const bankAccount = {
+  ownerName: 'John Doe',
+  accountNumber: '21',
+  balance: 23098,
+  deposit(sum) {
+    this.balance += sum;
+  },
+  withdraw(sum) {
+    this.balance -= sum;
+  },
+};
 
+bankAccount.deposit(234);
+console.log(bankAccount);
+
+bankAccount.withdraw(234);
+console.log(bankAccount);
+*/
