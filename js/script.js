@@ -179,40 +179,35 @@ console.log(checkObj(obj, "car"));
 
 
 
+/*
+TODO: У нас є об'єкт, у якому зберігатимуться зарплати нашої команди. Напишіть код для сумування всіх зарплат і збережіть його результат у змінній sum. Якщо об'єкт salaries порожній, то результат має бути 0
+TODO – Var 1 Object.entries()
+const salaries = {
+    Mango: 100,
+    Poly: 160,
+    Ajax: 222 ,
+};
+let sum = 0;
+const array = Object.entries(salaries);
+for (const arrayElement of array) {
+    sum+=arrayElement[1];
+}
+console.log(sum);
+TODO – Var 2 Object.keys()
+const salaries = {
+    Mango: 100,
+    Poly: 160,
+    Ajax: 222,
+};
 
-// У нас є об'єкт, у якому зберігатимуться зарплати
-// нашої команди
-// Напишіть код для сумування всіх зарплат і
-// збережіть його результат у змінній sum.
-// Якщо об'єкт salaries порожній, то результат має бути 0
+const keys = Object.keys(salaries);
+let sum = 0;
+for (let i = 0; i < keys.length; i++) {
+    sum += salaries[keys[i]];
+}
 
-//
-//const
-// const salaries = {
-//     Mango: 100,
-//     Poly: 160,
-//     Polwy:222 ,
-// };
-// let sum=0;
-// const array=Object.entries(salaries);
-// for (const arrayElement of array) {
-//     sum+=arrayElement[1];
-//
-// }
-
-
-
-
-
-
-
-// const keys= Object.keys(salaries);
-// // console.log(keys);
-// for (let i=0; i<keys.length; i++){
-//
-// // console.log(salaries[keys[i]]);
-// sum+=salaries[keys[i]]
-// }
+console.log(sum);
+*/
 
 
 // const values = Object.values(salaries);
@@ -266,3 +261,130 @@ const getArray = function (obj) {
 
 console.log(getArray(user));
 */
+
+
+
+
+/*
+TODO: Пошук друга по імені
+const friends = [
+  { name: 'John', online: true },
+  { name: 'Alice', online: false },
+  { name: 'Bob', online: true },
+  { name: 'Charlie', online: false },
+]
+
+console.table(friends)
+
+
+const findFriendByName = function (allFriends, friendName) {
+  for (const friend of allFriends) {
+    if (friend.name.toLowerCase() === friendName.toLowerCase()) {
+      return friend;
+    }
+  }
+  return `none`
+}
+
+console.log(findFriendByName(friends, 'John'));
+*/
+
+/* 
+TODO: Отримуємо імена всіх друзів
+const friends = [
+  { name: 'John', online: true },
+  { name: 'Alice', online: false },
+  { name: 'Bob', online: true },
+  { name: 'Charlie', online: false },
+]
+const getAllNames = function (allFriends) {
+  const allNames = []
+  for (const friend of allFriends) {
+    allNames.push(friend.name)
+  }
+  return allNames
+}
+console.log(getAllNames(friends));
+*/
+/*
+TODO: Отримати імена друзів які онлайн
+const friends = [
+  { name: 'John', online: true },
+  { name: 'Alice', online: false },
+  { name: 'Bob', online: true },
+  { name: 'Charlie', online: false },
+]
+const getOnlimeFriends = function (allFriends) {
+  const friendsNames = [];
+
+  for (const friend of allFriends) {
+    if (friend.online) {
+      friendsNames.push(friend.name)
+    }
+  }
+  return friendsNames;
+}
+console.log(getOnlimeFriends(friends));
+*/
+
+/*
+TODO: Напишіть функцію calcTotalPrice(stones, stoneName), яка приймає масив обʼєктів та рядок з назвою каменю. Функція рахує і повертає загальну вартість каміння з таким імʼям, ціною та кількістю з обʼєкта
+const stones = [
+  { name: 'Аконіт', price: 100, quantity: 10 },
+  { name: 'Смарагд', price: 1300, quantity: 4 },
+  { name: 'Діамант', price: 2700, quantity: 3 },
+  { name: 'Сапфір', price: 400, quantity: 7 },
+  { name: 'Щебінь', price: 200, quantity: 2 },
+]
+
+const calcTotalPrice = function (allStones, stoneName) {
+  stoneName = stoneName.toLowerCase();
+  for (const stone of allStones) {
+    if (stone.name.toLowerCase() === stoneName) {
+      return stone.price * stone.quantity;
+    }
+  }
+}
+console. log(calcTotalPrice(stones, 'Діамант'));
+console. log(calcTotalPrice(stones, 'СмаРагд'));
+console. log(calcTotalPrice(stones, 'аконіт'));
+*/
+
+/*
+var1
+const playlist = {
+  name: 'My amazing playlist',
+  raiting: 5,
+  tracks: ['track-1', 'track-2', 'track-3'],
+  
+  changeName: function (newTitle) {
+    if (typeof newTitle === 'string') {
+      playlist.name = newTitle;
+    }
+  }
+}
+console.log(playlist);
+playlist.changeName('New Title')
+console.log(playlist);
+var2
+const playlist = {
+  name: 'My amazing playlist',
+  raiting: 5,
+  tracks: ['track-1', 'track-2', 'track-3'],
+}
+
+const changePlayList = function (playlist, newTitle) {
+  if (typeof newTitle === 'string') {
+    playlist.name = newTitle;
+  }
+}
+
+changePlayList(playlist, 23)
+console.log(playlist);
+*/
+
+
+
+// console.log(typeof playlist.name);
+// console.log(Array.isArray(playlist.name));
+
