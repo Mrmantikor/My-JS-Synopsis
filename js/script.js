@@ -24,24 +24,6 @@ if (weather === 'rainy') {
 }
 */
 
-/*
-const size = prompt('pizza size').trim().toLowerCase();
-
-if (size === 'small') {
-  console.log('Price: $800');
-} else if (size === 'medium') {
-  console.log('Price: $1200');
-} else if (size === 'large') {
-  console.log('Price: $1500');
-} else { console.log(); }
-*/
-
-/*
-
-
-
-*/
-
 // #region //?_Об'єкти_Теоргія?//
 /* //! dot notation  
 human.mood = "happy";
