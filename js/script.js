@@ -4,10 +4,12 @@ console.timeEnd('for...of');
 */
 
 function repeatStr(n, s) {
-  return;
+  return (repeatStr.repeat = n * s);
 }
 
-console.log((repeatStr(3, '*'), '***'));
+console.log(repeatStr(3, '*'));
 
 const methodRepeat = 'You NOT Love is Java Skript?!';
 console.log(methodRepeat.repeat(3));
+
+console.log(hkhhh);
