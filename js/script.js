@@ -70,4 +70,3 @@ TODO: Нехай функція getModels повертає масив модел
 // const getModels = cars => cars.map(car => car.model);
 
 // console.log(getModels(allCars));
-console.log();
