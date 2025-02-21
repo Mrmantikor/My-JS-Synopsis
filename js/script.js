@@ -455,6 +455,7 @@ TODO: Нехай функція getModelsOnSale повертає масив мо
 TODO: але тільки тих, які зараз на розпродажі.
 
  const getModelsOnSale = cars => {
+
    cars = structuredClone(cars);
 
    return cars.filter(car => car.onSale).map(car => car.model);
