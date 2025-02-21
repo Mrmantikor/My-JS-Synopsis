@@ -1411,7 +1411,18 @@ const getModels = cars => cars.map(car => car.model);
 
 console.log(getModels(allCars));
 */
-/* //! const новийОб'єкт = structuredClone(оригінальнийОб'єкт);
+/* //! const newObj = structuredClone(originalObj);
+TODO: const новийОб'єкт = structuredClone(оригінальнийОб'єкт);
+ * - Глибоко копіює об'єкт або масив, створюючи незалежну копію
+ * - Не змінює оригінальний об'єкт або масив
+ * - Повертає новий об'єкт або масив, який є точною копією вихідного
+TODO: 
+const original = { name: "John", details: { age: 30 } };
+const copy = structuredClone(original);
+copy.details.age = 35;
+
+console.log(original.details.age); // 30 (оригінал не змінився)
+console.log(copy.details.age); // 35 (зміни тільки в копії)
 
 */
 
