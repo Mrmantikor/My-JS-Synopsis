@@ -1448,13 +1448,11 @@ copy.details.age = 35;
 
 console.log(original.details.age); // 30 (оригінал не змінився)
 console.log(copy.details.age); // 35 (зміни тільки в копії)
-
 */
 
 /*
 TODO: Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним
 TODO: значенням властивості price залежно від переданої знижки. Метод для копії structuredClone.
-
 
 const makeCarsWithDiscount = (cars, discount) => {
   cars = structuredClone(cars);
