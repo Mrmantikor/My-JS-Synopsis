@@ -1,6 +1,5 @@
 //#region //! Основи JS
-
-/* //! data type (Тип данних)
+/* //! Data type (Тип данних)
 TODO: основні типи данних, їх 8, У JavaScript значення Infinity і NaN належать до типу даних Number
 1. Number — число  
 2. BigInt — велике число  
@@ -11,9 +10,33 @@ TODO: основні типи данних, їх 8, У JavaScript значенн
 7. Symbol — символ  
 8. Object — об'єкт  
 */
+//? Робота з числами
+/* //! Million 1е6 1е-6 (Короткий запис великих чисел)
+const million = 1e6;
+console.log(million);
+
+const million = 1e-6;
+console.log(million);
+*/
 /* //! Number (Число)
 console.log(42);  -→ 42
 console.log(3.14); -→ 3.14
+TODO – Явне перетворення типів
+console.log(Number('5'));
+console.log(+'5');
+console.log(Number(true));
+console.log(+true);
+console.log(Number(false));
+console.log(Number(null));
+console.log(Number(undefined));
+console.log(Number('Jacob'));
+console.log(Number('25px'));
+console.log(+'25px');
+TODO – Неявне перетворення типів
+console.log('5' * 2);
+console.log('10' - 5);
+console.log(5 + true);
+console.log(5 - true);
 */
 /* //! Number.MIN_SAFE_INTEGER або Number.MAX_SAFE_INTEGER
 TODO: Максимальне та мінімальне число в JavaScript, якщо перевищити це значення без допомоги BigInt , можуть виникати помилки з точністю
@@ -22,18 +45,46 @@ console.log(Number.MAX_SAFE_INTEGER); -→ 9007199254740991
 
 
 */
-/* //! BigInt()
+/* //! BigInt() (Метод рахувати великі числа)
 const num = 999999999999999999999999999999999999n;
 console.log(num);
 
 console.log(num * 99999999n); 
-console.log(num * 50); // Помилка не робити так!
+console.log(num * 50); -→ Помилка не робити так!
 console.log(num * BigInt(50)); //! Var #1
 console.log(Number(num) * 50); //! Var #2
 console.log(11n / 2n); //! Особливість!
 
 Q: Який результат буде під час виконання console.log(15n / 4n)?
-A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
+A: При розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
+*/
+/* //! Number.EPSILON (Більш точне порівняння числа з плаваючою комою)
+TODO: Порівняння чисел із плаваючою комою, быльш точне ніж ===
+function areEqual(a, b) {
+  return Math.abs(a - b) < Number.EPSILON;
+}
+
+console.log(0.1 + 0.2 === 0.3); -→ false
+console.log(areEqual(0.1 + 0.2, 0.3)); -→ true
+*/
+/* //! Object.is() (Більш точне порівняння числа)
+console.log(NaN === NaN); -→ false ❌
+console.log(Object.is(NaN, NaN)); -→ true ✅
+*/
+/* //! toFixed() (Заокруглює число та перетворює в рядок)
+TODO – використовується для округлення числа до заданої кількості знаків після коми та перетворення їх у рядок.
+-//! Округлює число за математичними правилами
+console.log((12.3456).toFixed(2)); // "12.35
+TODO
+console.log(0.1 + 0.2);
+console.log((0.1 + 0.2).toFixed(1));
+console.log(Number((0.1 + 0.2).toFixed(1)));
+console.log((12345.6459).toFixed(1));
+TODO
+let num = 12.3456;
+console.log(num.toFixed(2)); // "12.35"
+console.log(num.toFixed(0)); // "12"
+console.log(num.toFixed(5)); // "12.34560"
 */
 /* //! Infinity (Безкінечність)
 console.log(1e1000);
@@ -59,7 +110,6 @@ console.log(isFinite(num3)); // false
 
 
 */
-
 /* //! NaN (Not-a-Number)
 TODO: У JavaScript NaN (Not-a-Number) — це спеціальне значення, яке означає, що результат операції не є числом.
 1.2 NaN (Not-a-Number)
@@ -67,68 +117,56 @@ console.log(typeof NaN); -→ "number"
 TODO: NaN не дорівнює самому собі, будь-яке значення NaN є унікальним і не може бути рівним іншому NaN.
 console.log(NaN === NaN); -→ false
 */
-/* //! Number.isNaN() 
+/* //! Number.isNaN() (Більш точне порівняння чисел)
 TODO: isNaN() може дати помилкові результати, тому краще використовувати Number.isNaN(), який працює точніше:
 
 console.log(isNaN("hello")); // true (бо "hello" перетворюється на NaN)
 console.log(Number.isNaN("hello")); // false (строка не є числом NaN)
 */
-
-/*
-2. BigInt (Велике число)
-console.log(9007199254740991n);  Виведе: 9007199254740991n
-
-3. String (Рядок)
-console.log("Hello, world!");  Виведе: Hello, world!
-
-4. Boolean (Булєве значение)
-console.log(true);   Виведе: true
-console.log(false);  Виведе: false
-
-5. Undefined (Невизначене значення)
-let x;
-console.log(x);  Виведе: undefined
-
-6. Null (Порожнє значения)
-let y = null;
-console.log(y);  Виведе: null
-
-7. Symbol (Символ)
-let sym = Symbol("id");
-console.log(sym);  Виведе: Symbol(id)
-
-8. Object (Об'єкт)
-let obj = { name: "Alex", age: 30 };
-console.log(obj);  Виведе об'єкт: { name: "Alex", age: 30 }
+/* //! Math.Min() (Пошук найменьшого числа)
+console.log(Math.min(2, 5, -4, 0));
 */
-//#endregion
+/* //! Math.Max() (Пошук найбільшого числа)
+console.log(Math.max(2, 5, -4, 0));
 
-/* //! Console
-function Detected() {
-  console.log('Java Script Detected');
-}
-Detected();
 */
-/* //! Let
-let username = 'Mango';
-username = 'poly';
-console.log(username);
+/* //! Math.pow() (Степінь)
+console.log(Math.pow(2, 2));
  */
-/* //! Null
-let value = null;
-console.log(value);
+/* //! Math.sqrt() (Квадратний корінь)
+console.log(Math.sqrt(8));
+ */
+/* //! Math.cbrt() (Кубічний корінь)
+console.log(Math.cbrt(8));
+ */
+/* //! Math.ceil()
+TODO – округлення вгору (у більшу сторону) Округлює завжди у більшу сторону (до найближчого більшого цілого)
+console.log(Math.ceil(24.23));
+console.log(Math.ceil(24.83));
 */
-/* //! Undefined
-let value;
-console.log(value);
+/* //! Math.floor()
+TODO – округлення вниз (у меншу сторону) Округлює завжди в меншу сторону (до найближчого меншого цілого)
+console.log(Math.floor(24.23));
+console.log(Math.floor(24.83));
+console.log(Math.floor(-24.23));
+console.log(Math.floor(-24.83));
 */
-/* //! Million 1е6 1е-6
-const million = 1e6;
-console.log(million);
+/* //! Math.round()
+TODO – округлення за правилами математики - Округлює число до найближчого цілого
+console.log(Math.round(24.23));
+console.log(Math.round(24.83));
+*/
+/* //! Math.trunc() 
+TODO – відкидання дробової частини Просто прибирає дробову частину, не округляючи
+console.log(Math.trunc(24.23));
+console.log(Math.trunc(24.83));
+console.log(Math.trunc(-24.23));
+console.log(Math.trunc(-24.83));
+*/
+//?
 
-const mil = 1e-6;
-console.log(mil);
-*/
+//#endregion
+//#region //! Alert, Prompt, Confirm
 /* //! Alert
 alert('Hello World!');
 */
@@ -147,6 +185,8 @@ confirm(`yes and text`);
 const isAdult = confirm('Чи є вам 18?');
 console.log(isAdult);
 */
+//#endregion
+
 /* //! Typeof
 const q = 1;
 console.log(typeof q);
@@ -261,39 +301,6 @@ console.log('5' + false);
 console.log('5' + null);
 console.log('5' + undefined);
  */
-/* //! Number
-TODO – Явне перетворення типів
-console.log(Number('5'));
-console.log(+'5');
-console.log(Number(true));
-console.log(+true);
-console.log(Number(false));
-console.log(Number(null));
-console.log(Number(undefined));
-console.log(Number('Jacob'));
-console.log(Number('25px'));
-console.log(+'25px');
-TODO – Неявне перетворення типів
-console.log('5' * 2);
-console.log('10' - 5);
-console.log(5 + true);
-console.log(5 - true);
- */
-/* //! toFixed()
-TODO – використовується для округлення числа до заданої кількості знаків після коми та перетворення їх у рядок.
--//! Округлює число за математичними правилами
-console.log((12.3456).toFixed(2)); // "12.35
-TODO
-console.log(0.1 + 0.2);
-console.log((0.1 + 0.2).toFixed(1));
-console.log(Number((0.1 + 0.2).toFixed(1)));
-console.log((12345.6459).toFixed(1));
-TODO
-let num = 12.3456;
-console.log(num.toFixed(2)); // "12.35"
-console.log(num.toFixed(0)); // "12"
-console.log(num.toFixed(5)); // "12.34560"
-*/
 
 /* //! ${} Template Strings
 TODO – Запросіть у користувача ім'я та прізвище і виведіть у консоль повідомлення: Hello <імʼя> <прізвище>, you are logged in.
@@ -310,10 +317,7 @@ const msg = `${companyName} has ${repairBots + defenceBots} bots in stock`;
 console.log(msg); // "Cyberdyne Systems has 200 bots in stock"
 // 
 */
-/* //! Math.Min, Math.Max
-console.log(Math.max(2, 5, -4, 0));
-console.log(Math.min(2, 5, -4, 0));
-*/
+
 /* //! Math.random()
 TODO – від -10 до 10 рандомне число
 const min = -10;
@@ -362,30 +366,7 @@ let elementWidth = '50px';
 elementWidth = Number.parseInt(elementWidth);
 console.log('elementWidth:', elementWidth);
 */
-/* //! Math.ceil()
-TODO – округлення вгору (у більшу сторону) Округлює завжди у більшу сторону (до найближчого більшого цілого)
-console.log(Math.ceil(24.23));
-console.log(Math.ceil(24.83));
-*/
-/* //! Math.floor()
-TODO – округлення вниз (у меншу сторону) Округлює завжди в меншу сторону (до найближчого меншого цілого)
-console.log(Math.floor(24.23));
-console.log(Math.floor(24.83));
-console.log(Math.floor(-24.23));
-console.log(Math.floor(-24.83));
-*/
-/* //! Math.round()
-TODO – округлення за правилами математики - Округлює число до найближчого цілого
-console.log(Math.round(24.23));
-console.log(Math.round(24.83));
-*/
-/* //! Math.trunc() 
-TODO – відкидання дробової частини Просто прибирає дробову частину, не округляючи
-console.log(Math.trunc(24.23));
-console.log(Math.trunc(24.83));
-console.log(Math.trunc(-24.23));
-console.log(Math.trunc(-24.83));
-*/
+
 /* //! Оператори порівняння
 console.log(5 < 4);
 console.log(5 >= 6);
@@ -403,18 +384,7 @@ console.log('6' != 5);
 console.log('6' !== 5);
 
 */
-/* //! Math.pow()
-TODO: Степінь
-console.log(Math.pow(2, 2));
- */
-/* //! Math.sqrt()
-TODO: Повертає квадратний корінь числа
-console.log(Math.sqrt(8));
- */
-/* //! Math.cbrt()
-TODO: Повертає кубічний корінь числа
-console.log(Math.cbrt(8));
- */
+
 /* //! Concat()
 TODO: Краще використовувати + замість Concat()
 const num = +prompt('Enter a number');
