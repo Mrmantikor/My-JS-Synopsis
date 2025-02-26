@@ -1,7 +1,7 @@
 //#region //! Основи JS
 
 /* //! data type (Тип данних)
-TODO: основні типи данних, їх 8
+TODO: основні типи данних, їх 8, У JavaScript значення Infinity і NaN належать до типу даних Number
 1. Number — число  
 2. BigInt — велике число  
 3. String — рядок  
@@ -11,54 +11,95 @@ TODO: основні типи данних, їх 8
 7. Symbol — символ  
 8. Object — об'єкт  
 */
-/*
-1. Number (Число)
-console.log(42);  // Выведет: 42
-console.log(3.14); // Выведет: 3.14
-_//! У JavaScript значення Infinity і NaN належать до типу даних Number
+/* //! Number (Число)
+console.log(42);  -→ 42
+console.log(3.14); -→ 3.14
 */
-/* //! 1.1 Infinity
+/* //! Number.MIN_SAFE_INTEGER або Number.MAX_SAFE_INTEGER
+TODO: Максимальне та мінімальне число в JavaScript, якщо перевищити це значення без допомоги BigInt , можуть виникати помилки з точністю
+console.log(Number.MIN_SAFE_INTEGER); -→ -9007199254740991
+console.log(Number.MAX_SAFE_INTEGER); -→ 9007199254740991
+
+
+*/
+/* //! BigInt()
+const num = 999999999999999999999999999999999999n;
+console.log(num);
+
+console.log(num * 99999999n); 
+console.log(num * 50); // Помилка не робити так!
+console.log(num * BigInt(50)); //! Var #1
+console.log(Number(num) * 50); //! Var #2
+console.log(11n / 2n); //! Особливість!
+
+Q: Який результат буде під час виконання console.log(15n / 4n)?
+A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
+*/
+/* //! Infinity (Безкінечність)
 console.log(1e1000);
+*/
+/* //! Number.isFinite() (Перевірка на безкінечність)
+TODO: Функція isFinite(value) перевіряє, чи є значення безкінченним числом. Якщо число Infinity або NaN, вона поверне false, інакше - true. Не виконує автоматичного перетворення типів — перевіряє, чи аргумент є дійсним числом (number) і чи не є він Infinity або NaN.
+Приклад: Чи є число безкінченним?
 
+Ділимо 50 на 2, отримуємо звичайне число 25
 const num1 = 50 / 2;
-console.log(Number.isFinite(num1));
+console.log(num1);// 25
+console.log(isFinite(num1));// true
+
+Ділимо 50 на 0, отримуємо Infinity (нескінченність)
 const num2 = 50 / 0;
-console.log(Number.isFinite(num2));
+console.log(num2); // Виведе: Infinity
+console.log(isFinite(num2)); // false
+
+Ділимо -50 на 0, отримуємо -Infinity (негативна нескінченність)
+const num3 = -50 / 0;
+console.log(num3); // Виведе: -Infinity
+console.log(isFinite(num3)); // false
+
+
+*/
+
+/* //! NaN (Not-a-Number)
+TODO: У JavaScript NaN (Not-a-Number) — це спеціальне значення, яке означає, що результат операції не є числом.
+1.2 NaN (Not-a-Number)
+console.log(typeof NaN); -→ "number"
+TODO: NaN не дорівнює самому собі, будь-яке значення NaN є унікальним і не може бути рівним іншому NaN.
+console.log(NaN === NaN); -→ false
+*/
+/* //! Number.isNaN() 
+TODO: isNaN() може дати помилкові результати, тому краще використовувати Number.isNaN(), який працює точніше:
+
+console.log(isNaN("hello")); // true (бо "hello" перетворюється на NaN)
+console.log(Number.isNaN("hello")); // false (строка не є числом NaN)
 */
 
 /*
-
-console.log(typeof Infinity); // "number"
-console.log(1 / 0); // Infinity
-
-1.2 NaN (Not-a-Number)
-console.log(typeof NaN); // "number"
-
 2. BigInt (Велике число)
-console.log(9007199254740991n);  Выведет: 9007199254740991n
+console.log(9007199254740991n);  Виведе: 9007199254740991n
 
 3. String (Рядок)
-console.log("Hello, world!");  Выведет: Hello, world!
+console.log("Hello, world!");  Виведе: Hello, world!
 
 4. Boolean (Булєве значение)
-console.log(true);   Выведет: true
-console.log(false);  Выведет: false
+console.log(true);   Виведе: true
+console.log(false);  Виведе: false
 
 5. Undefined (Невизначене значення)
 let x;
-console.log(x);  Выведет: undefined
+console.log(x);  Виведе: undefined
 
 6. Null (Порожнє значения)
 let y = null;
-console.log(y);  Выведет: null
+console.log(y);  Виведе: null
 
 7. Symbol (Символ)
 let sym = Symbol("id");
-console.log(sym);  Выведет: Symbol(id)
+console.log(sym);  Виведе: Symbol(id)
 
 8. Object (Об'єкт)
 let obj = { name: "Alex", age: 30 };
-console.log(obj);  Выведет объект: { name: "Alex", age: 30 }
+console.log(obj);  Виведе об'єкт: { name: "Alex", age: 30 }
 */
 //#endregion
 
@@ -253,22 +294,7 @@ console.log(num.toFixed(2)); // "12.35"
 console.log(num.toFixed(0)); // "12"
 console.log(num.toFixed(5)); // "12.34560"
 */
-/* //! BigInt
-console.log(Number.MIN_SAFE_INTEGER); //Мінімальне число в JS
-console.log(Number.MAX_SAFE_INTEGER); //Максимальне число в JS
 
-const num = 999999999999999999999999999999999999n;
-console.log(num);
-
-console.log(num * 99999999n); 
-console.log(num * 50); // Помилка не робити так!
-console.log(num * BigInt(50)); // Var #1
-console.log(Number(num) * 50); // Var #2
-console.log(11n / 2n); // Особливість!
-
-Q: Який результат буде під час виконання console.log(15n / 4n)?
-A: Все так, при розподілі BigInt чисел дробова частина відкидається, тому що BigInt підтримує лише цілі числа. Таким чином, 15n / 4n дорівнює 3n.
-*/
 /* //! ${} Template Strings
 TODO – Запросіть у користувача ім'я та прізвище і виведіть у консоль повідомлення: Hello <імʼя> <прізвище>, you are logged in.
 const firstName = prompt('Введіть ваше імʼя!');
