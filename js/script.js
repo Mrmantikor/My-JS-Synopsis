@@ -121,4 +121,43 @@ HTML
 JS
 const link = document.querySelector('.social');
 console.log(link.classList);
+
+
 */
+
+/* //! .classList.add('class')
+HTML
+<a href="https://www.google.com/" class="social" target="_blank">social</a>
+JS
+const link = document.querySelector('.social');
+link.classList.add('new-class');
+
+console.log(link);
+*/
+/* //! .classList.remove('class')
+HTML
+<a href="https://www.google.com/" class="social new-class" target="_blank">social</a>
+JS
+const link = document.querySelector('.social');
+link.classList.remove('new-class');
+
+console.log(link);
+*/
+/* //! .classList.toggle('class')
+ */
+/* //! .classList.contains('class')
+HTML
+<a href="https://www.google.com/" class="social new-class" target="_blank">social</a>
+JS
+const link = document.querySelector('.social');
+const trueOrFalse = link.classList.contains('new-class');
+
+console.log(trueOrFalse);
+*/
+/* //! .classList.replace('old', 'new')
+ */
+
+const link = document.querySelector('.social');
+
+const trueOrFalse = link.classList.contains('');
+console.log(trueOrFalse);
