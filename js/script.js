@@ -121,11 +121,8 @@ HTML
 JS
 const link = document.querySelector('.social');
 console.log(link.classList);
-
-
 */
-
-/* //! .classList.add('class')
+/* //! .classList.add('class') (Додає новий клас)
 HTML
 <a href="https://www.google.com/" class="social" target="_blank">social</a>
 JS
@@ -133,8 +130,14 @@ const link = document.querySelector('.social');
 link.classList.add('new-class');
 
 console.log(link);
+TODO: Можна вказати більше одного класу, вказавши кілька аргументів через кому:
+const link = document.querySelector('.social');
+link.classList.add('new-class', 'new-social-class', 'new-social-class1');
+
+console.log(link);
 */
-/* //! .classList.remove('class')
+/* //! .classList.remove('class') (Видаляє клас)
+TODO: Якщо спробувати видалити клас, якого не існує - не буде помилки, просто нічого не відбудеться.
 HTML
 <a href="https://www.google.com/" class="social new-class" target="_blank">social</a>
 JS
@@ -142,10 +145,34 @@ const link = document.querySelector('.social');
 link.classList.remove('new-class');
 
 console.log(link);
+TODO: Дозволяє видаляти кілька класів одночасно, просто передаючи їх через кому.
+element.classList.remove('class1', 'class2', 'class3');
 */
-/* //! .classList.toggle('class')
+/* //! .classList.toggle('class') (Перемикає)
+TODO: Додає клас, якщо його немає, і видаляє, якщо він є.
+<button id="toggle-btn">Натисни мене</button>
+<p id="text">Цей текст буде підсвічуватись.</p>
+
+<style>
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  
+  const button = document.getElementById('toggle-btn');
+  const text = document.getElementById('text');
+
+  
+  button.addEventListener('click', () => {
+    text.classList.toggle('highlight');
+  });
+</script>
  */
-/* //! .classList.contains('class')
+/* //! .classList.contains('class') (Перевіряє True/False)
+TODO: Перевіряє, чи є клас у елемента (true або false)
 HTML
 <a href="https://www.google.com/" class="social new-class" target="_blank">social</a>
 JS
@@ -154,10 +181,42 @@ const trueOrFalse = link.classList.contains('new-class');
 
 console.log(trueOrFalse);
 */
-/* //! .classList.replace('old', 'new')
+/* //! .classList.replace('old', 'new') (Замінює)
+TODO: Замінює один клас іншим
+const selectorReplace = document.querySelector('.social');
+
+const oldToNew = selectorReplace.classList.replace('social', 'new-social-class');
+
+console.log(selectorReplace);
  */
+/* //! .hasAttribute(name) (Перевіряє True/False)
+TODO: Перевіряє, чи є атрибут (true) - атрибут існує, (false) - не існує.
+HTML
+<a href="https://www.google.com/" class="social" target="_blank">social</a>
+JS
+const atribute = document.querySelector('.social');
+const hasOrNot = atribute.hasAttribute('href');
 
-const link = document.querySelector('.social');
+console.log(hasOrNot);
+*/
+/* //! .getAttribute(name) отримує значення атрибута.
+TODO: Якщо атрибута немає, поверне null.
+HTML
+<a href="https://www.google.com/" class="social" target="_blank">social</a>
+JS
+const atribute = document.querySelector('.social');
+const getOrNot = atribute.getAttribute('href');
 
-const trueOrFalse = link.classList.contains('');
-console.log(trueOrFalse);
+console.log(getOrNot);
+*/
+/* //! .setAttribute(name, value)
+TODO: 
+*/
+/* //! .removeAttribute(name) 
+TODO: 
+*/
+
+const atribute = document.querySelector('.social');
+const getOrNot = atribute.setAttribute('alt', 'bohdan');
+
+console.log(getOrNot);
