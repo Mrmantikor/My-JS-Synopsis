@@ -199,7 +199,7 @@ const hasOrNot = atribute.hasAttribute('href');
 
 console.log(hasOrNot);
 */
-/* //! .getAttribute(name) отримує значення атрибута.
+/* //! .getAttribute(name) (отримує значення атрибута)
 TODO: Якщо атрибута немає, поверне null.
 HTML
 <a href="https://www.google.com/" class="social" target="_blank">social</a>
@@ -209,14 +209,29 @@ const getOrNot = atribute.getAttribute('href');
 
 console.log(getOrNot);
 */
-/* //! .setAttribute(name, value)
-TODO: 
-*/
-/* //! .removeAttribute(name) 
-TODO: 
-*/
+/* //! .setAttribute(name, value) (Перезаписує)
+TODO: Додає новий атрибут до елемента або змінює значення існуючого.
+<a href="https://www.google.com/" class="social" target="_blank">Перейти</a>
+<button id="changeLink">Змінити посилання</button>
 
+<script>
+  const link = document.querySelector('a');
+  const button = document.getElementById('changeLink');
+
+  button.addEventListener('click', () => {
+    link.setAttribute('href', 'https://www.youtube.com/'); -→ змінюємо посилання
+    link.setAttribute('class', 'new-social'); -→ змінюємо клас
+    link.setAttribute('target', '_self'); -→ відкривати у цьому ж вікні
+  });
+</script>
+*/
+/* //! .removeAttribute(name) (Видаляє атрибут)
+TODO: Якщо спробувати видалити атрибут, якого не існує - не буде помилки, просто нічого не відбудеться.
+HTML
+<a href="https://www.google.com/" class="social" target="_blank">social</a>
+JS
 const atribute = document.querySelector('.social');
-const getOrNot = atribute.setAttribute('alt', 'bohdan');
+atribute.removeAttribute('href');
 
-console.log(getOrNot);
+console.log(atribute);
+*/
