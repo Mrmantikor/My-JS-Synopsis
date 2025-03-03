@@ -234,15 +234,54 @@ box.append(last); //-→ Додає в кінець
  */
 /* //! element.innerHTML (Отримує, додає і тд)
 TODO: Метод innerHTML - отримує або встановлює вміст елемента в форматі HTML. Він дозволяє працювати з вмістом елемента як з рядком HTML-коду, що включає як текст, так і інші HTML-елементи.
- * - Читання
- * - Зміна
+ * - Отримання вмісту
+ * - Встановлення вмісту
+ * - Зміна вмісту (додавання до існуючого)
+ * - Використання порожнього рядка ("")
  * - Якщо вписати порожній рядок у innerHTML, то весь вміст елемента буде видалено, і він залишиться порожнім.
  * //! Використання innerHTML який отримано від користувача або з ненадійного джерела, може призвести до XSS-атак, оскільки зловмисники можуть вставити шкідливий код.
+ * 
+.//? Отримання вмісту
+const div = document.querySelector('.inner');
+console.log(div.innerHTML);
+.//? Встановлення вмісту
+const div = document.querySelector('.inner');
+div.innerHTML = '<strong>Новий текст</strong>';
+.//? Зміна вмісту (додавання до існуючого)
+const div = document.querySelector('.inner');
+div.innerHTML += ' + Доданий текст';
+.//? Використання порожнього рядка ("")
+const div = document.querySelector('.inner');
+div.innerHTML = '';
 */
+/* //! element.insertAdjacentHTML(position, string)
+TODO: сучасний метод!!! Синтаксис:
+ * - position - місце, куди вставити HTML.
+ * - string - HTML-код, який потрібно вставити.
+.//? position Може бути:
+ * - "beforebegin" - перед самим елементом.
+ * - "afterbegin" - всередині елемента, перед першим дочірнім вузлом.
+ * - "beforeend" - всередині елемента, після останнього дочірнього вузла.
+ * - "afterend" - після самого елемента.
+ * 
+.//? beforebegin
+const section = document.querySelector('.section-wrap');
+
+section.insertAdjacentHTML('beforebegin', '<p>Перед секцією</p>');
+.//? afterbegin
+const section = document.querySelector('.section-wrap');
+section.insertAdjacentHTML('afterbegin', '<p>На початку секції</p>');
+.//? beforeend
+const section = document.querySelector('.section-wrap');
+section.insertAdjacentHTML('beforeend', '<p>В кінці секції</p>');
+.//? afterend
+const section = document.querySelector('.section-wrap');
+section.insertAdjacentHTML('afterend', '<p>Після секції</p>');
+*/
+
 //#endregion
 
 /*
-innerHTML
 dataset
 style
 */
