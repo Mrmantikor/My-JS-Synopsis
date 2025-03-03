@@ -100,7 +100,6 @@ elSpan.textContent = 'Lukashenko'; -→ Змінюємо Span
 console.log(elP.textContent); -→ Bohdan Lukashenko
 console.log(elSpan.textContent); -→ Lukashenko
 */
-//#endregion
 //#region //! Властивості
 /* //! .classList 
 TODO: - властивість, яка дозволяє додавати, видаляти чи переводити класи елемента
@@ -317,7 +316,8 @@ function handleClick() {
 button.addEventListener('click', handleClick);
 Після першого кліку в консоль виведеться "Кнопка натиснута!", але на другий раз подія вже не спрацює, бо обробник було видалено.
 */
-/* //! Event
+/* //! Event (Об'єкт події)
+TODO: event містить детальну інформацію про подію.
  * - event.type - тип події ("click", "keydown", "mouseover" тощо).
  * - event.target - елемент, на якому відбулася подія.
  * - event.currentTarget - елемент, до якого доданий обробник події.
@@ -339,6 +339,13 @@ const handleClick = event => {
 };
 button.addEventListener('click', handleClick);
 */
+/* //! KeyboardEvent (Події клавіатури)
+TODO: Об'єкт KeyboardEvent використовується для роботи з подіями клавіатури, такими як натискання (keydown), відпускання (keyup) або введення символів (keypress, але його застаріло).
+document.addEventListener('keydown', event => {
+  console.log('Ви натиснули:', event.key);
+});
+*/
+//#endregion
 
 //#endregion
 
