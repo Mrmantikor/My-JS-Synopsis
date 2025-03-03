@@ -107,7 +107,7 @@ console.log(elSpan.textContent); -→ Lukashenko
 */
 
 //#endregion
-
+//#region //! Властивості
 /* //! .classList 
 TODO: - властивість, яка дозволяє додавати, видаляти чи переводити класи елемента
  * - .add('class') Додає клас
@@ -189,6 +189,8 @@ const oldToNew = selectorReplace.classList.replace('social', 'new-social-class')
 
 console.log(selectorReplace);
  */
+//#endregion
+//#region //! Атрибути
 /* //! .hasAttribute(name) (Перевіряє True/False)
 TODO: Перевіряє, чи є атрибут (true) - атрибут існує, (false) - не існує.
 HTML
@@ -234,4 +236,57 @@ const atribute = document.querySelector('.social');
 atribute.removeAttribute('href');
 
 console.log(atribute);
+*/
+//#endregion
+//#region //! Елементи
+/* //! .createElement(name) (Створити елемент)
+TODO: Метод document.createElement(name) використовується для створення нового HTML-елемента в JavaScript.
+ * - Елемент створюється в пам’яті, а не одразу в DOM. 
+ * - Створює лише сам елемент, без вмісту. 
+ * - Цей метод активно використовується для динамічного створення контенту на веб-сторінках, наприклад, при генерації списків, карток товарів, повідомлень у чаті тощо.
+ * 
+const newParagraph = document.createElement('p');
+console.log(newParagraph);
+*/
+
+//#endregion
+/*
+
+/* 
+*/
+/* //! .append()
+TODO: Додає елементи або текст у DOM в кінець вибраного елемента.
+ * - Може приймати кілька аргументів одночасно (елементи та текст).
+ * - Додає новий вузол (newElement) або рядковий текст ("Текст").
+ * - Додає вміст всередину вибраного елемента
+.//? Зверни увагу! Якщо елемент для додавання вже знаходиться в DOM, то він видаляється зі свого старого місця й додається у нове. Отже, є правило: один і той самий елемент не може бути одночасно у двох місцях.
+HTML
+<div class="box">Середній елемент</div>
+JS
+const box = document.querySelector(".box"); -→ Отримуємо елемент за класом
+const last = document.createElement("p");
+last.textContent = "⬇ Кінцевий елемент";
+box.append(last); -→ Додає в кінець
+ */
+/* //! .prepend()
+TODO: Додає елементи або текст у DOM на початок вибраного елемента.
+ * - Може приймати кілька аргументів одночасно (елементи та текст).
+ * - Додає новий вузол (newElement) або рядковий текст ("Текст").
+ * - Додає вміст всередину вибраного елемента
+.//? Зверни увагу! Якщо елемент для додавання вже знаходиться в DOM, то він видаляється зі свого старого місця й додається у нове. Отже, є правило: один і той самий елемент не може бути одночасно у двох місцях.
+
+HTML
+<div class="box">Середній елемент</div>
+
+JS
+const box = document.querySelector(".box"); -→ Отримуємо елемент за класом
+const first = document.createElement("p");
+first.textContent = "⬆ Початковий елемент";
+box.prepend(first); -→ Додає на початок
+ */
+
+/*
+innerHTML
+dataset
+style
 */

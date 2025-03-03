@@ -1,0 +1,36 @@
+@import url('./reset.css');
+
+.container {
+  max-width: 1200px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgba(1, 1, 1, 1);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  transition: color 250ms linear, border-color 250ms linear;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #ff6b0a;
+  border-color: #ff6b0a;
+}
