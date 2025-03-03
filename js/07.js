@@ -197,7 +197,7 @@ console.log(atribute);
 */
 //#endregion
 //#region //! Елементи
- .createElement(name) (Створити елемент)
+/* //! .createElement(name) (Створити елемент)
 TODO: Метод document.createElement(name) використовується для створення нового HTML-елемента в JavaScript.
  * - Елемент створюється в пам’яті, а не одразу в DOM. 
  * - Створює лише сам елемент, без вмісту. 
@@ -283,21 +283,66 @@ section.insertAdjacentHTML('afterend', '<p>Після секції</p>');
 //#endregion
 //#region //! Події
 /* //! element.addEventListener(event, handler, options);
-TODO: 
+TODO: Використовується для додавання обробників подій до HTML-елементів. Він дозволяє прив’язувати кілька обробників до одного елемента, не перезаписуючи попередні.
  * - event(подія) - назва події ("click", "keydown",)
  * - handler(функція) -  код, який буде виконуватись при настанні події.
  * - options(необов'язковий параметр) - true або false (визначає фазу спрацьовування: false - "спливання", true - "занурення").
+ * 
+.//? Додавання обробника кліку (click)
+const button = document.querySelector('.btn');
+
+button.addEventListener('click', () => {
+  alert('Кнопку натиснуто!');
+});
+.//? Обробка наведення миші (mouseover)
+const section = document.querySelector('.section-wrap');
+
+section.addEventListener('mouseover', () => {
+  section.style.backgroundColor = 'lightblue';
+});
 */
+/* //! element.removeEventListener(event, handler, options)
+TODO: Використовується для видалення обробників подій, які були додані за допомогою addEventListener()
+ * - event(подія) - тип події, яку потрібно видалити ("click", "keydown",)
+ * - handler(функція) - посилання на функцію, яка була прив’язана через addEventListener()
+ * - options(необов'язковий параметр) - повинно співпадати зі значенням, яке використовувалося в addEventListener()
+ * //! ВАЖЛИВО! removeEventListener() не працює, якщо функція була передана у addEventListener() як анонімна!
+ * 
+.//? Видалення обробника після одного кліку
+const button = document.querySelector('.btn');
+function handleClick() {
+  console.log('Кнопка натиснута!');
+  button.removeEventListener('click', handleClick);
+}
+button.addEventListener('click', handleClick);
+Після першого кліку в консоль виведеться "Кнопка натиснута!", але на другий раз подія вже не спрацює, бо обробник було видалено.
+*/
+/* //! Event
+ * - event.type - тип події ("click", "keydown", "mouseover" тощо).
+ * - event.target - елемент, на якому відбулася подія.
+ * - event.currentTarget - елемент, до якого доданий обробник події.
+ * - event.clientX / event.clientY - координати кліку відносно вікна.
+ * - event.pageX / event.pageY - координати кліку відносно документа.
+ * - event.key - клавіша, яку натиснули (для подій клавіатури).
+ * - event.code - фізічний код клавіші незалежно від мови розкладки.
+ * - event.preventDefault() - відміняє стандартну дію браузера (наприклад, перехід по посиланню).
+ * - event.stopPropagation() - зупиняє спливання події (подія не передається вище по DOM).
+ * - event.stopImmediatePropagation() - зупиняє виконання всіх обробників події на цьому елементі.
+ * - event.detail - додаткова інформація про подію (наприклад, кількість кліків для `dblclick`).
+ * //! ВАЖЛИВО! Використання event без параметра у функції-обробнику може викликати помилку!
+
+const button = document.querySelector('.btn');
+const handleClick = event => {
+  console.log('event: ', event);
+  console.log('event type: ', event.type);
+  console.log('currentTarget: ', event.currentTarget);
+};
+button.addEventListener('click', handleClick);
+*/
+
 //#endregion
 
 /*
 dataset
 style
 */
-
-
-const button = document.querySelector(".btn");
-
-button.addEventListener("click", () => {
-  alert("Кнопку натиснуто!");
-});
