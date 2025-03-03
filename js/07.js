@@ -197,7 +197,7 @@ console.log(atribute);
 */
 //#endregion
 //#region //! Елементи
-/* //! .createElement(name) (Створити елемент)
+ .createElement(name) (Створити елемент)
 TODO: Метод document.createElement(name) використовується для створення нового HTML-елемента в JavaScript.
  * - Елемент створюється в пам’яті, а не одразу в DOM. 
  * - Створює лише сам елемент, без вмісту. 
@@ -254,7 +254,7 @@ div.innerHTML += ' + Доданий текст';
 const div = document.querySelector('.inner');
 div.innerHTML = '';
 */
-/* //! element.insertAdjacentHTML(position, string)
+/* //! element.insertAdjacentHTML(position, string) (Сучасний InnerHTML)
 TODO: сучасний метод!!! Синтаксис:
  * - position - місце, куди вставити HTML.
  * - string - HTML-код, який потрібно вставити.
@@ -263,10 +263,12 @@ TODO: сучасний метод!!! Синтаксис:
  * - "afterbegin" - всередині елемента, перед першим дочірнім вузлом.
  * - "beforeend" - всередині елемента, після останнього дочірнього вузла.
  * - "afterend" - після самого елемента.
+ * //! Дозволяє додавати HTML без перезапису існуючого контенту.
+ * //! Використовується для швидкої вставки без порушення структури DOM.
+ * //! Більш безпечний, ніж innerHTML, оскільки не видаляє обробники подій у вже існуючих елементах
  * 
 .//? beforebegin
 const section = document.querySelector('.section-wrap');
-
 section.insertAdjacentHTML('beforebegin', '<p>Перед секцією</p>');
 .//? afterbegin
 const section = document.querySelector('.section-wrap');
@@ -278,10 +280,24 @@ section.insertAdjacentHTML('beforeend', '<p>В кінці секції</p>');
 const section = document.querySelector('.section-wrap');
 section.insertAdjacentHTML('afterend', '<p>Після секції</p>');
 */
-
+//#endregion
+//#region //! Події
+/* //! element.addEventListener(event, handler, options);
+TODO: 
+ * - event(подія) - назва події ("click", "keydown",)
+ * - handler(функція) -  код, який буде виконуватись при настанні події.
+ * - options(необов'язковий параметр) - true або false (визначає фазу спрацьовування: false - "спливання", true - "занурення").
+*/
 //#endregion
 
 /*
 dataset
 style
 */
+
+
+const button = document.querySelector(".btn");
+
+button.addEventListener("click", () => {
+  alert("Кнопку натиснуто!");
+});
