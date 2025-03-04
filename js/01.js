@@ -146,12 +146,12 @@ console.log(Math.sqrt(8));
 /* //! Math.cbrt() (Кубічний корінь)
 console.log(Math.cbrt(8));
  */
-/* //! Math.ceil() (округлення у більшу сторону)
+/* //! Math.ceil() (Округлення у більшу сторону)
 TODO – округлення вгору (у більшу сторону) Округлює завжди у більшу сторону (до найближчого більшого цілого)
 console.log(Math.ceil(24.23));
 console.log(Math.ceil(24.83));
 */
-/* //! Math.floor() (округлення у меншу сторону)
+/* //! Math.floor() (Округлення у меншу сторону)
 TODO – округлення вниз (у меншу сторону) Округлює завжди в меншу сторону (до найближчого меншого цілого)
 console.log(Math.floor(24.23));
 console.log(Math.floor(24.83));
@@ -170,5 +170,153 @@ console.log(Math.trunc(24.83));
 console.log(Math.trunc(-24.23));
 console.log(Math.trunc(-24.83));
 */
-//?
+//? Арифметичні оператори
+/* //! Арифметичні оператори (Arithmetic Operators) + - / * % **
+TODO - додавання (Addition)
+const x = 8;
+const y = 5;
+console.log(x + y);
+TODO - відімання (Subtraction)
+const x = 8;
+const y = 5;
+console.log(x - y);
+TODO - множення (Multiplication)
+const x = 8;
+const y = 5;
+console.log(x * y);
+TODO - ділення (Division)
+const x = 8;
+const y = 5;
+console.log(x / y);
+TODO - залишок від ділення (Modulus, Remainder)
+const x = 8;
+const y = 5;
+console.log(x % y);
+TODO - степінь (Exponentiation)
+const x = 8;
+const y = 5;
+console.log(x ** y);
+*/
+/* //! Оператори присвоювання з арифметичними операціями (Assignment with Arithmetic Operators) += -= /= *= %= **=
+TODO - додавання (Addition Assignment)
+let x = 8;
+x += 5;
+console.log(x); // 13
+
+TODO - віднімання (Subtraction Assignment)
+let x = 8;
+x -= 5;
+console.log(x); // 3
+
+TODO - множення (Multiplication Assignment)
+let x = 8;
+x *= 5;
+console.log(x); // 40
+
+TODO - ділення (Division Assignment)
+let x = 8;
+x /= 5;
+console.log(x); // 1.6
+
+TODO - залишок від ділення (Modulus Assignment)
+let x = 8;
+x %= 5;
+console.log(x); // 3
+
+TODO - піднесення до степеня (Exponentiation Assignment)
+let x = 8;
+x **= 5;
+console.log(x); // 32768
+*/
+
 //#endregion
+/* //! typeof
+TODO: typeof використовується для перевірки типу змінної або значення. Важливо пам’ятати, що для null він повертає "object" — це відома особливість JavaScript.
+
+TODO - визначення типу змінної (Typeof)
+let x = 8;
+console.log(typeof x); // "number"
+
+TODO - визначення типу рядка (Typeof String)
+let str = "Hello";
+console.log(typeof str); // "string"
+
+TODO - визначення типу булевого значення (Typeof Boolean)
+let isTrue = true;
+console.log(typeof isTrue); // "boolean"
+
+TODO - визначення типу undefined (Typeof Undefined)
+let notDefined;
+console.log(typeof notDefined); // "undefined"
+
+TODO - визначення типу null (Typeof Null)
+let emptyValue = null;
+console.log(typeof emptyValue); // "object" (особливість JavaScript)
+
+TODO - визначення типу об'єкта (Typeof Object)
+let obj = { name: "Alice" };
+console.log(typeof obj); // "object"
+
+TODO - визначення типу масиву (Typeof Array)
+let arr = [1, 2, 3];
+console.log(typeof arr); // "object" (масиви в JavaScript — це об'єкти)
+
+TODO - визначення типу функції (Typeof Function)
+function myFunc() {}
+console.log(typeof myFunc); // "function"
+*/
+/* //! + Конкатенація рядків (String Concatenation)
+TODO: Об’єднує два операнди в один рядок, якщо хоча б один із них є рядком, або виконує додавання, якщо обидва числа.
+ * - Оператор перевіряє типи операндів.
+ * - Якщо хоча б один операнд є рядком, обидва приводяться до рядків і об’єднуються.
+ * - Якщо обидва операнди числа, виконується арифметичне додавання.
+ * - Нечислові значення (null, undefined, true, тощо) при конкатенації з рядком приводяться до рядкової форми.
+console.log('Hello' + 'World'); // Виведе: 'HelloWorld'
+console.log('Number: ' + 42); // Виведе: 'Number: 42'
+console.log('' + 0); // Виведе: '0'
+console.log(null + 'test'); // Виведе: 'nulltest'
+console.log(undefined + ('' && false)); // Виведе: 'undefined'
+console.log(('Hi' + '') * (false + true)); // Виведе: NaN
+console.log(('NaN' + '') - (false + 'true')); // Виведе: NaN
+console.log(('Code' + 5) + (false + true)); // Виведе: 'Code51'
+console.log(('Text' + NaN) / ('yes' + false)); // Виведе: NaN
+console.log((null + 'end') / (0 + 1)); // Виведе: NaN
+console.log((undefined + 'start') * ('' + false)); // Виведе: NaN
+*/
+
+/* //! `` Шаблонні рядки (Template Literals) (Backtick - Бектіки)
+TODO: Створює рядок із використанням зворотних лапок, дозволяючи вбудовувати вирази через ${} і писати багатострокові рядки.
+ * - Використовуються зворотні лапки (``) замість одинарних або подвійних лапок.
+ * - Вирази всередині ${} обчислюються і підставляються в рядок.
+ * - Підтримує пряме написання рядків із переносами без спеціальних символів (\n).
+ * - Усі операнди всередині ${} приводяться до рядків.
+TODO – Запросіть у користувача ім'я та прізвище і виведіть у консоль повідомлення: Hello <імʼя> <прізвище>, you are logged in.
+const firstName = prompt('Введіть ваше імʼя!');
+const lastName = prompt('Введіть ваше прізвище!');
+const message = `Hello ${firstName} ${lastName}, you are logged in.`;
+alert(message);
+*/
+
+/* //! Явне перетворення рядків (Explicit String Conversion)
+TODO: Перетворює значення в рядок за допомогою спеціальних методів чи функцій, таких як String() або .toString().
+ * - Використовується для явного приведення значення до рядкового типу.
+ * - String() працює з будь-яким значенням, включаючи null і undefined.
+ * - .toString() викликається на об’єктах/числах, але не працює з null і undefined.
+ * - Результат завжди рядок, навіть для спеціальних значень (NaN, null, тощо).
+console.log(String(false)); // Виведе: 'false'
+console.log(String(42)); // Виведе: '42'
+console.log((0).toString()); // Виведе: '0'
+console.log(String(null)); // Виведе: 'null'
+
+*/
+
+/* //! Явне перетворення до числа (Explicit Number Conversion)
+TODO: Перетворює значення в число за допомогою методів чи функцій, таких як Number(), parseInt(), parseFloat(), або унарного +.
+ * - Використовується для явного приведення значення до числового типу.
+ * - Number() перетворює значення в число, повертаючи NaN для нечислового вмісту.
+ * - parseInt() і parseFloat() витягують числа з рядків, ігноруючи нечислові символи після числа.
+ * - Унарний + швидко приводить до числа, подібно до Number().
+console.log(Number('42')); // Виведе: 42
+console.log(+'0'); // Виведе: 0
+console.log(Number(null)); // Виведе: 0
+*/
