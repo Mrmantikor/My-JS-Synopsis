@@ -1,4 +1,3 @@
-//#endregion
 //#region //! Alert, Prompt, Confirm
 /* //! Alert
 alert('Hello World!');

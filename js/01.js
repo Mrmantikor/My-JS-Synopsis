@@ -19,8 +19,16 @@ const million = 1e-6;
 console.log(million);
 */
 /* //! Number (Число)
-console.log(42);  -→ 42
-console.log(3.14); -→ 3.14
+console.log(Number(0)); //0
+console.log(Number(-0)); //-0
+console.log(Number(1)); //1
+console.log(Number('')); //0
+console.log(Number('f')); //NaN
+console.log(Number(NaN)); //NaN
+console.log(Number(null)); //0
+console.log(Number(undefined)); //NaN
+console.log(Number(false)); //0
+console.log(Number(true)); //1
 TODO – Явне перетворення типів
 console.log(Number('5'));
 console.log(+'5');
@@ -163,3 +171,4 @@ console.log(Math.trunc(-24.23));
 console.log(Math.trunc(-24.83));
 */
 //?
+//#endregion
