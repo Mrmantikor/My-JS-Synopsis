@@ -1,21 +1,3 @@
-/* //! length
-const str = 'Love is Java Skript';
-console.log(str.length);
-console.log(str[0]);
-console.log(str.at(0));
-console.log(str.at(-1));
-console.log(str[str.length - 1]);
-
-const num = 25.25;
-console.log(String(num));
-
-TODO – Дізнайтесь довжину рядка message.
-const message = 'This string is 28 chars long';
-const messageLength = message.length;
-console.log(message);
-console.log(messageLength);
-
-*/
 /* //! toLocaleLowerCase(), toLocaleUpperCase()
 const strLowerCase = 'You NOT Love is Java Skript?!';
 console.log(strLowerCase.toLowerCase());
@@ -38,103 +20,9 @@ console.log(str1.trim().length);
 const methodRepeat = 'You NOT Love is Java Skript?!';
 console.log(methodRepeat.repeat(3));
 */
-/* //! + - / * % **
-TODO – Дано 90 хвилин, дізнайтеся скільки в цьому числі міститься годин і хвилин. Результат виведіть у консоль.
-const totalMinutes = 90;
-const hours = Math.floor(totalMinutes / 60);
-const minutes = totalMinutes % 60;
-console.log(hours);
-console.log(minutes);
-console.log(hours, ':', minutes); 
-*/
-
-/* //! Math.random()
-TODO – від -10 до 10 рандомне число
-const min = -10;
-const max = 10;
-const random = Math.trunc(Math.random() * (max - min) + min);
-console.log(random);
-TODO – 
-const num = 24.3456;
-console.log(num);
-console.log(num * 100);
-console.log(Math.trunc(num));
-console.log(Math.trunc(num * 100));
-console.log(Math.trunc(num * 100) / 100);
-*/
-/* //! charCodeAt() Юнікод
-console.log('a', 'a'.charCodeAt(0));
-console.log('b', 'b'.charCodeAt(0));
-console.log('1'.charCodeAt(0));
- */
-/* //! time() timeEnd()
-console.time('for...of');
-console.timeEnd('for...of');
-*/
-/* //! parseFloat(), 
-const str = '52.86';
-console.log(Number(str));
-console.log(Number.parseFloat(str));
-TODO – Дізнайтесь числове значення висоти елемента.
-let elementHeight = '200.74px';
-elementHeight = Number.parseFloat(elementHeight);
-console.log('elementHeight:', elementHeight);
-TODO – Попросіть користувача ввести два числа, складіть їх та виведіть результат у консоль.
-const numA = Number.parseFloat(prompt('Введіть перше число!'));
-const numB = Number.parseFloat(prompt('Введіть друге число!'));
-console.log('numA:', numA);
-console.log('numB:', numB);
-const result = numA + numB;
-console.log('result:', result);
-*/
-/* //! parseInt()
-const str = '52.86';
-console.log(Number(str));
-console.log(Number.parseInt(str));
-TODO – Дізнайтесь числове значення ширини елемента.
-let elementWidth = '50px';
-elementWidth = Number.parseInt(elementWidth);
-console.log('elementWidth:', elementWidth);
-*/
-
-//#region //! Alert, Prompt, Confirm
-/* //! Alert
-alert('Hello World!');
-*/
-/* //! Prompt
-prompt(`yes or no`); 
-TODO –
-const firstName = prompt('Як вас звати?');
-console.log(firstName);
-TODO – Попросіть користувача ввести число. Виведіть результат у консоль. Приведіть рядок до числа.
-const userInput = Number(prompt('Введіть якесь число!'));
-console.log(userInput);
-*/
-/* //! Confirm
-confirm(`yes and text`); 
-
-const isAdult = confirm('Чи є вам 18?');
-console.log(isAdult);
-*/
-//#endregion
 
 // #region //?_Function_Теоргія?//
-/* //! Function Declaration() 
-TODO: (Можна викликати ДО оголошення функції в коді). Перевага в тому, що окремо в коді можна створити "Регіон" з аргументами і окремо "Регіон" з функціями
-greetUser('Oleksii', 'Repin');
-greetUser1('Phoebe', 'Howell');
-greetUser2('Garrett', 'Cooper');
 
-function greetUser(firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
-function greetUser1(firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
-function greetUser2(firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
-*/
 /* //! Function Expression ()
 TODO: Викликати тільки ПІСЛЯ оголошення в коді. Все те саме, що і в Function Declaration(), тільки навпаки, інтерпретатор спочатку прочитає функцію і потім виведе її результат.
 const greetUser = function (firstName, lastName) {
@@ -151,37 +39,7 @@ greetUser('Oleksii', 'Repin');
 greetUser1('Phoebe', 'Howell');
 greetUser2('Garrett', 'Cooper');
 */
-/* //! Стек викликів, Порядок виконання
-TODO: http://latentflip.com/loupe/
-const fn1 = function () {
-  console.log('fn1 execution');
 
-  console.log('Before fn2 execution');
-  fn2();
-  console.log('After fn2 execution');
-};
-
-const fn2 = function () {
-  console.log('fn2 execution');
-
-  console.log('Before fn3 execution');
-  fn3();
-  console.log('After fn3 execution');
-};
-
-const fn3 = function () {
-  console.log('fn3 execution');
-};
-
-console.log('Before fn1 execution');
-fn1();
-console.log('After fn1 execution');
-
-
-/* //!
-*/
-/* //!
- */
 // #endregion
 // #region //?_Function_Практика?//
 /* //!
