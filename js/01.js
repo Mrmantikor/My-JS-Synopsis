@@ -42,4 +42,39 @@ confirm('Do you want to proceed?'); // Показує запитання з "OK"
 let choice = confirm('Delete this item?'); // Зберігає вибір у змінну (true/false)
 console.log('Result: ' + confirm('Continue?')); // Виведе 'Result: true' або 'Result: false'
 */
+/* //! typeof 
+TODO: typeof використовується для перевірки типу змінної або значення. Важливо пам’ятати, що для null він повертає "object" — це відома особливість JavaScript.
+
+TODO - визначення типу змінної (Typeof)
+let x = 8;
+console.log(typeof x); // "number"
+
+TODO - визначення типу рядка (Typeof String)
+let str = "Hello";
+console.log(typeof str); // "string"
+
+TODO - визначення типу булевого значення (Typeof Boolean)
+let isTrue = true;
+console.log(typeof isTrue); // "boolean"
+
+TODO - визначення типу undefined (Typeof Undefined)
+let notDefined;
+console.log(typeof notDefined); // "undefined"
+
+TODO - визначення типу null (Typeof Null)
+let emptyValue = null;
+console.log(typeof emptyValue); // "object" (особливість JavaScript)
+
+TODO - визначення типу об'єкта (Typeof Object)
+let obj = { name: "Alice" };
+console.log(typeof obj); // "object"
+
+TODO - визначення типу масиву (Typeof Array)
+let arr = [1, 2, 3];
+console.log(typeof arr); // "object" (масиви в JavaScript — це об'єкти)
+
+TODO - визначення типу функції (Typeof Function)
+function myFunc() {}
+console.log(typeof myFunc); // "function"
+*/
 //#endregion
