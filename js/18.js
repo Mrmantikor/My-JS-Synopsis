@@ -1,27 +1,3 @@
-// #region //?_Function_Теоргія?//
-
-/* //! Function Expression ()
-TODO: Викликати тільки ПІСЛЯ оголошення в коді. Все те саме, що і в Function Declaration(), тільки навпаки, інтерпретатор спочатку прочитає функцію і потім виведе її результат.
-const greetUser = function (firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-const greetUser1 = function (firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-const greetUser2 = function (firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-
-greetUser('Oleksii', 'Repin');
-greetUser1('Phoebe', 'Howell');
-greetUser2('Garrett', 'Cooper');
-*/
-
-// #endregion
-// #region //?_Function_Практика?//
-/* //!
- */
-// #endregion
 // #region //?_Массиви_Теоргія?//
 /* //! Псевдомасив, Масив, Перебір масиву
 TODO: Псевдомасив
