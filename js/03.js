@@ -1,90 +1,30 @@
 // #region //? Function (Теорія)
-/* //! Стек викликів, функції та порядок виконання (Call Stack Execution)
-TODO: Демонструє порядок виконання функцій у стеку викликів JavaScript (візуалізація: http://latentflip.com/loupe/).
- * - Стек викликів (Call Stack): структура даних, яка відстежує виконання функцій у порядку "остання зайшла — перша вийшла" (LIFO).
- * - Кожна функція додається до стеку під час виклику і видаляється після завершення.
- * - Порядок виконання: спочатку зовнішній код, потім вкладені виклики функцій по черзі.
- * - Використовуйте http://latentflip.com/loupe/ для покрокової візуалізації стеку викликів цього коду.
- * 
+/* //! Аргументи та параметри функції (Function Arguments and Parameters)
+TODO: Параметри — це змінні, визначені у функції для прийняття значень, а аргументи — це значення, передані функції при її виклику.
+ * - Параметри: оголошуються в оголошенні функції як змінні, які приймають дані.
+ * - Аргументи: конкретні значення, передані функції під час виклику.
+ * - Кількість параметрів і аргументів може не збігатися: зайві аргументи доступні через об’єкт arguments, а ненадані параметри — undefined.
+ * - Використовуються для передачі інформації у функцію для обробки.
 
-TODO: Оголошення функцій
-const fn1 = function () {
-  console.log('fn1 execution');
+TODO: Приклад із параметрами та аргументами
+function greetUser(firstName, lastName) { // firstName, lastName — параметри
+  console.log(`Welcome ${firstName} ${lastName}`);
+}
 
-  console.log('Before fn2 execution');
-  fn2(); // Виклик fn2 додається до стеку
-  console.log('After fn2 execution');
-};
+greetUser('Bohdan', 'Vasylovych'); // 'Bohdan', 'Vasylovych' — аргументи
+Результат: Welcome Bohdan Vasylovych
 
-const fn2 = function () {
-  console.log('fn2 execution');
+TODO: Приклад із різною кількістю параметрів і аргументів
+function showInfo(name, age, city) { // Параметри: name, age, city
+  console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
+}
 
-  console.log('Before fn3 execution');
-  fn3(); // Виклик fn3 додається до стеку
-  console.log('After fn3 execution');
-};
+showInfo('Anna'); // Аргумент: 'Anna', age і city будуть undefined
+Результат: Name: Anna, Age: undefined, City: undefined
 
-const fn3 = function () {
-  console.log('fn3 execution');
-};
-
-TODO: Виконання коду
-console.log('Before fn1 execution');
-fn1(); // Виклик fn1 додається до стеку
-console.log('After fn1 execution');
-
- Порядок виведення у консоль:
-1. 'Before fn1 execution'    // Зовнішній код виконується першим
-2. 'fn1 execution'          // fn1 додано до стеку
-3. 'Before fn2 execution'   // fn1 викликає fn2
-4. 'fn2 execution'          // fn2 додано до стеку
-5. 'Before fn3 execution'   // fn2 викликає fn3
-6. 'fn3 execution'          // fn3 додано до стеку і завершує виконання
-7. 'After fn3 execution'    // fn3 видалено зі стеку, fn2 продовжує
-8. 'After fn2 execution'    // fn2 видалено зі стеку, fn1 продовжує
-9. 'After fn1 execution'    // fn1 видалено зі стеку, зовнішній код завершує
+showInfo('Oleksii', 25, 'Kyiv', 'Extra'); // 'Extra' — зайвий аргумент
+Результат: Name: Oleksii, Age: 25, City: Kyiv
 */
-/* //! Приклад із колбеками та стеком викликів (Call Stack Execution with Callbacks)
-TODO: Демонструє порядок виконання функцій із колбеками у стеку викликів JavaScript.
- * - Стек викликів (Call Stack): структура даних, яка відстежує виконання функцій у порядку "остання зайшла — перша вийшла" (LIFO).
- * - Колбек: функція, передана як аргумент іншій функції, викликається після певної дії.
- * - Кожна функція додається до стеку під час виклику і видаляється після завершення.
- * - Порядок виконання: спочатку зовнішній код, потім вкладені виклики через колбеки.
-
-TODO: Оголошення функцій із колбеками
-const fn1 = function (callbackFn2) {
-  console.log('fn1 execution');
-  console.log('Before fn2 execution');
-  callbackFn2(); // Виклик колбека fn2 додається до стеку
-  console.log('After fn2 execution');
-};
-
-const fn2 = function (callbackFn3) {
-  console.log('fn2 execution');
-  console.log('Before fn3 execution');
-  callbackFn3(); // Виклик колбека fn3 додається до стеку
-  console.log('After fn3 execution');
-};
-
-const fn3 = function () {
-  console.log('fn3 execution');
-};
-
-TODO: Виклик із передачею колбеків
-fn1(() => fn2(fn3)); // Передаємо стрілочну функцію як колбек у fn1, яка викликає fn2 із fn3 як колбеком
-
-Порядок виведення у консоль:
-1. 'fn1 execution'          // fn1 додано до стеку
-2. 'Before fn2 execution'   // fn1 викликає колбек
-3. 'fn2 execution'          // Колбек (стрілочна функція) викликає fn2
-4. 'Before fn3 execution'   // fn2 викликає свій колбек
-5. 'fn3 execution'          // fn3 додано до стеку і завершує виконання
-6. 'After fn3 execution'    // fn3 видалено зі стеку, fn2 продовжує
-7. 'After fn2 execution'    // fn2 видалено зі стеку, fn1 продовжує
-*/
-
-// #endregion
-
 /* //! Function Declaration (Оголошення функції)
 TODO: Дозволяє викликати функцію до її оголошення в коді завдяки hoisting (підняттю). Перевага: можна організувати код із окремими "регіонами" для аргументів (викликів) і функцій.
  * - Оголошення функції через ключове слово function із назвою та (опціонально) параметрами.
@@ -135,7 +75,6 @@ greetUser('Oleksii', 'Repin');    // Виведе: 'Welcome Oleksii Repin'
 greetUser1('Phoebe', 'Howell');   // Виведе: 'Welcome Phoebe Howell'
 greetUser2('Garrett', 'Cooper');  // Виведе: 'Welcome Garrett Cooper'
 */
-
 /* //! Arrow Function (Стрілочна функція)
 TODO: Компактний синтаксис для оголошення функцій, введений у ES6, із особливим поводженням із this.
  * - Оголошується через => замість ключового слова function, не має власного this (бере з зовнішнього контексту).
@@ -160,7 +99,6 @@ TODO: З одним параметром (без дужок)
 const square = x => x * x;
 console.log(square(4));           // Виведе: 16
 */
-
 /* //! Callback (Колбек-функція)
 TODO: Функція, передана як аргумент іншій функції, яка викликається після завершення певної дії.
  * - Колбек — це механізм для асинхронного чи відкладеного виконання коду.
@@ -251,3 +189,89 @@ TODO: Результат:
  * - [через 2 секунди]
  * - Data received: {"id":1,"name":"Bohdan"}
 */
+
+/* //! Стек викликів, функції та порядок виконання (Call Stack Execution)
+TODO: Демонструє порядок виконання функцій у стеку викликів JavaScript (візуалізація: http://latentflip.com/loupe/).
+ * - Стек викликів (Call Stack): структура даних, яка відстежує виконання функцій у порядку "остання зайшла — перша вийшла" (LIFO).
+ * - Кожна функція додається до стеку під час виклику і видаляється після завершення.
+ * - Порядок виконання: спочатку зовнішній код, потім вкладені виклики функцій по черзі.
+ * - Використовуйте http://latentflip.com/loupe/ для покрокової візуалізації стеку викликів цього коду.
+ * 
+
+TODO: Оголошення функцій
+const fn1 = function () {
+  console.log('fn1 execution');
+
+  console.log('Before fn2 execution');
+  fn2(); // Виклик fn2 додається до стеку
+  console.log('After fn2 execution');
+};
+
+const fn2 = function () {
+  console.log('fn2 execution');
+
+  console.log('Before fn3 execution');
+  fn3(); // Виклик fn3 додається до стеку
+  console.log('After fn3 execution');
+};
+
+const fn3 = function () {
+  console.log('fn3 execution');
+};
+
+TODO: Виконання коду
+console.log('Before fn1 execution');
+fn1(); // Виклик fn1 додається до стеку
+console.log('After fn1 execution');
+
+ Порядок виведення у консоль:
+1. 'Before fn1 execution'    // Зовнішній код виконується першим
+2. 'fn1 execution'          // fn1 додано до стеку
+3. 'Before fn2 execution'   // fn1 викликає fn2
+4. 'fn2 execution'          // fn2 додано до стеку
+5. 'Before fn3 execution'   // fn2 викликає fn3
+6. 'fn3 execution'          // fn3 додано до стеку і завершує виконання
+7. 'After fn3 execution'    // fn3 видалено зі стеку, fn2 продовжує
+8. 'After fn2 execution'    // fn2 видалено зі стеку, fn1 продовжує
+9. 'After fn1 execution'    // fn1 видалено зі стеку, зовнішній код завершує
+*/
+/* //! Приклад із колбеками та стеком викликів (Call Stack Execution with Callbacks)
+TODO: Демонструє порядок виконання функцій із колбеками у стеку викликів JavaScript.
+ * - Стек викликів (Call Stack): структура даних, яка відстежує виконання функцій у порядку "остання зайшла — перша вийшла" (LIFO).
+ * - Колбек: функція, передана як аргумент іншій функції, викликається після певної дії.
+ * - Кожна функція додається до стеку під час виклику і видаляється після завершення.
+ * - Порядок виконання: спочатку зовнішній код, потім вкладені виклики через колбеки.
+
+TODO: Оголошення функцій із колбеками
+const fn1 = function (callbackFn2) {
+  console.log('fn1 execution');
+  console.log('Before fn2 execution');
+  callbackFn2(); // Виклик колбека fn2 додається до стеку
+  console.log('After fn2 execution');
+};
+
+const fn2 = function (callbackFn3) {
+  console.log('fn2 execution');
+  console.log('Before fn3 execution');
+  callbackFn3(); // Виклик колбека fn3 додається до стеку
+  console.log('After fn3 execution');
+};
+
+const fn3 = function () {
+  console.log('fn3 execution');
+};
+
+TODO: Виклик із передачею колбеків
+fn1(() => fn2(fn3)); // Передаємо стрілочну функцію як колбек у fn1, яка викликає fn2 із fn3 як колбеком
+
+Порядок виведення у консоль:
+1. 'fn1 execution'          // fn1 додано до стеку
+2. 'Before fn2 execution'   // fn1 викликає колбек
+3. 'fn2 execution'          // Колбек (стрілочна функція) викликає fn2
+4. 'Before fn3 execution'   // fn2 викликає свій колбек
+5. 'fn3 execution'          // fn3 додано до стеку і завершує виконання
+6. 'After fn3 execution'    // fn3 видалено зі стеку, fn2 продовжує
+7. 'After fn2 execution'    // fn2 видалено зі стеку, fn1 продовжує
+*/
+
+// #endregion
