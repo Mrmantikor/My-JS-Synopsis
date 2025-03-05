@@ -1,277 +1,205 @@
-// #region //? Function (Теорія)
-/* //! Аргументи та параметри функції (Function Arguments and Parameters)
-TODO: Параметри — це змінні, визначені у функції для прийняття значень, а аргументи — це значення, передані функції при її виклику.
- * - Параметри: оголошуються в оголошенні функції як змінні, які приймають дані.
- * - Аргументи: конкретні значення, передані функції під час виклику.
- * - Кількість параметрів і аргументів може не збігатися: зайві аргументи доступні через об’єкт arguments, а ненадані параметри — undefined.
- * - Використовуються для передачі інформації у функцію для обробки.
-
-TODO: Приклад із параметрами та аргументами
-function greetUser(firstName, lastName) { // firstName, lastName — параметри
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
-
-greetUser('Bohdan', 'Vasylovych'); // 'Bohdan', 'Vasylovych' — аргументи
-Результат: Welcome Bohdan Vasylovych
-
-TODO: Приклад із різною кількістю параметрів і аргументів
-function showInfo(name, age, city) { // Параметри: name, age, city
-  console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
-}
-
-showInfo('Anna'); // Аргумент: 'Anna', age і city будуть undefined
-Результат: Name: Anna, Age: undefined, City: undefined
-
-showInfo('Oleksii', 25, 'Kyiv', 'Extra'); // 'Extra' — зайвий аргумент
-Результат: Name: Oleksii, Age: 25, City: Kyiv
+//#region //? Арифметичні оператори
+/* //! Арифметичні оператори (Arithmetic Operators) + - / * % **
+TODO - додавання (Addition)
+const x = 8;
+const y = 5;
+console.log(x + y);
+TODO - відімання (Subtraction)
+const x = 8;
+const y = 5;
+console.log(x - y);
+TODO - множення (Multiplication)
+const x = 8;
+const y = 5;
+console.log(x * y);
+TODO - ділення (Division)
+const x = 8;
+const y = 5;
+console.log(x / y);
+TODO - залишок від ділення (Modulus, Remainder)
+const x = 8;
+const y = 5;
+console.log(x % y);
+TODO - степінь (Exponentiation)
+const x = 8;
+const y = 5;
+console.log(x ** y);
 */
-/* //! Function Declaration (Оголошення функції)
-TODO: Дозволяє викликати функцію до її оголошення в коді завдяки hoisting (підняттю). Перевага: можна організувати код із окремими "регіонами" для аргументів (викликів) і функцій.
- * - Оголошення функції через ключове слово function із назвою та (опціонально) параметрами.
- * - Hoisting: функція доступна в усій області видимості, навіть до її фізичного місця в коді.
- * - Повертає undefined, якщо не вказано return, але може виконувати дії (наприклад, виводити в консоль).
- * - Використовується для структурованого коду, де логіка функцій відділена від їх викликів.
+/* //! Оператори присвоювання з арифметичними операціями (Assignment with Arithmetic Operators) += -= /= *= %= **=
+TODO - додавання (Addition Assignment)
+let x = 8;
+x += 5;
+console.log(x); // 13
 
-TODO: Виклики функцій (регіон аргументів)
-greetUser('Bohdan', 'Vasylovych'); // Виведе: 'Welcome Bohdan Vasylovych'
-greetUser1('Sarah', 'Connor');     // Виведе: 'Welcome Sarah Connor'
-greetUser2('Bruce', 'Lee');        // Виведе: 'Welcome Bruce Lee'
+TODO - віднімання (Subtraction Assignment)
+let x = 8;
+x -= 5;
+console.log(x); // 3
 
-TODO: Оголошення функцій (регіон функцій)
-function greetUser(firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
+TODO - множення (Multiplication Assignment)
+let x = 8;
+x *= 5;
+console.log(x); // 40
 
-function greetUser1(firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
+TODO - ділення (Division Assignment)
+let x = 8;
+x /= 5;
+console.log(x); // 1.6
 
-function greetUser2(firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-}
+TODO - залишок від ділення (Modulus Assignment)
+let x = 8;
+x %= 5;
+console.log(x); // 3
+
+TODO - піднесення до степеня (Exponentiation Assignment)
+let x = 8;
+x **= 5;
+console.log(x); // 32768
 */
-/* //! Function Expression (Функціональний вираз)
-TODO: Виклик можливий тільки після оголошення в коді, на відміну від Function Declaration. Інтерпретатор спочатку обробляє оголошення змінної, а потім дозволяє виклик функції.
- * - Оголошення функції через присвоєння анонімної функції змінній (const, let, var).
- * - Hoisting не застосовується до самої функції, лише до змінної (з var — undefined до присвоєння).
- * - Повертає undefined, якщо не вказано return, але виконує дії в тілі функції.
- * - Використовується, коли порядок виклику має відповідати логіці оголошення.
-
-TODO: Оголошення функцій через Function Expression
-const greetUser = function (firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-
-const greetUser1 = function (firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-
-const greetUser2 = function (firstName, lastName) {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-
-TODO: Виклики функцій (можливі лише після оголошення)
-greetUser('Oleksii', 'Repin');    // Виведе: 'Welcome Oleksii Repin'
-greetUser1('Phoebe', 'Howell');   // Виведе: 'Welcome Phoebe Howell'
-greetUser2('Garrett', 'Cooper');  // Виведе: 'Welcome Garrett Cooper'
+//#endregion
+//#region //? Логічні оператори
+/* //! && (Логічне "І" - Logical AND)
+TODO: Повертає перший неістинний (falsy) операнд або останній операнд, якщо всі істинні (truthy).
+ * - Оператор перевіряє ліву частину виразу.
+ * - Якщо ліве значення неістинне (falsy), він повертає це значення.
+ * - Якщо ліве значення істинне (truthy), оператор перевіряє праву частину та повертає її значення.
+ * - Falsy значення: false, 0, '', null, undefined, NaN. Truthy — усе інше.
+console.log(false && 'Hello'); // Виведе: false
+console.log('Hello' && 'World'); // Виведе: 'World'
+console.log(0 && 42); // Виведе: 0
+console.log(null && undefined); // Виведе: null
+console.log(undefined && '' && false && 0); // Виведе: undefined
+console.log((null && '') * (false && true)); // Виведе: 0
+console.log((NaN && '') - (false && true)); // Виведе: NaN
+console.log((NaN && '') + (false && true)); // Виведе: NaN
+console.log((NaN && '') / (false && true)); // Виведе: NaN
+console.log((null && undefined) / (0 && 1)); // Виведе: NaN
+console.log((undefined && 0) * ('' && false)); // Виведе: undefined
 */
-/* //! Arrow Function (Стрілочна функція)
-TODO: Компактний синтаксис для оголошення функцій, введений у ES6, із особливим поводженням із this.
- * - Оголошується через => замість ключового слова function, не має власного this (бере з зовнішнього контексту).
- * - Не піднімається (hoisting не застосовується), виклик можливий лише після оголошення.
- * - Повертає значення автоматично, якщо тіло — один вираз (без фігурних дужок і return).
- * - Використовується для коротких функцій, колбеків і коли потрібен лексичний this.
-
-TODO: Приклад стрілочної функції
-const greetUser = (firstName, lastName) => {
-  console.log(`Welcome ${firstName} ${lastName}`);
-};
-
-TODO: Виклики функції (після оголошення)
-greetUser('Oleksii', 'Repin');    // Виведе: 'Welcome Oleksii Repin'
-greetUser('Phoebe', 'Howell');    // Виведе: 'Welcome Phoebe Howell'
-
-TODO: Короткий синтаксис для одного виразу
-const addNumbers = (a, b) => a + b;
-console.log(addNumbers(5, 3));    // Виведе: 8
-
-TODO: З одним параметром (без дужок)
-const square = x => x * x;
-console.log(square(4));           // Виведе: 16
+/* //! || (Логічне "АБО" - Logical OR)
+TODO: Повертає перший істинний (true) операнд, або остання істинну умову.
+ * - Оператор перевіряє ліву частину виразу.
+ * - Якщо ліве значення істинне (true), він повертає це значення.
+ * - Якщо ліве значення неістинне (false), оператор перевіряє праву частину та повертає її значення.
+console.log(false || 'Hello');
+console.log('Hello' || 'World'); 
+console.log(0 || 42);
+console.log(null || undefined); 
+console.log(undefined || '' || false || 0); 
+console.log((null || '') * (false || true)); 
+console.log((NaN || '') - (false || true)); 
+console.log((NaN || '') + (false || true)); 
+console.log((NaN || '') / (false || true)); 
+console.log((null || undefined) / (0 || 1));
+console.log((undefined || 0) * ('' || false));
 */
-/* //! Callback (Колбек-функція)
-TODO: Функція, передана як аргумент іншій функції, яка викликається після завершення певної дії.
- * - Колбек — це механізм для асинхронного чи відкладеного виконання коду.
- * - Використовується для обробки результатів операцій, які займають час (наприклад, запити до сервера, таймери).
- * - Не має власного this у стрілочних функціях, у звичайних функціях — залежить від контексту виклику.
- * - Може бути синхронним (виклик одразу) або асинхронним (виклик після затримки чи події).
- * - Основна ідея: колбек — це функція, яка "зворотньо викликається" (callback) після завершення роботи основної функції.
- * - Типи колбеків:
- *   - Синхронні: виконуються одразу після основної операції (наприклад, forEach).
- *   - Асинхронні: виконуються після затримки чи події (наприклад, setTimeout, fetch).
- * - Як працює:
- *   - Основна функція приймає колбек як параметр.
- *   - Після завершення роботи викликає колбек із результатом (якщо є).
- *   - Синхронні колбеки обробляються стеком викликів, асинхронні — через Event Loop.
- * - Переваги:
- *   - Гнучкість: дозволяє передавати різну логіку обробки.
- *   - Асинхронність: уникає блокування основного потоку.
- * - Недоліки:
- *   - Callback Hell: вкладені колбеки ускладнюють читання при множинних асинхронних операціях.
- *   - Помилки: без обробки (try/catch чи error-параметр) можуть бути пропущені.
- * - Контекст this:
- *   - У звичайних функціях залежить від способу виклику (call, bind).
- *   - У стрілочних функціях — лексичний, із зовнішнього контексту.
- * - Коли використовувати:
- *   - Прості асинхронні операції (таймери, події).
- *   - Колбеки в методах масиву (forEach, map, filter).
- *   - Старі API без Promises.
+/* //! ?? (Оператор нульового злиття - Nullish Coalescing Operator)
+TODO: Повертає перший операнд, який не є null або undefined, або останній операнд, якщо всі є null/undefined.
+ * - Оператор перевіряє ліву частину виразу.
+ * - Якщо ліве значення не є null або undefined (тобто "не нульове"), він повертає це значення.
+ * - Якщо ліве значення є null або undefined, оператор перевіряє праву частину та повертає її значення.
+ * - На відміну від ||, ?? не вважає 0, '' або false "неістинними" — він працює лише з null і undefined.
+console.log(false ?? 'Hello'); // Виведе: false
+console.log('Hello' ?? 'World'); // Виведе: 'Hello'
+console.log(0 ?? 42); // Виведе: 0
+console.log(null ?? undefined); // Виведе: undefined
+console.log(undefined ?? '' ?? false ?? 0); // Виведе: ''
+console.log((null ?? '') * (false ?? true)); // Виведе: 0
+console.log((NaN ?? '') - (false ?? true)); // Виведе: NaN
+console.log((NaN ?? '') + (false ?? true)); // Виведе: 'false'
+console.log((NaN ?? '') / (false ?? true)); // Виведе: NaN
+console.log((null ?? undefined) / (0 ?? 1)); // Виведе: NaN
+console.log((undefined ?? 0) * ('' ?? false)); // Виведе: 0
 */
-/* //! Callback (Колбек-функція) (Синхронний колбек)
-TODO: Найпростіший приклад із синхронним колбеком
-function sayHello(callback) {
-  callback(); // Виклик колбека одразу
-}
-
-function hello() {
-  console.log('Hello!');
-}
-
-sayHello(hello); // Передаємо hello як колбек
-Результат: - Hello!
-
-TODO: Приклад трохи складніш:
-function processData(data, callback) {
-  console.log('Processing data: ' + data);
-  callback(data); // Виклик колбека з переданими даними
-}
-
-function handleResult(result) {
-  console.log('Result handled: ' + result);
-}
-
-processData('User Info', handleResult); // Передаємо handleResult як колбек
-TODO: Результат:
- * - Processing data: User Info
- * - Result handled: User Info
+/* //! ! (Логічне "НЕ" - Logical NOT)
+TODO: Інвертує булеве значення операнда, повертаючи true для falsy значень і false для truthy значень.
+ * - Оператор перевіряє операнд.
+ * - Якщо значення є falsy (неістинне), повертає true.
+ * - Якщо значення є truthy (істинне), повертає false.
+ * - Falsy значення: false, 0, '', null, undefined, NaN. Truthy — усе інше.
+ * - Завжди повертає булевий тип (true або false).
+console.log(!false); // Виведе: true
+console.log(!'Hello'); // Виведе: false
+console.log(!0); // Виведе: true
+console.log(!null); // Виведе: true
+console.log(!(undefined && '' && false)); // Виведе: true
+console.log(!null * !false); // Виведе: false
+console.log(!NaN - !false); // Виведе: 0
+console.log(!NaN + !true); // Виведе: 'truefalse'
+console.log(!NaN / !false); // Виведе: NaN
+console.log(!null / !(0 && 1)); // Виведе: NaN
+console.log(!undefined * !('' && false)); // Виведе: 1
 */
-/* //! Callback (Колбек-функція) (Асинхронний колбек)
-TODO: Найпростіший приклад із асинхронним колбеком
-function waitAndSay(callback) {
-  setTimeout(callback, 1000); // Виклик колбека через 1 секунду
-}
-
-function hi() {
-  console.log('Hi!');
-}
-
-waitAndSay(hi); // Передаємо hi як колбек
-Результат:
- * - [через 1 секунду]
- * - Hi!
-
-TODO: Приклад трохи складніш:
-function fetchData(url, callback) {
-  console.log('Fetching data from: ' + url);
-  setTimeout(() => {
-    const data = { id: 1, name: 'Bohdan' };
-    callback(data); // Виклик колбека після затримки
-  }, 2000);
-}
-
-function displayData(data) {
-  console.log('Data received: ' + JSON.stringify(data));
-}
-
-fetchData('http://example.com/api', displayData); // Асинхронний виклик
-TODO: Результат:
- * - Fetching data from: http://example.com/api
- * - [через 2 секунди]
- * - Data received: {"id":1,"name":"Bohdan"}
+/* //! === (Суворе порівняння - Strict Equality)
+TODO: Порівнює два операнди на рівність значень і типів, повертаючи true, якщо вони ідентичні, і false, якщо ні.
+ * - Оператор перевіряє лівий і правий операнди.
+ * - Якщо типи даних різні, повертає false без приведення типів.
+ * - Якщо типи однакові, порівнює значення: повертає true при повній ідентичності, інакше false.
+ * - Не виконує примусове приведення типів (на відміну від ==).
+console.log(false === false); // Виведе: true
+console.log('Hello' === 'Hello'); // Виведе: true
+console.log(0 === '0'); // Виведе: false
+console.log(null === undefined); // Виведе: false
+console.log(undefined === ('' && false)); // Виведе: false
+console.log((null === null) * (false === true)); // Виведе: 0
+console.log((NaN === NaN) - (false === true)); // Виведе: NaN
+console.log((5 === '5') + (false === true)); // Виведе: 0
+console.log((NaN === '') / (false === false)); // Виведе: NaN
+console.log((null === undefined) / (0 === 0)); // Виведе: 0
+console.log((undefined === undefined) * ('' === false)); // Виведе: 0
 */
-
-/* //! Стек викликів, функції та порядок виконання (Call Stack Execution)
-TODO: Демонструє порядок виконання функцій у стеку викликів JavaScript (візуалізація: http://latentflip.com/loupe/).
- * - Стек викликів (Call Stack): структура даних, яка відстежує виконання функцій у порядку "остання зайшла — перша вийшла" (LIFO).
- * - Кожна функція додається до стеку під час виклику і видаляється після завершення.
- * - Порядок виконання: спочатку зовнішній код, потім вкладені виклики функцій по черзі.
- * - Використовуйте http://latentflip.com/loupe/ для покрокової візуалізації стеку викликів цього коду.
- * 
-
-TODO: Оголошення функцій
-const fn1 = function () {
-  console.log('fn1 execution');
-
-  console.log('Before fn2 execution');
-  fn2(); // Виклик fn2 додається до стеку
-  console.log('After fn2 execution');
-};
-
-const fn2 = function () {
-  console.log('fn2 execution');
-
-  console.log('Before fn3 execution');
-  fn3(); // Виклик fn3 додається до стеку
-  console.log('After fn3 execution');
-};
-
-const fn3 = function () {
-  console.log('fn3 execution');
-};
-
-TODO: Виконання коду
-console.log('Before fn1 execution');
-fn1(); // Виклик fn1 додається до стеку
-console.log('After fn1 execution');
-
- Порядок виведення у консоль:
-1. 'Before fn1 execution'    // Зовнішній код виконується першим
-2. 'fn1 execution'          // fn1 додано до стеку
-3. 'Before fn2 execution'   // fn1 викликає fn2
-4. 'fn2 execution'          // fn2 додано до стеку
-5. 'Before fn3 execution'   // fn2 викликає fn3
-6. 'fn3 execution'          // fn3 додано до стеку і завершує виконання
-7. 'After fn3 execution'    // fn3 видалено зі стеку, fn2 продовжує
-8. 'After fn2 execution'    // fn2 видалено зі стеку, fn1 продовжує
-9. 'After fn1 execution'    // fn1 видалено зі стеку, зовнішній код завершує
+/* //! !== (Суворе порівняння на нерівність - Strict Inequality)
+TODO: Порівнює два операнди на нерівність значень або типів, повертаючи true, якщо вони різні, і false, якщо ідентичні.
+ * - Оператор перевіряє лівий і правий операнди.
+ * - Якщо типи даних різні, повертає true без приведення типів.
+ * - Якщо типи однакові, порівнює значення: повертає true, якщо значення різні, інакше false.
+ * - Не виконує примусове приведення типів (на відміну від !=).
+console.log(false !== true); // Виведе: true
+console.log('Hello' !== 'World'); // Виведе: true
+console.log(0 !== '0'); // Виведе: true
+console.log(null !== undefined); // Виведе: true
+console.log(undefined !== ('' && false)); // Виведе: true
+console.log((null !== null) * (false !== true)); // Виведе: 0
+console.log((NaN !== NaN) - (false !== false)); // Виведе: 0
+console.log((5 !== '5') + (false !== true)); // Виведе: 2
+console.log((NaN !== '') / (false !== false)); // Виведе: Infinity
+console.log((null !== undefined) / (0 !== 0)); // Виведе: Infinity
+console.log((undefined !== undefined) * ('' !== false)); // Виведе: 0
 */
-/* //! Приклад із колбеками та стеком викликів (Call Stack Execution with Callbacks)
-TODO: Демонструє порядок виконання функцій із колбеками у стеку викликів JavaScript.
- * - Стек викликів (Call Stack): структура даних, яка відстежує виконання функцій у порядку "остання зайшла — перша вийшла" (LIFO).
- * - Колбек: функція, передана як аргумент іншій функції, викликається після певної дії.
- * - Кожна функція додається до стеку під час виклику і видаляється після завершення.
- * - Порядок виконання: спочатку зовнішній код, потім вкладені виклики через колбеки.
-
-TODO: Оголошення функцій із колбеками
-const fn1 = function (callbackFn2) {
-  console.log('fn1 execution');
-  console.log('Before fn2 execution');
-  callbackFn2(); // Виклик колбека fn2 додається до стеку
-  console.log('After fn2 execution');
-};
-
-const fn2 = function (callbackFn3) {
-  console.log('fn2 execution');
-  console.log('Before fn3 execution');
-  callbackFn3(); // Виклик колбека fn3 додається до стеку
-  console.log('After fn3 execution');
-};
-
-const fn3 = function () {
-  console.log('fn3 execution');
-};
-
-TODO: Виклик із передачею колбеків
-fn1(() => fn2(fn3)); // Передаємо стрілочну функцію як колбек у fn1, яка викликає fn2 із fn3 як колбеком
-
-Порядок виведення у консоль:
-1. 'fn1 execution'          // fn1 додано до стеку
-2. 'Before fn2 execution'   // fn1 викликає колбек
-3. 'fn2 execution'          // Колбек (стрілочна функція) викликає fn2
-4. 'Before fn3 execution'   // fn2 викликає свій колбек
-5. 'fn3 execution'          // fn3 додано до стеку і завершує виконання
-6. 'After fn3 execution'    // fn3 видалено зі стеку, fn2 продовжує
-7. 'After fn2 execution'    // fn2 видалено зі стеку, fn1 продовжує
+/* //! Number (console.log(Number))
+console.log(Number(0)); //0
+console.log(Number(-0)); //-0
+console.log(Number(1)); //1
+console.log(Number('')); //0
+console.log(Number('f')); //NaN
+console.log(Number(NaN)); //NaN
+console.log(Number(null)); //0
+console.log(Number(undefined)); //NaN
+console.log(Number(false)); //0
+console.log(Number(true)); //1
 */
-
-// #endregion
+/* //! String (console.log(String))
+console.log(String(0)); //0;
+console.log(String(-0)); //0;
+console.log(String(1)); //1;
+console.log(String(''));
+console.log(String('f')); //f;
+console.log(String(NaN)); //NaN;
+console.log(String(null)); //null;
+console.log(String(undefined)); //undefined;
+console.log(String(false)); //false;
+console.log(String(true)); //true;
+*/
+/* //! Boolean (console.log(Boolean))
+console.log(Boolean(0)); // false
+console.log(Boolean(-0)); //false
+console.log(Boolean('')); //false
+console.log(Boolean(NaN)); //false
+console.log(Boolean(null)); //false
+console.log(Boolean(undefined)); //false
+console.log(Boolean(false)); //false
+console.log(Boolean(true)); //true
+console.log(Boolean(1)); //true
+console.log(Boolean('f')); //true
+*/
+//#endregion

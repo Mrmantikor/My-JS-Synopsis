@@ -1,0 +1,20 @@
+@import url('./reset.css');
+
+.go-back {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2rem;
+  border: 5px solid black;
+  color: green;
+  margin-bottom: 2rem;
+}
+
+.go-back:hover {
+  color: #ff6b0a;
+}
+
+.section-wrap {
+  border: 2px solid #ff6b0a;
+  margin: 1rem;
+}
