@@ -160,40 +160,6 @@ TODO: З одним параметром (без дужок)
 const square = x => x * x;
 console.log(square(4));           // Виведе: 16
 */
-/* //! Callback (Колбек-функція)
-TODO: Функція, передана як аргумент іншій функції, яка викликається після завершення певної дії.
- * - Колбек — це механізм для асинхронного чи відкладеного виконання коду.
- * - Використовується для обробки результатів операцій, які займають час (наприклад, запити до сервера, таймери).
- * - Не має власного this у стрілочних функціях, у звичайних функціях — залежить від контексту виклику.
- * - Може бути синхронним (виклик одразу) або асинхронним (виклик після затримки чи події).
-
-// Приклад із синхронним колбеком
-function processData(data, callback) {
-  console.log('Processing data: ' + data);
-  callback(data); // Виклик колбека з переданими даними
-}
-
-function handleResult(result) {
-  console.log('Result handled: ' + result);
-}
-
-processData('User Info', handleResult); // Передаємо handleResult як колбек
-
-// Приклад із асинхронним колбеком
-function fetchData(url, callback) {
-  console.log('Fetching data from: ' + url);
-  setTimeout(() => {
-    const data = { id: 1, name: 'Bohdan' };
-    callback(data); // Виклик колбека після "імітації" затримки
-  }, 2000);
-}
-
-function displayData(data) {
-  console.log('Data received: ' + JSON.stringify(data));
-}
-
-fetchData('http://example.com/api', displayData); // Асинхронний виклик
-*/
 
 /* //! Callback (Колбек-функція)
 TODO: Функція, передана як аргумент іншій функції, яка викликається після завершення певної дії.
@@ -222,8 +188,21 @@ TODO: Функція, передана як аргумент іншій функ
  *   - Прості асинхронні операції (таймери, події).
  *   - Колбеки в методах масиву (forEach, map, filter).
  *   - Старі API без Promises.
+*/
+/* //! Callback (Колбек-функція) (Синхронний колбек)
+TODO: Найпростіший приклад із синхронним колбеком
+function sayHello(callback) {
+  callback(); // Виклик колбека одразу
+}
 
-TODO: Приклад із синхронним колбеком
+function hello() {
+  console.log('Hello!');
+}
+
+sayHello(hello); // Передаємо hello як колбек
+Результат: - Hello!
+
+TODO: Приклад трохи складніш:
 function processData(data, callback) {
   console.log('Processing data: ' + data);
   callback(data); // Виклик колбека з переданими даними
@@ -234,16 +213,31 @@ function handleResult(result) {
 }
 
 processData('User Info', handleResult); // Передаємо handleResult як колбек
-TODO: Результат: 
- * - Processing data: User Info 
+TODO: Результат:
+ * - Processing data: User Info
  * - Result handled: User Info
+*/
+/* //! Callback (Колбек-функція) (Асинхронний колбек)
+TODO: Найпростіший приклад із асинхронним колбеком
+function waitAndSay(callback) {
+  setTimeout(callback, 1000); // Виклик колбека через 1 секунду
+}
 
-TODO: Приклад із асинхронним колбеком
+function hi() {
+  console.log('Hi!');
+}
+
+waitAndSay(hi); // Передаємо hi як колбек
+Результат:
+ * - [через 1 секунду]
+ * - Hi!
+
+TODO: Приклад трохи складніш:
 function fetchData(url, callback) {
   console.log('Fetching data from: ' + url);
   setTimeout(() => {
     const data = { id: 1, name: 'Bohdan' };
-    callback(data); // Виклик колбека після "імітації" затримки
+    callback(data); // Виклик колбека після затримки
   }, 2000);
 }
 
@@ -256,5 +250,4 @@ TODO: Результат:
  * - Fetching data from: http://example.com/api
  * - [через 2 секунди]
  * - Data received: {"id":1,"name":"Bohdan"}
- * є простіше приклади? чи це самі прості?
 */
