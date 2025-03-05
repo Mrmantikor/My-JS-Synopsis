@@ -1,1 +1,1 @@
-# My-Training-JS.
+# My-Training-JS
