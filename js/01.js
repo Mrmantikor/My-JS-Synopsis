@@ -115,20 +115,18 @@ console.log(areEqual(0.1 + 0.2, 0.3)); -→ true
 console.log(NaN === NaN); -→ false ❌
 console.log(Object.is(NaN, NaN)); -→ true ✅
 */
-/* //! toFixed() (Заокруглює число та перетворює в рядок)
-TODO – використовується для округлення числа до заданої кількості знаків після коми та перетворення їх у рядок.
--//! Округлює число за математичними правилами
-console.log((12.3456).toFixed(2)); // "12.35
-TODO
-console.log(0.1 + 0.2);
-console.log((0.1 + 0.2).toFixed(1));
-console.log(Number((0.1 + 0.2).toFixed(1)));
-console.log((12345.6459).toFixed(1));
-TODO
-let num = 12.3456;
-console.log(num.toFixed(2)); // "12.35"
-console.log(num.toFixed(0)); // "12"
-console.log(num.toFixed(5)); // "12.34560"
+/* //! toFixed() (Заокруглення числа до рядка з фіксованою кількістю знаків)
+TODO: Округляє число до вказаної кількості знаків після коми та повертає його як рядок.
+ * - Приймає один аргумент — кількість знаків після коми (від 0 до 100).
+ * - Округлення виконується за математичними правилами (до найближчого значення).
+ * - Додає нулі, якщо знаків після коми недостатньо, або відсікає зайві.
+ * - Повертає рядок, а не число (для числового результату потрібне додаткове перетворення).
+console.log((12.3456).toFixed(2)); // Виведе: '12.35'
+console.log((0.1 + 0.2).toFixed(1)); // Виведе: '0.3'
+console.log(Number((0.1 + 0.2).toFixed(1))); // Виведе: 0.3
+console.log((12345.6459).toFixed(1)); // Виведе: '12345.6'
+console.log((0.1 + 0.2)); // Виведе: 0.30000000000000004 (неточність двійкової арифметики)
+console.log((12.3456).toFixed(0)); // Виведе: '12'
 */
 /* //! Infinity (Безкінечність)
 console.log(1e1000);
@@ -264,8 +262,7 @@ let x = 8;
 x **= 5;
 console.log(x); // 32768
 */
-
-//#endregion
+//? Рядки
 /* //! typeof
 TODO: typeof використовується для перевірки типу змінної або значення. Важливо пам’ятати, що для null він повертає "object" — це відома особливість JavaScript.
 
@@ -319,7 +316,6 @@ console.log(('Text' + NaN) / ('yes' + false)); // Виведе: NaN
 console.log((null + 'end') / (0 + 1)); // Виведе: NaN
 console.log((undefined + 'start') * ('' + false)); // Виведе: NaN
 */
-
 /* //! `` Шаблонні рядки (Template Literals) (Backtick - Бектіки)
 TODO: Створює рядок із використанням зворотних лапок, дозволяючи вбудовувати вирази через ${} і писати багатострокові рядки.
  * - Використовуються зворотні лапки (``) замість одинарних або подвійних лапок.
@@ -332,7 +328,6 @@ const lastName = prompt('Введіть ваше прізвище!');
 const message = `Hello ${firstName} ${lastName}, you are logged in.`;
 alert(message);
 */
-
 /* //! Явне перетворення рядків (Explicit String Conversion)
 TODO: Перетворює значення в рядок за допомогою спеціальних методів чи функцій, таких як String() або .toString().
  * - Використовується для явного приведення значення до рядкового типу.
@@ -345,7 +340,6 @@ console.log((0).toString()); // Виведе: '0'
 console.log(String(null)); // Виведе: 'null'
 
 */
-
 /* //! length (Властивість довжини - Length Property)
 TODO: Повертає кількість елементів у рядку (символів) або масиві (елементів).
  * - Доступна для рядків (кількість символів у кодуванні UTF-16) і масивів (кількість індексованих елементів).
@@ -355,9 +349,7 @@ TODO: Повертає кількість елементів у рядку (си
 console.log('Hello'.length); // Виведе: 5
 console.log([1, 2, 3].length); // Виведе: 3
 console.log(''.length); // Виведе: 0
-console.log(['a', null, 42].length); // Виведе: 3
 */
-
 /* //! indexOf() (Пошук індексу - Index Of)
 TODO: Повертає індекс першого входження вказаного значення в рядку або масиві, або -1, якщо значення не знайдено.
  * - Для рядків: шукає підрядок, повертає позицію першого символу.
@@ -366,13 +358,24 @@ TODO: Повертає індекс першого входження вказа
  * - Чутливий до регістру для рядків, для масивів порівнює тип і значення.
 console.log('Hello'.indexOf('l')); // Виведе: 2
 console.log([1, 2, 3].indexOf(2)); // Виведе: 1
-console.log(''.indexOf('a')); // Виведе: -1
-console.log(['a', null, 42].indexOf(null)); // Виведе: 1
-console.log((undefined && '').indexOf('')); // Виведе: 0
-console.log(('Hi' + '').indexOf('i') * ('yes' + true).indexOf('e')); // Виведе: 1
-console.log(('NaN' + '').indexOf('N') - ('no'.indexOf('o'))); // Виведе: 0
-console.log(('Code' + 5).indexOf('5') + ('nope'.indexOf('p'))); // Виведе: 6
-console.log(('Text' + NaN).indexOf('NaN') / ('yes'.indexOf('s'))); // Виведе: 2
-console.log((null + 'end').indexOf('e') / ([0, 1, 2].indexOf(1))); // Виведе: 1
-console.log((undefined + 'start').indexOf('t') * (''.indexOf('x'))); // Виведе: -3
+console.log('Hello'.indexOf('x')); // Виведе: -1
+
+const howIndex = 'Bohdan';
+console.log(howIndex[2]); // Виведе: 'h' (доступ до символу за індексом 2)
+console.log(howIndex[6]); // Виведе: undefined (індекс поза межами рядка)
+console.log(howIndex[howIndex.length - 1]); // Виведе: 'n' (останній символ)
+console.log(howIndex.indexOf(howIndex[howIndex.length - 1])); // Виведе: 5 (індекс останнього символу 'n')
 */
+/* //! charCodeAt() (Код символу за індексом - Character Code At)
+TODO: Повертає числовий код UTF-16 символу в рядку за вказаним індексом.
+ * - Приймає один аргумент — індекс символу (ціле число, від 0 до length - 1).
+ * - Повертає ціле число від 0 до 65535, яке відповідає коду UTF-16 символу.
+ * - Якщо індекс поза межами рядка або не вказано, повертає NaN.
+ * - Для складних символів (наприклад, емодзі) може повертати код лише однієї одиниці UTF-16.
+console.log('Hello'.charCodeAt(0)); // Виведе: 72 (код 'H')
+console.log('Hello'.charCodeAt(2)); // Виведе: 108 (код 'l')
+console.log(''.charCodeAt(0)); // Виведе: NaN (немає символів)
+console.log('Bohdan'.charCodeAt('Bohdan'.length - 1)); // Виведе: 110 (код 'n')
+console.log('Test'.charCodeAt(4)); // Виведе: NaN (індекс поза межами)
+*/
+//#endregion

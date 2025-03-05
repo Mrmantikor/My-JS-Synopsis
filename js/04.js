@@ -118,11 +118,6 @@ console.log(isAdult);
 */
 //#endregion
 
-/* //! Concat()
-TODO: Краще використовувати + замість Concat()
-const num = +prompt('Enter a number');
-console.log(`Введіть ${num} і вийде ${num + 10}`);
- */
 // #region //?_Function_Теоргія?//
 /* //! Function Declaration() 
 TODO: (Можна викликати ДО оголошення функції в коді). Перевага в тому, що окремо в коді можна створити "Регіон" з аргументами і окремо "Регіон" з функціями
