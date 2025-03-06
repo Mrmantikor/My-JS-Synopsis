@@ -356,26 +356,3 @@ input;
 focus;
 blur;
 */
-
-//#region Блок if-else
-/* //! console.time() і console.timeEnd() (Вимірювання часу виконання)
-TODO: Вимірює час у мілісекундах між викликом console.time() і console.timeEnd().
-TODO: performance.now() — для точнішого вимірювання в мілісекундах.
- * - console.time(label): запускає таймер із заданим ідентифікатором (label).
- * - console.timeEnd(label): зупиняє таймер із відповідним ідентифікатором і виводить час.
- * - Аргумент label (рядок) — унікальний ідентифікатор таймера, має збігатися для пари.
- * - Повертає undefined, але виводить результат у консоль у форматі "label: час ms".
-console.time('simple-loop'); // Починає таймер із міткою 'simple-loop'
-for (let i = 0; i < 1000000; i++) {} // Простий цикл
-console.timeEnd('simple-loop'); // Виведе: 'simple-loop: X.XXX ms' (наприклад, 2.345 ms)
-
-console.time('array-sum'); // Починає таймер із міткою 'array-sum'
-const arr = [1, 2, 3, 4, 5];
-let sum = 0;
-for (const num of arr) { sum += num; }
-console.timeEnd('array-sum'); // Виведе: 'array-sum: X.XXX ms'
-
-console.time('for...of'); // Починає таймер із міткою 'for...of'
-console.timeEnd('for...of'); // Виведе: 'for...of: X.XXX ms' (дуже малий час, наприклад, 0.001 ms)
-*/
-//#endregion
