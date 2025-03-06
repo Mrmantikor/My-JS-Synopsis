@@ -211,7 +211,6 @@ for (let value = 5; value >= 0; value--) {
   }
 }
 */
-
 //#endregion
 
 //#region //? Цикли (Практика)
