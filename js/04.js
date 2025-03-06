@@ -1,4 +1,4 @@
-//#region //? String
+//#region //? String (Теорія)
 /* //! + Конкатенація рядків (String Concatenation)
 TODO: Об’єднує два операнди в один рядок, якщо хоча б один із них є рядком, або виконує додавання, якщо обидва числа.
  * - Оператор перевіряє типи операндів.
@@ -51,21 +51,23 @@ console.log('Hello'.length); // Виведе: 5
 console.log([1, 2, 3].length); // Виведе: 3
 console.log(''.length); // Виведе: 0
 */
-/* //! indexOf() (Пошук індексу - Index Of)
-TODO: Повертає індекс першого входження вказаного значення в рядку або масиві, або -1, якщо значення не знайдено.
- * - Для рядків: шукає підрядок, повертає позицію першого символу.
- * - Для масивів: шукає елемент, повертає його індекс (порівняння через ===).
+/* //! indexOf() (Пошук індексу в рядку - Index Of)
+TODO: Повертає індекс першого входження вказаного підрядка в рядку, або -1, якщо підрядок не знайдено.
+ * - Шукає підрядок у рядку і повертає номер (індекс) першого символу цього підрядка.
+ * - Індекси в рядку починаються з 0.
  * - Приймає необов’язковий другий аргумент — позицію, з якої починати пошук.
- * - Чутливий до регістру для рядків, для масивів порівнює тип і значення.
+ * - Чутливий до регістру: 'A' і 'a' — різні символи.
+
 console.log('Hello'.indexOf('l')); // Виведе: 2
-console.log([1, 2, 3].indexOf(2)); // Виведе: 1
+console.log('Hello'.indexOf('ll')); // Виведе: 2
 console.log('Hello'.indexOf('x')); // Виведе: -1
+console.log('Hello'.indexOf('l', 3)); // Виведе: 3 (пошук із позиції 3)
 
 const howIndex = 'Bohdan';
-console.log(howIndex[2]); // Виведе: 'h' (доступ до символу за індексом 2)
-console.log(howIndex[6]); // Виведе: undefined (індекс поза межами рядка)
-console.log(howIndex[howIndex.length - 1]); // Виведе: 'n' (останній символ)
-console.log(howIndex.indexOf(howIndex[howIndex.length - 1])); // Виведе: 5 (індекс останнього символу 'n')
+console.log(howIndex.indexOf('h')); // Виведе: 2 (перше 'h')
+console.log(howIndex.indexOf('dan')); // Виведе: 3 (початок 'dan')
+console.log(howIndex.indexOf('n')); // Виведе: 5 (перше 'n')
+console.log(howIndex.indexOf('n', howIndex.length - 1)); // Виведе: 5 (пошук із передостанньої позиції)
 */
 /* //! charCodeAt() (Код символу за індексом - Character Code At)
 TODO: Повертає числовий код UTF-16 символу в рядку за вказаним індексом.
@@ -249,5 +251,32 @@ console.log(text.includes('I', 1));    // Виведе: false (починає п
 TODO: Приклад із чутливістю до регістру
 const phrase = 'JavaScript';
 console.log(phrase.includes('java')); // Виведе: false (регістр не збігається)
+*/
+//#endregion
+//#region //? String (Практика)
+/*  //! repeat()
+TODO: Напишіть функцію, яка отримує ціле невід'ємне число n та рядок s у якості параметрів і повертає рядок s, який повторюється рівно n разів.
+function repeatStr(n, s) {
+return ''
+}
+console.log(repeatStr(5, 'I'));
+console.log(repeatStr(6, 'Hello'));
+console.log(repeatStr(3, '*'));
+console.log(repeatStr(5, '-'));
+
+Приклади (вхід -> вихід)
+«I» -> «IIIIII»
+«Hello» -> «HelloHelloHelloHelloHelloHello»
+
+.//? Рішення задачі:
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+
+console.log(repeatStr(5, 'I'));
+console.log(repeatStr(6, 'Hello'));
+console.log(repeatStr(3, '*'));
+console.log(repeatStr(5, '-'));
+
 */
 //#endregion

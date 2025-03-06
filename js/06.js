@@ -1,4 +1,4 @@
-//#region //? Цикли
+//#region //? Цикли (Теорія)
 /* //! Префікс і Постфікс (Prefix and Postfix Operators)
 TODO: Оператори ++ і --, які змінюють значення змінної на 1, із різницею в моменті повернення значення.
  * - Префікс (++x, --x): спочатку змінює значення змінної, потім повертає нове значення.
@@ -212,4 +212,31 @@ for (let value = 5; value >= 0; value--) {
 }
 */
 
+//#endregion
+
+//#region //? Цикли (Практика)
+/* //! Math.pow() (Степінь)
+TODO: Доповніть функцію квадратної суми так, щоб вона повертала в квадрат кожне передане їй число, а потім додати результат
+function squareSum(numbers) {
+}
+
+console.log(squareSum([1, 2]));
+console.log(squareSum([1, 2, 3]));
+console.log(squareSum([0, 3, 4, 5]));
+console.log(squareSum([0]));
+
+.//? Рішення
+function squareSum(numbers) {
+  let sum = 0;
+  for (let number of numbers) {
+    sum += Math.pow(number, 2);
+  }
+  return sum;
+}
+
+console.log(squareSum([1, 2]));
+console.log(squareSum([1, 2, 3]));
+console.log(squareSum([0, 3, 4, 5]));
+console.log(squareSum([0]));
+*/
 //#endregion
