@@ -198,3 +198,61 @@ foo('Hello', 'World', 'World1', 'World2', 'World3', 'World4');
 */
 
 // #endregion
+/* //! Array-like Object (Псевдомасив)
+TODO: Об’єкт, який виглядає як масив, має числові індекси та властивість length, але не є справжнім масивом.
+ * - Псевдомасив — це об’єкт із ключами як числа (0, 1, 2...) і властивістю length.
+ * - Не має методів масиву, як push чи slice, але схожий на масив за структурою.
+ * - Часто зустрічається в аргументах функцій (arguments) чи результатах DOM-запитів (NodeList).
+ * - Можна перетворити в справжній масив за допомогою Array.from або спред-оператора (...).
+
+TODO: Приклад із arguments у функції
+function showArgs() {
+  console.log(arguments); // Виводить: { '0': 'hello', '1': 'world', length: 2 }
+  console.log(arguments[0]); // Виводить: 'hello'
+  console.log(arguments.length); // Виводить: 2
+}
+showArgs('hello', 'world');
+
+TODO: Приклад із NodeList (з DOM)
+let divs = document.querySelectorAll('div');
+console.log(divs); // Виводить: NodeList (псевдомасив із елементами div)
+console.log(divs[0]); // Виводить: перший div (якщо є)
+console.log(divs.length); // Виводить: кількість div-ів
+
+TODO: Перетворення псевдомасиву в масив
+function convertArgs() {
+  let realArray = Array.from(arguments);
+  console.log(realArray); // Виводить: ['apple', 'banana']
+}
+convertArgs('apple', 'banana');
+*/
+
+/* //! arguments (Об’єкт аргументів функції)
+TODO: Псевдомасив, який містить усі аргументи, передані у функцію.
+ * - arguments — це спеціальний об’єкт, доступний усередині функції.
+ * - Виглядає як масив: має числові індекси (0, 1, 2...) і властивість length.
+ * - Не є справжнім масивом, тому методи типу push чи slice не працюють.
+ * - Збирає усі аргументи, навіть якщо їх не вказали в параметрах функції.
+
+// Простий приклад
+function showArgs() {
+  console.log(arguments); // Виводить: { '0': 'apple', '1': 'banana', length: 2 }
+  console.log(arguments[0]); // Виводить: 'apple'
+  console.log(arguments.length); // Виводить: 2
+}
+showArgs('apple', 'banana');
+
+// Приклад із параметрами
+function add(a, b) {
+  console.log(arguments[0] + arguments[1]); // Виводить: 7
+  console.log(arguments.length); // Виводить: 3 (усі передані аргументи)
+}
+add(2, 5, 10);
+
+// Перетворення в масив
+function listArgs() {
+  let realArray = Array.from(arguments);
+  console.log(realArray); // Виводить: [1, 2, 3]
+}
+listArgs(1, 2, 3);
+*/
