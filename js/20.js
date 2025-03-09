@@ -198,4 +198,3 @@ TODO: Видалення даних
 sessionStorage.removeItem('name');
 console.log(sessionStorage.getItem('name')); // Виводить: null
 */
-console.log('h');
