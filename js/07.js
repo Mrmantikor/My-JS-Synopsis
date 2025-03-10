@@ -27,6 +27,63 @@ console.log(fruits); // Виводить: ['grape', 'kiwi']
 TODO: Останній елемент після перезапису
 console.log(fruits[fruits.length - 1]); // Виводить: 'kiwi'
 */
+/* //! Array-like Object (Псевдомасив)
+TODO: Об’єкт, який виглядає як масив, має числові індекси та властивість length, але не є справжнім масивом.
+ * - Псевдомасив — це об’єкт із ключами як числа (0, 1, 2...) і властивістю length.
+ * - Не має методів масиву, як push чи slice, але схожий на масив за структурою.
+ * - Часто зустрічається в аргументах функцій (arguments) чи результатах DOM-запитів (NodeList).
+ * - Можна перетворити в справжній масив за допомогою Array.from або спред-оператора (...).
+
+TODO: Приклад із arguments у функції
+function showArgs() {
+  console.log(arguments); // Виводить: { '0': 'hello', '1': 'world', length: 2 }
+  console.log(arguments[0]); // Виводить: 'hello'
+  console.log(arguments.length); // Виводить: 2
+}
+showArgs('hello', 'world');
+
+TODO: Приклад із NodeList (з DOM)
+let divs = document.querySelectorAll('div');
+console.log(divs); // Виводить: NodeList (псевдомасив із елементами div)
+console.log(divs[0]); // Виводить: перший div (якщо є)
+console.log(divs.length); // Виводить: кількість div-ів
+
+TODO: Перетворення псевдомасиву в масив
+function convertArgs() {
+  let realArray = Array.from(arguments);
+  console.log(realArray); // Виводить: ['apple', 'banana']
+}
+convertArgs('apple', 'banana');
+*/
+/* //! arguments (Об’єкт аргументів функції)
+TODO: Псевдомасив, який містить усі аргументи, передані у функцію.
+ * - arguments — це спеціальний об’єкт, доступний усередині функції.
+ * - Виглядає як масив: має числові індекси (0, 1, 2...) і властивість length.
+ * - Не є справжнім масивом, тому методи типу push чи slice не працюють.
+ * - Збирає усі аргументи, навіть якщо їх не вказали в параметрах функції.
+
+TODO: Простий приклад
+function showArgs() {
+  console.log(arguments); // Виводить: { '0': 'apple', '1': 'banana', length: 2 }
+  console.log(arguments[0]); // Виводить: 'apple'
+  console.log(arguments.length); // Виводить: 2
+}
+showArgs('apple', 'banana');
+
+TODO: Приклад із параметрами
+function add(a, b) {
+  console.log(arguments[0] + arguments[1]); // Виводить: 7
+  console.log(arguments.length); // Виводить: 3 (усі передані аргументи)
+}
+add(2, 5, 10);
+
+TODO: Перетворення в масив
+function listArgs() {
+  let realArray = Array.from(arguments);
+  console.log(realArray); // Виводить: [1, 2, 3]
+}
+listArgs(1, 2, 3);
+*/
 /* //! join (Об’єднання елементів масиву в рядок)
 TODO: Бере всі елементи масиву і з’єднує їх у один рядок.
  * - Не змінює масив, повертає новий рядок.
@@ -169,90 +226,242 @@ let empty = [];
 console.log(empty.pop()); // Виводить: undefined
 console.log(empty); // Виводить: []
 */
+/* //! forEach (Перебирання елементів масиву)
+TODO: Виконує задану функцію для кожного елемента масиву, нічого не повертаючи.
+ * - array.forEach(callback) — метод масиву, який викликає функцію callback для кожного елемента.
+ * - Не змінює оригінальний масив напряму, але функція всередині може його змінити.
+ * - Не створює новий масив, повертає undefined.
+ * - Корисно для виконання дій із кожним елементом, наприклад, виведення в консоль.
 
+TODO: Синтаксис:
+array.forEach((element, index, array) => {
+  Виконуємо щось із елементом
+});
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+
+TODO: Приклади:
+let numbers = [1, 2, 3, 4];
+numbers.forEach(num => console.log(num * 2)); // Виводить: 2, 4, 6, 8 (по черзі)
+console.log(numbers); // Виводить: [1, 2, 3, 4] (оригінал не змінився)
+
+let names = ['josh', 'anna'];
+names.forEach(name => console.log(name.toUpperCase())); // Виводить: 'JOSH', 'ANNA' (по черзі)
+
+let fruits = ['apple', 'banana', 'kiwi'];
+fruits.forEach((fruit, index) => console.log(`${index}: ${fruit}`)); // Виводить: '0: apple', '1: banana', '2: kiwi'
+
+console.log(numbers.forEach(num => num + 1)); // Виводить: undefined (нічого не повертає)
+*/
+/* //! map (Перетворення масиву)
+TODO: Створює новий масив, застосовуючи функцію до кожного елемента старого масиву.
+ * - array.map(callback) — метод масиву, який повертає новий масив із результатами функції callback.
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+ * - Не змінює оригінальний масив, а створює новий, такої самої довжини
+ * - Корисно для перетворення даних, наприклад, подвоєння чисел чи зміни рядків.
+
+TODO: Синтаксис:
+array.map((element, index, array) => {
+  Повертаємо нове значення для елемента
+});
+
+TODO: Приклади:
+let numbers = [1, 2, 3, 4];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // Виводить: [2, 4, 6, 8]
+console.log(numbers); // Виводить: [1, 2, 3, 4] (оригінал не змінився)
+
+let names = ['josh', 'anna'];
+let upperNames = names.map(name => name.toUpperCase());
+console.log(upperNames); // Виводить: ['JOSH', 'ANNA']
+
+let fruits = ['apple', 'banana'];
+let indexed = fruits.map((fruit, index) => `${index}: ${fruit}`);
+console.log(indexed); // Виводить: ['0: apple', '1: banana']
+*/
+/* //! flatMap (Перетворення та розгортання масиву)
+TODO: Створює новий масив, застосовуючи функцію до кожного елемента старого масиву і розгортаючи вкладені масиви на один рівень.
+ * - array.flatMap(callback) — метод масиву, який повертає новий масив із результатами функції callback, розплющуючи вкладені масиви.
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+ * - Не змінює оригінальний масив, а створює новий.
+ * - Корисно для перетворення даних із розгортанням, наприклад, подвоєння чисел у плоскому списку.
+ * - Відмінність від map: map залишає вкладені масиви як є, flatMap розгортає їх на один рівень.
+
+TODO: Синтаксис:
+array.flatMap((element, index, array) => {
+  Повертаємо значення (може бути масивом, який розгорнеться)
+});
+
+TODO: Приклади:
+let numbers = [1, 2, 3, 4];
+let doubled = numbers.flatMap(num => [num, num * 2]);
+console.log(doubled); // Виводить: [1, 2, 2, 4, 3, 6, 4, 8]
+console.log(numbers); // Виводить: [1, 2, 3, 4] (оригінал не змінився)
+
+let names = ['josh', 'anna'];
+let splitNames = names.flatMap(name => name.split(''));
+console.log(splitNames); // Виводить: ['j', 'o', 's', 'h', 'a', 'n', 'n', 'a']
+
+let fruits = ['apple', 'banana'];
+let indexed = fruits.flatMap((fruit, index) => [`${index}: ${fruit}`]);
+console.log(indexed); // Виводить: ['0: apple', '1: banana']
+*/
+/* //! filter (Фільтрація елементів масиву)
+TODO: Створює новий масив із елементами, відібраними за певним критерієм із колекції.
+ * - array.filter(callback) — метод масиву, який використовується для єдиної операції — фільтрації масиву, що відповідають умові колбек-функції.
+ * - Не змінює оригінальний масив.
+ * - Поелементно перебирає оригінальний масив.
+ * - Повертає новий масив із елементами, які задовольняють умову.
+ * - Якщо колбек повернув true, елемент додається в масив, що повертається.
+ * - Якщо колбек повернув false, елемент не додається в масив, що повертається.
+ * - Якщо жоден елемент не задовольнив умову, повертає порожній масив.
+
+TODO: Синтаксис:
+array.filter((element, index, array) => {
+  Повертаємо true, якщо елемент залишається, або false, якщо його прибрати
+});
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+
+TODO: Приклади:
+let numbers = [1, 6, 3, 8, 4];
+let bigNumbers = numbers.filter(num => num > 5);
+console.log(bigNumbers); // Виводить: [6, 8] (елементи > 5)
+console.log(numbers); // Виводить: [1, 6, 3, 8, 4] (оригінал не змінився)
+
+let names = ['josh', 'anna', 'bob'];
+let longNames = names.filter(name => name.length > 3);
+console.log(longNames); // Виводить: ['josh', 'anna'] (імена довші за 3 символи)
+
+let fruits = ['apple', 'banana', 'kiwi'];
+let indexedFilter = fruits.filter((fruit, index) => index > 0);
+console.log(indexedFilter); // Виводить: ['banana', 'kiwi'] (елементи з індексом > 0)
+
+let smallNumbers = [1, 2, 3];
+let noneFit = smallNumbers.filter(num => num > 5);
+console.log(noneFit); // Виводить: [] (жоден елемент не підійшов)
+*/
+/* //! find (Пошук першого елемента в масиві)
+TODO: Знаходить і повертає перший елемент масиву, який відповідає умові, заданій у функції.
+ * - array.find(callback) — метод масиву, який використовується для єдиної операції — пошуку першого відповідного елемента, що відповідає умові колбек-функції.
+ * - Не змінює оригінальний масив.
+ * - Поелементно перебирає оригінальний масив.
+ * - Повертає перший елемент, який задовольняє умову, або undefined, якщо такого немає.
+ * - Якщо колбек повернув true, повертається поточний елемент і перебирання зупиняється.
+ * - Якщо колбек повернув false для всіх елементів, повертається undefined.
+ * - Різниця з filter: filter повертає масив усіх відповідних елементів, find — лише перший елемент.
+
+TODO: Синтаксис:
+array.find((element, index, array) => {
+  Повертаємо true, якщо елемент підходить, або false, якщо ні
+});
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+
+TODO: Приклади:
+let numbers = [1, 6, 3, 8, 4];
+let firstBig = numbers.find(num => num > 5);
+console.log(firstBig); // Виводить: 6 (перший елемент > 5)
+console.log(numbers); // Виводить: [1, 6, 3, 8, 4] (оригінал не змінився)
+
+let names = ['josh', 'anna', 'bob'];
+let longName = names.find(name => name.length > 3);
+console.log(longName); // Виводить: 'josh' (перше ім’я довше 3 символів)
+
+let fruits = ['apple', 'banana', 'kiwi'];
+let foundFruit = fruits.find((fruit, index) => index > 0);
+console.log(foundFruit); // Виводить: 'banana' (перший елемент із індексом > 0)
+
+let smallNumbers = [1, 2, 3];
+let notFound = smallNumbers.find(num => num > 5);
+console.log(notFound); // Виводить: undefined (жоден елемент не підійшов)
+*/
+/* //! every (Перевірка всіх елементів масиву)
+TODO: Перевіряє, чи всі елементи масиву відповідають умові, заданій у функції, і повертає true або false.
+ * - array.every(callback) — метод масиву, який повертає true, якщо кожен елемент проходить перевірку callback.
+ * - Не змінює оригінальний масив.
+ * - Повертає true, якщо всі елементи задовольняють умову, і false, якщо хоча б один ні.
+ * - Зупиняється, щойно знаходить перший елемент, який не підходить.
+ * - Корисно для перевірки, наприклад, чи всі числа більше 0.
+
+TODO: Синтаксис:
+array.every((element, index, array) => {
+  Повертаємо true, якщо елемент підходить, або false, якщо ні
+});
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+
+TODO: Приклади:
+let numbers = [2, 4, 6, 8];
+let allEven = numbers.every(num => num % 2 === 0);
+console.log(allEven); // Виводить: true (усі числа парні)
+console.log(numbers); // Виводить: [2, 4, 6, 8] (оригінал не змінився)
+
+let mixed = [2, 4, 5, 8];
+let allEvenMixed = mixed.every(num => num % 2 === 0);
+console.log(allEvenMixed); // Виводить: false (5 — непарне)
+
+let names = ['josh', 'anna', 'bob'];
+let allLong = names.every(name => name.length > 2);
+console.log(allLong); // Виводить: true (усі імена довші за 2 символи)
+
+let fruits = ['apple', 'banana', 'kiwi'];
+let allShort = fruits.every(fruit => fruit.length < 4);
+console.log(allShort); // Виводить: false (apple і banana довші за 4)
+*/
+/* //! some (Перевірка хоча б одного елемента масиву)
+TODO: Перевіряє, чи хоча б один елемент масиву відповідає умові, заданій у функції, і повертає true або false.
+ * - array.some(callback) — метод масиву, який повертає true, якщо хоча б один елемент проходить перевірку callback.
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+ * - Не змінює оригінальний масив.
+ * - Повертає true, якщо хоча б один елемент задовольняє умову, і false, якщо жоден.
+ * - Зупиняється, щойно знаходить перший елемент, який підходить.
+ * - Корисно для перевірки, наприклад, чи є в масиві число більше 5.
+
+TODO: Синтаксис:
+array.some((element, index, array) => {
+  Повертаємо true, якщо елемент підходить, або false, якщо ні
+});
+
+TODO: Приклади:
+let numbers = [1, 3, 5, 8];
+let hasBig = numbers.some(num => num > 5);
+console.log(hasBig); // Виводить: true (8 > 5)
+console.log(numbers); // Виводить: [1, 3, 5, 8] (оригінал не змінився)
+
+let mixed = [1, 2, 3, 4];
+let hasEven = mixed.some(num => num % 2 === 0);
+console.log(hasEven); // Виводить: true (2 — парне)
+
+let names = ['josh', 'anna', 'bob'];
+let hasLong = names.some(name => name.length > 4);
+console.log(hasLong); // Виводить: true ('josh' має 4 символи, але 'anna' ні, зупиняється на першому true)
+
+let fruits = ['apple', 'banana', 'kiwi'];
+let hasShort = fruits.some(fruit => fruit.length < 4);
+console.log(hasShort); // Виводить: true ('kiwi' має 4, але зупиняється раніше, якщо є коротше)
+*/
 //#endregion
 
-// #region //?_Массиви_Теоргія?//
-/* //! Псевдомасив, Масив, Перебір масиву
-TODO: Псевдомасив
-const foo = function () {
-  console.log('arguments:', arguments);
-}
-foo('Hello', 'World', 'World', 'World', 'World', 'World');
-TODO: Створення масиву args
-const foo = function () {
-  const args = Array.from(arguments); 
-  console.log('args:', args);
-};
-foo('Hello', 'World', 'World1', 'World2', 'World3', 'World4');
-TODO: Перебирає кожен аргумент МАСИВУ і виводить в консоль
-const foo = function () {
-  const args = Array.from(arguments); 
-  console.log('args:', args);
-
-  for (const arg of arguments) {
-  console.log(arg);
-  }
-};
-foo('Hello', 'World', 'World1', 'World2', 'World3', 'World4');
+// #region //? Массиви (Практика)
+/*
+this
 */
-
 // #endregion
-/* //! Array-like Object (Псевдомасив)
-TODO: Об’єкт, який виглядає як масив, має числові індекси та властивість length, але не є справжнім масивом.
- * - Псевдомасив — це об’єкт із ключами як числа (0, 1, 2...) і властивістю length.
- * - Не має методів масиву, як push чи slice, але схожий на масив за структурою.
- * - Часто зустрічається в аргументах функцій (arguments) чи результатах DOM-запитів (NodeList).
- * - Можна перетворити в справжній масив за допомогою Array.from або спред-оператора (...).
-
-TODO: Приклад із arguments у функції
-function showArgs() {
-  console.log(arguments); // Виводить: { '0': 'hello', '1': 'world', length: 2 }
-  console.log(arguments[0]); // Виводить: 'hello'
-  console.log(arguments.length); // Виводить: 2
-}
-showArgs('hello', 'world');
-
-TODO: Приклад із NodeList (з DOM)
-let divs = document.querySelectorAll('div');
-console.log(divs); // Виводить: NodeList (псевдомасив із елементами div)
-console.log(divs[0]); // Виводить: перший div (якщо є)
-console.log(divs.length); // Виводить: кількість div-ів
-
-TODO: Перетворення псевдомасиву в масив
-function convertArgs() {
-  let realArray = Array.from(arguments);
-  console.log(realArray); // Виводить: ['apple', 'banana']
-}
-convertArgs('apple', 'banana');
-*/
-
-/* //! arguments (Об’єкт аргументів функції)
-TODO: Псевдомасив, який містить усі аргументи, передані у функцію.
- * - arguments — це спеціальний об’єкт, доступний усередині функції.
- * - Виглядає як масив: має числові індекси (0, 1, 2...) і властивість length.
- * - Не є справжнім масивом, тому методи типу push чи slice не працюють.
- * - Збирає усі аргументи, навіть якщо їх не вказали в параметрах функції.
-
-// Простий приклад
-function showArgs() {
-  console.log(arguments); // Виводить: { '0': 'apple', '1': 'banana', length: 2 }
-  console.log(arguments[0]); // Виводить: 'apple'
-  console.log(arguments.length); // Виводить: 2
-}
-showArgs('apple', 'banana');
-
-// Приклад із параметрами
-function add(a, b) {
-  console.log(arguments[0] + arguments[1]); // Виводить: 7
-  console.log(arguments.length); // Виводить: 3 (усі передані аргументи)
-}
-add(2, 5, 10);
-
-// Перетворення в масив
-function listArgs() {
-  let realArray = Array.from(arguments);
-  console.log(realArray); // Виводить: [1, 2, 3]
-}
-listArgs(1, 2, 3);
-*/
