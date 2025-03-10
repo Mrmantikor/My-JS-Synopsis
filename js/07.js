@@ -458,6 +458,90 @@ let fruits = ['apple', 'banana', 'kiwi'];
 let hasShort = fruits.some(fruit => fruit.length < 4);
 console.log(hasShort); // Виводить: true ('kiwi' має 4, але зупиняється раніше, якщо є коротше)
 */
+/* //! reduce (Агрегація значень у масиві)
+TODO: Метод reduce() використовується для обчислення єдиного значення на основі всіх елементів масиву.
+ * - array.reduce(callback, initialValue) — виконує передану функцію-колбек для кожного елемента масиву, накопичуючи результат.
+ * - callback(accumulator, element, index, array) — функція, яка викликається для кожного елемента:
+ *   - accumulator — проміжний результат, що зберігає значення між викликами.
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
+ * - initialValue — початкове значення для accumulator (необов’язковий параметр).
+ * - Не змінює оригінальний масив.
+ * - Використовується для підсумовування, знаходження максимального значення, зведення масиву в об’єкт тощо.
+
+TODO: Синтаксис:
+array.reduce((accumulator, element, index, array) => {
+  Оновлення accumulator на основі element
+}, initialValue);
+
+TODO: Приклади:
+let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Виводить: 15 (1 + 2 + 3 + 4 + 5)
+
+let max = numbers.reduce((acc, num) => (num > acc ? num : acc), numbers[0]);
+console.log(max); // Виводить: 5 (максимальне число)
+
+let words = ['Hello', 'World'];
+let sentence = words.reduce((acc, word) => acc + ' ' + word);
+console.log(sentence); // Виводить: "Hello World"
+
+let products = [
+  { name: 'Laptop', price: 1000 },
+  { name: 'Mouse', price: 50 },
+  { name: 'Keyboard', price: 150 }
+];
+let totalPrice = products.reduce((acc, product) => acc + product.price, 0);
+console.log(totalPrice); // Виводить: 1200 (сума всіх цін)
+
+let letters = ['a', 'b', 'c', 'a', 'b', 'a'];
+let count = letters.reduce((acc, letter) => {
+  acc[letter] = (acc[letter] || 0) + 1;
+  return acc;
+}, {});
+console.log(count); // Виводить: { a: 3, b: 2, c: 1 }
+*/
+/* //! toSorted (Сортування масиву без зміни оригіналу)
+TODO: Метод toSorted() створює новий відсортований масив, не змінюючи вихідний.
+ * - array.toSorted(compareFunction) — повертає новий масив з елементами, відсортованими за переданою функцією порівняння.
+ * - compareFunction(a, b) — функція порівняння, яка визначає порядок сортування:
+ *   - Повертає від’ємне число, якщо a має бути перед b.
+ *   - Повертає позитивне число, якщо a має бути після b.
+ *   - Повертає 0, якщо порядок не змінюється.
+ * - Якщо compareFunction не передано, елементи сортуються як рядки за Unicode.
+ * - Оригінальний масив не змінюється (на відміну від sort()).
+ * - Корисно, якщо потрібно зберегти вихідний масив недоторканим.
+
+TODO: Синтаксис:
+array.toSorted((a, b) => {
+  Логіка сортування
+});
+
+TODO: Приклади:
+let numbers = [5, 3, 8, 1, 2];
+let sortedNumbers = numbers.toSorted((a, b) => a - b);
+console.log(sortedNumbers); // Виводить: [1, 2, 3, 5, 8]
+console.log(numbers); // Виводить: [5, 3, 8, 1, 2] (не змінився)
+
+let words = ['banana', 'apple', 'Cherry'];
+let sortedWords = words.toSorted();
+console.log(sortedWords); // Виводить: ["Cherry", "apple", "banana"] (сортує як рядки за Unicode)
+
+let users = [
+  { name: 'Anna', age: 25 },
+  { name: 'Bob', age: 22 },
+  { name: 'Charlie', age: 30 }
+];
+let sortedUsers = users.toSorted((a, b) => a.age - b.age);
+console.log(sortedUsers);
+/* Виводить:
+[
+  { name: 'Bob', age: 22 },
+  { name: 'Anna', age: 25 },
+  { name: 'Charlie', age: 30 }
+]
+*/
 //#endregion
 
 // #region //? Массиви (Практика)
