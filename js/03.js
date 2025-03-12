@@ -59,57 +59,71 @@ console.log(x); // 32768
 //#endregion
 //#region //? Логічні оператори
 /* //! && (Логічне "І" - Logical AND)
-TODO: Повертає перший неістинний (falsy) операнд або останній операнд, якщо всі істинні (truthy).
- * - Оператор перевіряє ліву частину виразу.
- * - Якщо ліве значення неістинне (falsy), він повертає це значення.
- * - Якщо ліве значення істинне (truthy), оператор перевіряє праву частину та повертає її значення.
- * - Falsy значення: false, 0, '', null, undefined, NaN. Truthy — усе інше.
-console.log(false && 'Hello'); // Виведе: false
-console.log('Hello' && 'World'); // Виведе: 'World'
-console.log(0 && 42); // Виведе: 0
-console.log(null && undefined); // Виведе: null
-console.log(undefined && '' && false && 0); // Виведе: undefined
-console.log((null && '') * (false && true)); // Виведе: 0
-console.log((NaN && '') - (false && true)); // Виведе: NaN
-console.log((NaN && '') + (false && true)); // Виведе: NaN
-console.log((NaN && '') / (false && true)); // Виведе: NaN
-console.log((null && undefined) / (0 && 1)); // Виведе: NaN
-console.log((undefined && 0) * ('' && false)); // Виведе: undefined
+TODO: Використовується для перевірки кількох умов одночасно або повернення першого "хибного" значення.
+ * - `умова1 && умова2` → Повертає `true`, якщо обидві умови `true`, або перше "хибне" значення.
+ * - Якщо перша умова `false`, другу навіть не перевіряє (оптимізація).
+ * - Якщо обидві умови `true`, повертає останнє "істинне" значення.
+ * - `false` — це "хибне" значення; зупиняє перевірку і повертається, якщо зустрічається.
+ * - Корисно для перевірки, що всі умови виконані, або для умовного виконання.
+
+TODO: Синтаксис:
+умова1 && умова2 
+
+TODO: Приклади:
+console.log(true && 'Hello'); // Виводить: 'Hello' (обидва істинні, повертає останнє)
+console.log('Hello' && 'World'); // Виводить: 'World' (обидва істинні, повертає останнє)
+console.log(false && 'Hello'); // Виводить: false (перше хибне, далі не перевіряє)
+console.log(0 && 42); // Виводить: 0 (0 — хибне, зупиняється)
+console.log(null && undefined); // Виводить: null (null — хибне, зупиняється)
+console.log('' && false && 0); // Виводить: '' (перше хибне, зупиняється)
+console.log((true && 5) + (10 && 'text')); // Виводить: '5text' (5 + 'text')
+console.log((false && 5) || (true && 10)); // Виводить: 10 (false зупиняє, 10 повертається)
+console.log((null && '') * (true && 1)); // Виводить: 0 (null * 1 = 0)
 */
 /* //! || (Логічне "АБО" - Logical OR)
-TODO: Повертає перший істинний (true) операнд, або остання істинну умову.
- * - Оператор перевіряє ліву частину виразу.
- * - Якщо ліве значення істинне (true), він повертає це значення.
- * - Якщо ліве значення неістинне (false), оператор перевіряє праву частину та повертає її значення.
-console.log(false || 'Hello');
-console.log('Hello' || 'World'); 
-console.log(0 || 42);
-console.log(null || undefined); 
-console.log(undefined || '' || false || 0); 
-console.log((null || '') * (false || true)); 
-console.log((NaN || '') - (false || true)); 
-console.log((NaN || '') + (false || true)); 
-console.log((NaN || '') / (false || true)); 
-console.log((null || undefined) / (0 || 1));
-console.log((undefined || 0) * ('' || false));
+TODO: Використовується для перевірки кількох умов одночасно або повернення першого "істинного" значення.
+ * - `умова1 || умова2` → Повертає `true`, якщо хоча б одна умова `true`, або перше "істинне" значення.
+ * - Якщо перша умова `true`, другу навіть не перевіряє (оптимізація).
+ * - Якщо обидві умови `false`, повертає останнє значення (яке є "хибним").
+ * - `false` — це "хибне" значення; у логічному "АБО" ігнорується, якщо є "істинне" далі.
+ * - Корисно для встановлення значень за замовчуванням, перевірки множинних варіантів.
+
+TODO: Синтаксис:
+умова1 || умова2 
+
+TODO: Приклади:
+console.log(false || 'Hello'); // Виводить: 'Hello' (false ігнорується, повертає перше істинне)
+console.log('Hello' || 'World'); // Виводить: 'Hello' (перше істинне, World не перевіряється)
+console.log(0 || 42); // Виводить: 42 (0 — хибне, 42 — істинне)
+console.log(null || undefined); // Виводить: undefined (null і undefined — хибні, повертає останнє)
+console.log(undefined || '' || false || 0); // Виводить: 0 (усі хибні, повертає останнє)
+console.log((null || '') * (false || true)); // Виводить: 0 ('' * true = 0 * 1 = 0)
+console.log((NaN || '') - (false || true)); // Виводить: -1 ('' - true = 0 - 1 = -1)
+console.log((NaN || '') + (false || true)); // Виводить: '01' ('' + true = '0' + '1' = '01')
+console.log((NaN || '') / (false || true)); // Виводить: 0 ('' / true = 0 / 1 = 0)
+console.log((null || undefined) / (0 || 1)); // Виводить: NaN (undefined / 1 = NaN)
+console.log((undefined || 0) * ('' || false)); // Виводить: 0 (0 * false = 0 * 0 = 0)
 */
 /* //! ?? (Оператор нульового злиття - Nullish Coalescing Operator)
-TODO: Повертає перший операнд, який не є null або undefined, або останній операнд, якщо всі є null/undefined.
- * - Оператор перевіряє ліву частину виразу.
- * - Якщо ліве значення не є null або undefined (тобто "не нульове"), він повертає це значення.
- * - Якщо ліве значення є null або undefined, оператор перевіряє праву частину та повертає її значення.
- * - На відміну від ||, ?? не вважає 0, '' або false "неістинними" — він працює лише з null і undefined.
-console.log(false ?? 'Hello'); // Виведе: false
-console.log('Hello' ?? 'World'); // Виведе: 'Hello'
-console.log(0 ?? 42); // Виведе: 0
-console.log(null ?? undefined); // Виведе: undefined
-console.log(undefined ?? '' ?? false ?? 0); // Виведе: ''
-console.log((null ?? '') * (false ?? true)); // Виведе: 0
-console.log((NaN ?? '') - (false ?? true)); // Виведе: NaN
-console.log((NaN ?? '') + (false ?? true)); // Виведе: 'false'
-console.log((NaN ?? '') / (false ?? true)); // Виведе: NaN
-console.log((null ?? undefined) / (0 ?? 1)); // Виведе: NaN
-console.log((undefined ?? 0) * ('' ?? false)); // Виведе: 0
+TODO: Повертає перше "не нульове" значення (не null і не undefined) із кількох варіантів.
+ * - `значення1 ?? значення2` → Повертає `значення1`, якщо воно не `null` і не `undefined`, інакше `значення2`.
+ * - Не вважає `false`, `0`, `''` "хибними" — тільки `null` і `undefined` є "нульовими".
+ * - Якщо перше значення не "нульове", друге не перевіряється (оптимізація).
+ * - Корисно для встановлення значень за замовчуванням, коли потрібно ігнорувати лише null/undefined.
+
+TODO: Синтаксис:
+значення1 ?? значення2 
+
+TODO: Приклади:
+console.log(null ?? 'Hello'); // Виводить: 'Hello' (null — нульове, береться друге)
+console.log(undefined ?? 'World'); // Виводить: 'World' (undefined — нульове)
+console.log(false ?? 'Yes'); // Виводить: false (false не нульове)
+console.log(0 ?? 42); // Виводить: 0 (0 не нульове)
+console.log('' ?? 'text'); // Виводить: '' (порожній рядок не нульовий)
+console.log('Hello' ?? 'World'); // Виводить: 'Hello' (перше не нульове)
+console.log((null ?? 5) + (undefined ?? 10)); // Виводить: 15 (5 + 10)
+console.log((false ?? '') * (0 ?? 1)); // Виводить: 0 (false * 1 = 0)
+console.log((null ?? undefined) ?? 'default'); // Виводить: 'default' (обидва нульові)
 */
 /* //! ! (Логічне "НЕ" - Logical NOT)
 TODO: Інвертує булеве значення операнда, повертаючи true для falsy значень і false для truthy значень.
