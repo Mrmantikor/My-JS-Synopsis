@@ -387,3 +387,62 @@ fn1(() => fn2(fn3)); // Передаємо стрілочну функцію я�
 */
 
 // #endregion
+/* //! Callback (Колбек-функція)
+TODO: Функція, яка передається як аргумент в іншу функцію і викликається пізніше.
+ * - Callback — це функція, яку передають іншій функції, щоб виконати її в потрібний момент.
+ * - Виконується після завершення певної дії (асинхронної чи синхронної).
+ * - Не має власного часу виклику, залежить від функції, якій її передали.
+ * - Часто використовується в методах масиву (map, filter) чи асинхронному коді (setTimeout).
+ * - Корисно для обробки результатів, подій чи затримок.
+
+TODO: Синтаксис:
+function ім’я(параметр, callback) {
+    Код
+  callback(); // Виклик колбеку
+}
+  Виклик: ім’я(значення, функція);
+
+TODO: Приклад 1. Простий приклад Callback
+function sayHello(callback) {
+  console.log('Готуємося...');
+  callback();
+};
+sayHello(function() {
+  console.log('Привіт!');
+}); // Виводить: 'Готуємося...' і 'Привіт!'
+
+TODO: Приклад 2. Приклад із параметрами
+function processNumber(num, callback) {
+  const result = num * 2;
+  callback(result);
+};
+processNumber(5, function(res) {
+  console.log('Результат: ' + res);
+}); // Виводить: 'Результат: 10'
+
+TODO: Приклад 3. Оголошення функцій через Callback
+const greetUser = function (firstName, lastName, callback) {
+  callback(`Welcome ${firstName} ${lastName}`);
+};
+
+const greetUser1 = function (firstName, lastName, callback) {
+  callback(`Welcome ${firstName} ${lastName}`);
+};
+
+const greetUser2 = function (firstName, lastName, callback) {
+  callback(`Welcome ${firstName} ${lastName}`);
+};
+
+TODO: Виклики функцій (можливі лише після оголошення)
+greetUser('Oleksii', 'Repin', function(message) {
+  console.log(message);
+}); // Виведе: 'Welcome Oleksii Repin'
+
+greetUser1('Phoebe', 'Howell', function(message) {
+  console.log(message);
+}); // Виведе: 'Welcome Phoebe Howell'
+
+greetUser2('Garrett', 'Cooper', function(message) {
+  console.log(message);
+}); // Виведе: 'Welcome Garrett Cooper'
+*/
