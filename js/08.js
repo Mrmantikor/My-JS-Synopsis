@@ -189,7 +189,7 @@ greetUser('Oleksii', 'Repin');    // Виведе: 'Welcome Oleksii Repin'
 greetUser1('Phoebe', 'Howell');   // Виведе: 'Welcome Phoebe Howell'
 greetUser2('Garrett', 'Cooper');  // Виведе: 'Welcome Garrett Cooper'
 */
-/* //! Callback (Колбек-функція)
+/* //! Callback (Колбек-функція) (Синхронний колбек)
 TODO: Функція, яка передається як аргумент в іншу функцію і викликається пізніше.
  * - Callback — це функція, яку передають іншій функції, щоб виконати її в потрібний момент.
  * - Виконується після завершення певної дії (асинхронної чи синхронної).
@@ -205,13 +205,16 @@ function ім’я(параметр, callback) {
   Виклик: ім’я(значення, функція);
 
 TODO: Приклад 1. Простий приклад Callback
-function sayHello(callback) {
-  console.log('Готуємося...');
-  callback();
-};
-sayHello(function() {
-  console.log('Привіт!');
-}); // Виводить: 'Готуємося...' і 'Привіт!'
+function зробити(дія) {
+  console.log('Роблю щось...');
+  дія(); // Виклик callback
+}
+
+  Виклик з callback
+зробити(function () {
+  console.log('Закінчив!');
+});
+
 
 TODO: Приклад 2. Приклад із параметрами
 function processNumber(num, callback) {
@@ -222,93 +225,55 @@ processNumber(5, function(res) {
   console.log('Результат: ' + res);
 }); // Виводить: 'Результат: 10'
 
-TODO: Приклад 3. Оголошення функцій через Callback
-const greetUser = function (firstName, lastName, callback) {
-  callback(`Welcome ${firstName} ${lastName}`);
-};
-
-const greetUser1 = function (firstName, lastName, callback) {
-  callback(`Welcome ${firstName} ${lastName}`);
-};
-
-const greetUser2 = function (firstName, lastName, callback) {
-  callback(`Welcome ${firstName} ${lastName}`);
-};
-
-TODO: Виклики функцій (можливі лише після оголошення)
-greetUser('Oleksii', 'Repin', function(message) {
-  console.log(message);
-}); // Виведе: 'Welcome Oleksii Repin'
-
-greetUser1('Phoebe', 'Howell', function(message) {
-  console.log(message);
-}); // Виведе: 'Welcome Phoebe Howell'
-
-greetUser2('Garrett', 'Cooper', function(message) {
-  console.log(message);
-}); // Виведе: 'Welcome Garrett Cooper'
 */
-/* //! Callback (Колбек-функція) (Синхронний колбек)
-TODO: Найпростіший приклад із синхронним колбеком
-function sayHello(callback) {
-  callback(); // Виклик колбека одразу
+/* //! Callback (Асинхронний колбек-функція)
+TODO: Функція, яка передається як аргумент і викликається після завершення асинхронної операції.
+ * - Асинхронний Callback — це функція, передана іншій функції, яка виконується пізніше, після певної затримки чи події.
+ * - Виконується не одразу, а коли завершиться асинхронна дія (наприклад, таймер чи запит).
+ * - Залежить від зовнішніх умов, таких як час чи відповідь сервера.
+ * - Часто використовується з setTimeout, fetch або подіями (наприклад, кліками).
+ * - Корисно для обробки результатів затримок, подій чи асинхронних даних.
+
+TODO: Синтаксис:
+function ім’я(параметр, callback) {
+    Асинхронна операція
+  callback(значення); // Виклик колбеку після завершення
 }
+  Виклик: ім’я(значення, функція);
 
-function hello() {
-  console.log('Hello!');
-}
-
-sayHello(hello); // Передаємо hello як колбек
-Результат: - Hello!
-
-TODO: Приклад трохи складніш:
-function processData(data, callback) {
-  console.log('Processing data: ' + data);
-  callback(data); // Виклик колбека з переданими даними
-}
-
-function handleResult(result) {
-  console.log('Result handled: ' + result);
-}
-
-processData('User Info', handleResult); // Передаємо handleResult як колбек
-TODO: Результат:
- * - Processing data: User Info
- * - Result handled: User Info
-*/
-/* //! Callback (Колбек-функція) (Асинхронний колбек)
-TODO: Найпростіший приклад із асинхронним колбеком
+TODO: Приклад 1. Простий приклад асинхронного Callback
 function waitAndSay(callback) {
-  setTimeout(callback, 1000); // Виклик колбека через 1 секунду
-}
+  setTimeout(function() {
+    callback('Привіт після затримки!');
+  }, 1000); // Виклик через 1 секунду
+};
+  Виклик з callback
+waitAndSay(function(message) {
+  console.log(message);
+}); // Виводить: 'Привіт після затримки!' через 1 секунду
 
-function hi() {
-  console.log('Hi!');
-}
+TODO: Приклад 2. Приклад із параметрами
+function delayDouble(num, callback) {
+  setTimeout(function() {
+    const result = num * 2;
+    callback(result);
+  }, 2000); // Виклик через 2 секунди
+};
+delayDouble(5, function(res) {
+  console.log('Результат: ' + res);
+}); // Виводить: 'Результат: 10' через 2 секунди
 
-waitAndSay(hi); // Передаємо hi як колбек
-Результат:
- * - [через 1 секунду]
- * - Hi!
-
-TODO: Приклад трохи складніш:
-function fetchData(url, callback) {
-  console.log('Fetching data from: ' + url);
-  setTimeout(() => {
-    const data = { id: 1, name: 'Bohdan' };
-    callback(data); // Виклик колбека після затримки
-  }, 2000);
-}
-
-function displayData(data) {
-  console.log('Data received: ' + JSON.stringify(data));
-}
-
-fetchData('http://example.com/api', displayData); // Асинхронний виклик
-TODO: Результат:
- * - Fetching data from: http://example.com/api
- * - [через 2 секунди]
- * - Data received: {"id":1,"name":"Bohdan"}
+TODO: Приклад 3. Оголошення асинхронного Callback із рядками
+function makeCoffee(firstName, lastName, callback) {
+  console.log(`Варимо каву для ${firstName} ${lastName}...`);
+  setTimeout(function() {
+    callback(`Кава готова для ${firstName} ${lastName}!`);
+  }, 3000); // Виклик через 3 секунди
+};
+  Виклик з callback
+makeCoffee('Oleksii', 'Repin', function(message) {
+  console.log(message);
+}); // Виводить: 'Варимо каву для Oleksii Repin...' і через 3 секунди 'Кава готова для Oleksii Repin!'
 */
 /* //! Pure Arrow Function (Чиста стрілочна функція)
 TODO: Чиста функція, написана у вигляді стрілки, яка завжди повертає однаковий результат для тих самих вхідних даних і не змінює нічого поза собою.
@@ -316,22 +281,32 @@ TODO: Чиста функція, написана у вигляді стрілк
  * - Не змінює зовнішні змінні чи стан (наприклад, не ламає масиви чи об’єкти поза собою).
  * - Завжди дає той самий результат, якщо дати їй ті самі значення.
  * - Не має "побічних ефектів" (наприклад, не виводить у консоль чи не змінює глобальні дані).
+ * - Корисно для передбачуваних обчислень чи роботи з даними.
 
-TODO: Приклад чистої стрілочної функції
+TODO: Синтаксис:
+const ім’я = (параметр1, параметр2) => результат;
+
+TODO: Приклад 1. Простий приклад чистої стрілочної функції
 const add = (a, b) => a + b;
 console.log(add(2, 3)); // Виводить: 5
 console.log(add(2, 3)); // Виводить: 5 (той самий результат)
 
-TODO: Ще один приклад чистої стрілочної функції
-const double = number => number * 2;
+TODO: Приклад 2. Приклад із одним параметром
+const double = (number) => number * 2;
 console.log(double(5)); // Виводить: 10
 console.log(double(5)); // Виводить: 10 (той самий результат)
 
-TODO: Приклад із масивом (не змінює оригінал)
-const getFirst = arr => arr[0];
+TODO: Приклад 3. Оголошення чистої стрілочної функції з масивом
+const getFirst = (arr) => arr[0];
+const getLength = (arr) => arr.length;
+const squareFirst = (arr) => arr[0] * arr[0];
+
+TODO: Виклики функцій (можливі лише після оголошення)
 let numbers = [1, 2, 3];
-console.log(getFirst(numbers)); // Виводить: 1
-console.log(numbers); // Виводить: [1, 2, 3] (масив не змінився)
+console.log(getFirst(numbers));    // Виведе: 1
+console.log(getLength(numbers));   // Виведе: 3
+console.log(squareFirst(numbers)); // Виведе: 1 (1 * 1)
+console.log(numbers);              // Виведе: [1, 2, 3] (масив не змінився)
 */
 /* //! Стек викликів, функції та порядок виконання (Call Stack Execution)
 TODO: Демонструє порядок виконання функцій у стеку викликів JavaScript (візуалізація: http://latentflip.com/loupe/).
