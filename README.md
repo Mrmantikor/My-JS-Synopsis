@@ -6,4 +6,4 @@
 можеш поставити "Зірку" я буду вдячний, це означає те, що комусь мій досвід буде
 корисний**
 
-https://github.com/user-attachments/assets/ae996a36-67b7-4685-9f1d-f2230deff97e
+![Image](https://github.com/user-attachments/assets/ae996a36-67b7-4685-9f1d-f2230deff97e)
