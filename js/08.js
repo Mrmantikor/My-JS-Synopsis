@@ -146,6 +146,40 @@ greetUser('Oleksii', 'Repin');    // Виведе: 'Welcome Oleksii Repin'
 greetUser1('Phoebe', 'Howell');   // Виведе: 'Welcome Phoebe Howell'
 greetUser2('Garrett', 'Cooper');  // Виведе: 'Welcome Garrett Cooper'
 */
+/* //! arguments (Об’єкт аргументів функції)
+TODO: Спеціальний об’єкт у функціях, який автоматично збирає всі передані аргументи, навіть не вказані в параметрах.
+ * - Доступний лише всередині функцій (крім стрілочних), містить аргументи за індексами (0, 1, 2...).
+ * - Має властивість length, що показує кількість аргументів.
+ * - Як псевдомасив, не підтримує методи масивів (push, map тощо) — потрібне перетворення.
+ * - Корисно для гнучкої обробки різної кількості аргументів без їх явного визначення.
+ * - У сучасному коді часто замінюється рест-параметрами (...args), які створюють справжній масив.
+
+TODO: Синтаксис:
+arguments[індекс]; // Доступ до аргументів
+let realArray = Array.from(arguments); // Перетворення в масив
+
+TODO: Приклад 1. Збирання всіх аргументів
+function showArgs() {
+  console.log(arguments); // Виводить: { '0': 'sun', '1': 'moon', length: 2 }
+  console.log(arguments[1]); // Виводить: 'moon'
+}
+showArgs('sun', 'moon');
+
+TODO: Приклад 2. Робота із зайвими аргументами
+function add(a, b) {
+  let sum = arguments[0] + arguments[1]; // Лише a і b
+  console.log(sum); // Виводить: 5
+  console.log(arguments.length); // Виводить: 3 (враховує всі)
+}
+add(2, 3, 10);
+
+TODO: Приклад 3. Перетворення для обробки
+function multiplyArgs() {
+  let argsArray = Array.from(arguments);
+  console.log(argsArray.reduce((acc, num) => acc * num, 1)); // Виводить: 24
+}
+multiplyArgs(2, 3, 4);
+*/
 /* //! Arrow Function (Стрілочна функція)
 TODO: Компактний спосіб створення функцій із використанням стрілки =>.
  * - Arrow Function — це коротший запис функції через =>, без ключового слова function.
