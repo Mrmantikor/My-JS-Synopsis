@@ -307,321 +307,307 @@ let empty = [];
 console.log(empty.pop()); // Виводить: undefined
 console.log(empty); // Виводить: []
 */
-
 /* //! forEach (Перебирання елементів масиву)
-TODO: Виконує задану функцію для кожного елемента масиву, нічого не повертаючи.
- * - array.forEach(callback) — метод масиву, який викликає функцію callback для кожного елемента.
- * - Не змінює оригінальний масив напряму, але функція всередині може його змінити.
- * - Не створює новий масив, повертає undefined.
- * - Корисно для виконання дій із кожним елементом, наприклад, виведення в консоль.
+TODO: Метод масиву, який викликає задану функцію для кожного елемента, не повертаючи результату.
+ * - Проходить по масиву зліва направо, застосовуючи функцію callback до кожного елемента.
+ * - Не створює новий масив і завжди повертає undefined, незалежно від того, що робить callback.
+ * - Не змінює оригінальний масив напряму, але callback може змінити його елементи.
+ * - Корисно для простих дій із кожним елементом, наприклад, виведення чи оновлення значень.
+ * - Альтернатива циклам for, коли не потрібен результат перебирання.
 
 TODO: Синтаксис:
 array.forEach((element, index, array) => {
-  Виконуємо щось із елементом
+    Виконуємо щось із елементом
 });
  * - callback(element, index, array) — функція, яка викликається для кожного елемента:
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
 
-TODO: Приклади:
-let numbers = [1, 2, 3, 4];
-numbers.forEach(num => console.log(num * 2)); // Виводить: 2, 4, 6, 8 (по черзі)
-console.log(numbers); // Виводить: [1, 2, 3, 4] (оригінал не змінився)
+TODO: Приклад 1. Виведення подвоєних чисел
+let numbers = [1, 2, 3];
+numbers.forEach(num => console.log(num * 2)); // Виводить: 2, 4, 6 (по черзі)
+console.log(numbers); // Виводить: [1, 2, 3]
 
-let names = ['josh', 'anna'];
-names.forEach(name => console.log(name.toUpperCase())); // Виводить: 'JOSH', 'ANNA' (по черзі)
-
+TODO: Приклад 2. Виведення з індексами
 let fruits = ['apple', 'banana', 'kiwi'];
 fruits.forEach((fruit, index) => console.log(`${index}: ${fruit}`)); // Виводить: '0: apple', '1: banana', '2: kiwi'
 
-console.log(numbers.forEach(num => num + 1)); // Виводить: undefined (нічого не повертає)
+TODO: Приклад 3. Зміна масиву всередині
+let values = [10, 20, 30];
+values.forEach((value, index, arr) => arr[index] = value + 1);
+console.log(values); // Виводить: [11, 21, 31]
 */
 /* //! map (Перетворення масиву)
-TODO: Створює новий масив, застосовуючи функцію до кожного елемента старого масиву.
- * - array.map(callback) — метод масиву, який повертає новий масив із результатами функції callback.
- * - callback(element, index, array) — функція, яка викликається для кожного елемента:
- *   - element — поточний елемент масиву.
- *   - index — індекс поточного елемента (необов’язковий).
- *   - array — сам масив (необов’язковий).
- * - Не змінює оригінальний масив, а створює новий, такої самої довжини
- * - Корисно для перетворення даних, наприклад, подвоєння чисел чи зміни рядків.
+TODO: Метод масиву, який створює новий масив, застосовуючи функцію до кожного елемента старого.
+ * - Проходить по масиву зліва направо, викликаючи callback для кожного елемента.
+ * - Повертає новий масив тієї ж довжини, де кожен елемент — результат callback.
+ * - Не змінює оригінальний масив, лише створює копію з новими значеннями.
+ * - Корисно для перетворення даних, наприклад, множення чисел чи форматування тексту.
+ * - На відміну від forEach, повертає результат, а не undefined.
 
 TODO: Синтаксис:
 array.map((element, index, array) => {
-  Повертаємо нове значення для елемента
+    Повертаємо нове значення
 });
-
-TODO: Приклади:
-let numbers = [1, 2, 3, 4];
-let doubled = numbers.map(num => num * 2);
-console.log(doubled); // Виводить: [2, 4, 6, 8]
-console.log(numbers); // Виводить: [1, 2, 3, 4] (оригінал не змінився)
-
-let names = ['josh', 'anna'];
-let upperNames = names.map(name => name.toUpperCase());
-console.log(upperNames); // Виводить: ['JOSH', 'ANNA']
-
-let fruits = ['apple', 'banana'];
-let indexed = fruits.map((fruit, index) => `${index}: ${fruit}`);
-console.log(indexed); // Виводить: ['0: apple', '1: banana']
-*/
-/* //! flatMap (Перетворення та розгортання масиву)
-TODO: Створює новий масив, застосовуючи функцію до кожного елемента старого масиву і розгортаючи вкладені масиви на один рівень.
- * - array.flatMap(callback) — метод масиву, який повертає новий масив із результатами функції callback, розплющуючи вкладені масиви.
  * - callback(element, index, array) — функція, яка викликається для кожного елемента:
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
- * - Не змінює оригінальний масив, а створює новий.
- * - Корисно для перетворення даних із розгортанням, наприклад, подвоєння чисел у плоскому списку.
- * - Відмінність від map: map залишає вкладені масиви як є, flatMap розгортає їх на один рівень.
+
+TODO: Приклад 1. Подвоєння чисел
+let numbers = [1, 2, 3];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled); // Виводить: [2, 4, 6]
+console.log(numbers); // Виводить: [1, 2, 3]
+
+TODO: Приклад 2. Нумерація елементів
+let fruits = ['apple', 'banana'];
+let numbered = fruits.map((fruit, index) => `${index + 1}. ${fruit}`);
+console.log(numbered); // Виводить: ['1. apple', '2. banana']
+
+TODO: Приклад 3. Перетворення тексту
+let words = ['cat', 'dog'];
+let upper = words.map(word => word.toUpperCase());
+console.log(upper); // Виводить: ['CAT', 'DOG']
+*/
+/* //! flatMap (Перетворення та розгортання масиву)
+TODO: Метод масиву, який створює новий масив, застосовуючи функцію до кожного елемента і розгортаючи вкладені масиви на один рівень.
+ * - Спочатку діє як map: перетворює кожен елемент за допомогою callback.
+ * - Потім "сплющує" вкладені масиви глибиною 1, додаючи їхні елементи в результат.
+ * - Не змінює оригінальний масив, повертає новий із розгорнутими значеннями.
+ * - Корисно, коли потрібно перетворити елементи й одразу отримати плоский список.
+ * - Відмінність від map: map залишає вкладені масиви як є, flatMap їх розгортає.
 
 TODO: Синтаксис:
 array.flatMap((element, index, array) => {
-  Повертаємо значення (може бути масивом, який розгорнеться)
+    Повертаємо значення чи масив, який розгорнеться
 });
+ * - callback(element, index, array) — функція, яка викликається для кожного елемента:
+ *   - element — поточний елемент масиву.
+ *   - index — індекс поточного елемента (необов’язковий).
+ *   - array — сам масив (необов’язковий).
 
-TODO: Приклади:
-let numbers = [1, 2, 3, 4];
+TODO: Приклад 1. Подвоєння чисел із розгортанням
+let numbers = [1, 2, 3];
 let doubled = numbers.flatMap(num => [num, num * 2]);
-console.log(doubled); // Виводить: [1, 2, 2, 4, 3, 6, 4, 8]
-console.log(numbers); // Виводить: [1, 2, 3, 4] (оригінал не змінився)
+console.log(doubled); // Виводить: [1, 2, 2, 4, 3, 6]
+console.log(numbers); // Виводить: [1, 2, 3]
 
-let names = ['josh', 'anna'];
-let splitNames = names.flatMap(name => name.split(''));
-console.log(splitNames); // Виводить: ['j', 'o', 's', 'h', 'a', 'n', 'n', 'a']
+TODO: Приклад 2. Порівняння з map
+let values = [1, 2];
+let mapped = values.map(num => [num, num + 1]); // Залишає вкладені масиви
+let flatMapped = values.flatMap(num => [num, num + 1]); // Розгортає їх
+console.log(mapped); // Виводить: [[1, 2], [2, 3]]
+console.log(flatMapped); // Виводить: [1, 2, 2, 3]
 
-let fruits = ['apple', 'banana'];
-let indexed = fruits.flatMap((fruit, index) => [`${index}: ${fruit}`]);
-console.log(indexed); // Виводить: ['0: apple', '1: banana']
+TODO: Приклад 3. Розбиття слів на літери
+let words = ['hi', 'bye'];
+let letters = words.flatMap(word => word.split(''));
+console.log(letters); // Виводить: ['h', 'i', 'b', 'y', 'e']
 */
 /* //! filter (Фільтрація елементів масиву)
 TODO: Створює новий масив із елементами, відібраними за певним критерієм із колекції.
- * - array.filter(callback) — метод масиву, який використовується для єдиної операції — фільтрації масиву, що відповідають умові колбек-функції.
- * - Не змінює оригінальний масив.
- * - Поелементно перебирає оригінальний масив.
- * - Повертає новий масив із елементами, які задовольняють умову.
- * - Якщо колбек повернув true, елемент додається в масив, що повертається.
- * - Якщо колбек повернув false, елемент не додається в масив, що повертається.
- * - Якщо жоден елемент не задовольнив умову, повертає порожній масив.
+ * - array.filter(callback) — метод масиву, який фільтрує елементи, що відповідають умові callback.
+ * - Не змінює оригінальний масив, повертає новий із відфільтрованими значеннями.
+ * - Перебирає масив зліва направо, перевіряючи кожен елемент.
+ * - Додає елемент у новий масив, якщо callback повертає true; ігнорує, якщо false.
+ * - Повертає порожній масив, якщо жоден елемент не відповідає умові.
+ * - Корисно для відбору даних, наприклад, чисел більше певного значення чи слів за довжиною.
 
 TODO: Синтаксис:
 array.filter((element, index, array) => {
-  Повертаємо true, якщо елемент залишається, або false, якщо його прибрати
+    Повертаємо true, якщо елемент залишається
 });
  * - callback(element, index, array) — функція, яка викликається для кожного елемента:
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
 
-TODO: Приклади:
-let numbers = [1, 6, 3, 8, 4];
-let bigNumbers = numbers.filter(num => num > 5);
-console.log(bigNumbers); // Виводить: [6, 8] (елементи > 5)
-console.log(numbers); // Виводить: [1, 6, 3, 8, 4] (оригінал не змінився)
+TODO: Приклад 1. Фільтр великих чисел
+let numbers = [1, 5, 3, 7];
+let big = numbers.filter(num => num > 4);
+console.log(big); // Виводить: [5, 7]
+console.log(numbers); // Виводить: [1, 5, 3, 7]
 
-let names = ['josh', 'anna', 'bob'];
-let longNames = names.filter(name => name.length > 3);
-console.log(longNames); // Виводить: ['josh', 'anna'] (імена довші за 3 символи)
-
+TODO: Приклад 2. Фільтр за індексом
 let fruits = ['apple', 'banana', 'kiwi'];
-let indexedFilter = fruits.filter((fruit, index) => index > 0);
-console.log(indexedFilter); // Виводить: ['banana', 'kiwi'] (елементи з індексом > 0)
+let later = fruits.filter((fruit, index) => index > 0);
+console.log(later); // Виводить: ['banana', 'kiwi']
 
-let smallNumbers = [1, 2, 3];
-let noneFit = smallNumbers.filter(num => num > 5);
-console.log(noneFit); // Виводить: [] (жоден елемент не підійшов)
+TODO: Приклад 3. Фільтр без результату
+let small = [1, 2, 3];
+let none = small.filter(num => num > 5);
+console.log(none); // Виводить: []
 */
 /* //! find (Пошук першого елемента в масиві)
 TODO: Знаходить і повертає перший елемент масиву, який відповідає умові, заданій у функції.
- * - array.find(callback) — метод масиву, який використовується для єдиної операції — пошуку першого відповідного елемента, що відповідає умові колбек-функції.
- * - Не змінює оригінальний масив.
- * - Поелементно перебирає оригінальний масив.
- * - Повертає перший елемент, який задовольняє умову, або undefined, якщо такого немає.
- * - Якщо колбек повернув true, повертається поточний елемент і перебирання зупиняється.
- * - Якщо колбек повернув false для всіх елементів, повертається undefined.
- * - Різниця з filter: filter повертає масив усіх відповідних елементів, find — лише перший елемент.
+ * - array.find(callback) — метод масиву, який шукає перший елемент, що відповідає умові callback.
+ * - Не змінює оригінальний масив, повертає лише один елемент або undefined.
+ * - Перебирає масив зліва направо, зупиняється, коли callback повертає true.
+ * - Повертає елемент, якщо умова виконана, або undefined, якщо жоден елемент не підходить.
+ * - Корисно для пошуку першого відповідного значення, наприклад, першого великого числа.
+ * - Відмінність від filter: find повертає один елемент, а не масив.
 
 TODO: Синтаксис:
 array.find((element, index, array) => {
-  Повертаємо true, якщо елемент підходить, або false, якщо ні
+    Повертаємо true, якщо елемент підходить
 });
  * - callback(element, index, array) — функція, яка викликається для кожного елемента:
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
 
-TODO: Приклади:
-let numbers = [1, 6, 3, 8, 4];
-let firstBig = numbers.find(num => num > 5);
-console.log(firstBig); // Виводить: 6 (перший елемент > 5)
-console.log(numbers); // Виводить: [1, 6, 3, 8, 4] (оригінал не змінився)
+TODO: Приклад 1. Пошук великого числа
+let numbers = [1, 4, 6, 3];
+let big = numbers.find(num => num > 5);
+console.log(big); // Виводить: 6
+console.log(numbers); // Виводить: [1, 4, 6, 3]
 
-let names = ['josh', 'anna', 'bob'];
-let longName = names.find(name => name.length > 3);
-console.log(longName); // Виводить: 'josh' (перше ім’я довше 3 символів)
-
+TODO: Приклад 2. Пошук за індексом
 let fruits = ['apple', 'banana', 'kiwi'];
-let foundFruit = fruits.find((fruit, index) => index > 0);
-console.log(foundFruit); // Виводить: 'banana' (перший елемент із індексом > 0)
+let second = fruits.find((fruit, index) => index === 1);
+console.log(second); // Виводить: 'banana'
 
-let smallNumbers = [1, 2, 3];
-let notFound = smallNumbers.find(num => num > 5);
-console.log(notFound); // Виводить: undefined (жоден елемент не підійшов)
+TODO: Приклад 3. Пошук без результату
+let small = [1, 2, 3];
+let none = small.find(num => num > 5);
+console.log(none); // Виводить: undefined
 */
 /* //! every (Перевірка всіх елементів масиву)
 TODO: Перевіряє, чи всі елементи масиву відповідають умові, заданій у функції, і повертає true або false.
- * - array.every(callback) — метод масиву, який повертає true, якщо кожен елемент проходить перевірку callback.
- * - Не змінює оригінальний масив.
- * - Повертає true, якщо всі елементи задовольняють умову, і false, якщо хоча б один ні.
- * - Зупиняється, щойно знаходить перший елемент, який не підходить.
- * - Корисно для перевірки, наприклад, чи всі числа більше 0.
+ * - array.every(callback) — метод масиву, який повертає true, якщо кожен елемент відповідає умові callback.
+ * - Не змінює оригінальний масив, лише перевіряє.
+ * - Перебирає масив зліва направо, зупиняється на першому false.
+ * - Повертає false, якщо хоча б один елемент не відповідає умові.
+ * - Корисно для перевірки загальних властивостей, наприклад, чи всі числа позитивні.
 
 TODO: Синтаксис:
 array.every((element, index, array) => {
-  Повертаємо true, якщо елемент підходить, або false, якщо ні
+    Повертаємо true, якщо елемент відповідає
 });
  * - callback(element, index, array) — функція, яка викликається для кожного елемента:
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
 
-TODO: Приклади:
-let numbers = [2, 4, 6, 8];
+TODO: Приклад 1. Усі парні числа
+let numbers = [2, 4, 6];
 let allEven = numbers.every(num => num % 2 === 0);
-console.log(allEven); // Виводить: true (усі числа парні)
-console.log(numbers); // Виводить: [2, 4, 6, 8] (оригінал не змінився)
+console.log(allEven); // Виводить: true
+console.log(numbers); // Виводить: [2, 4, 6]
 
-let mixed = [2, 4, 5, 8];
+TODO: Приклад 2. Перевірка індексів
+let fruits = ['apple', 'banana'];
+let allEarly = fruits.every((fruit, index) => index < 2);
+console.log(allEarly); // Виводить: true
+
+TODO: Приклад 3. Змішаний масив
+let mixed = [2, 4, 5];
 let allEvenMixed = mixed.every(num => num % 2 === 0);
-console.log(allEvenMixed); // Виводить: false (5 — непарне)
-
-let names = ['josh', 'anna', 'bob'];
-let allLong = names.every(name => name.length > 2);
-console.log(allLong); // Виводить: true (усі імена довші за 2 символи)
-
-let fruits = ['apple', 'banana', 'kiwi'];
-let allShort = fruits.every(fruit => fruit.length < 4);
-console.log(allShort); // Виводить: false (apple і banana довші за 4)
+console.log(allEvenMixed); // Виводить: false
 */
 /* //! some (Перевірка хоча б одного елемента масиву)
 TODO: Перевіряє, чи хоча б один елемент масиву відповідає умові, заданій у функції, і повертає true або false.
- * - array.some(callback) — метод масиву, який повертає true, якщо хоча б один елемент проходить перевірку callback.
+ * - array.some(callback) — метод масиву, який повертає true, якщо хоча б один елемент відповідає умові callback.
+ * - Не змінює оригінальний масив, лише перевіряє.
+ * - Перебирає масив зліва направо, зупиняється на першому true.
+ * - Повертає false, якщо жоден елемент не відповідає умові.
+ * - Корисно для перевірки наявності, наприклад, чи є число більше 5.
+
+TODO: Синтаксис:
+array.some((element, index, array) => {
+    Повертаємо true, якщо елемент відповідає
+});
  * - callback(element, index, array) — функція, яка викликається для кожного елемента:
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
- * - Не змінює оригінальний масив.
- * - Повертає true, якщо хоча б один елемент задовольняє умову, і false, якщо жоден.
- * - Зупиняється, щойно знаходить перший елемент, який підходить.
- * - Корисно для перевірки, наприклад, чи є в масиві число більше 5.
 
-TODO: Синтаксис:
-array.some((element, index, array) => {
-  Повертаємо true, якщо елемент підходить, або false, якщо ні
-});
-
-TODO: Приклади:
-let numbers = [1, 3, 5, 8];
+TODO: Приклад 1. Наявність великого числа
+let numbers = [1, 3, 7];
 let hasBig = numbers.some(num => num > 5);
-console.log(hasBig); // Виводить: true (8 > 5)
-console.log(numbers); // Виводить: [1, 3, 5, 8] (оригінал не змінився)
+console.log(hasBig); // Виводить: true
+console.log(numbers); // Виводить: [1, 3, 7]
 
-let mixed = [1, 2, 3, 4];
-let hasEven = mixed.some(num => num % 2 === 0);
-console.log(hasEven); // Виводить: true (2 — парне)
+TODO: Приклад 2. Наявність другого елемента
+let fruits = ['apple', 'banana'];
+let hasSecond = fruits.some((fruit, index) => index === 1);
+console.log(hasSecond); // Виводить: true
 
-let names = ['josh', 'anna', 'bob'];
-let hasLong = names.some(name => name.length > 4);
-console.log(hasLong); // Виводить: true ('josh' має 4 символи, але 'anna' ні, зупиняється на першому true)
-
-let fruits = ['apple', 'banana', 'kiwi'];
-let hasShort = fruits.some(fruit => fruit.length < 4);
-console.log(hasShort); // Виводить: true ('kiwi' має 4, але зупиняється раніше, якщо є коротше)
+TODO: Приклад 3. Відсутність коротких слів
+let words = ['cake', 'bread'];
+let hasShort = words.some(word => word.length < 3);
+console.log(hasShort); // Виводить: false
 */
 /* //! reduce (Агрегація значень у масиві)
-TODO: Метод reduce() використовується для обчислення єдиного значення на основі всіх елементів масиву.
- * - array.reduce(callback, initialValue) — виконує передану функцію-колбек для кожного елемента масиву, накопичуючи результат.
+TODO: Метод масиву, який обчислює одне значення на основі всіх елементів, накопичуючи результат.
+ * - array.reduce(callback, initialValue) — викликає callback для кожного елемента, оновлюючи accumulator.
+ * - Не змінює оригінальний масив, повертає кінцеве значення (число, рядок, об’єкт тощо).
+ * - Перебирає масив зліва направо, накопичуючи результат у accumulator.
+ * - initialValue — початкове значення accumulator; якщо не вказано, береться перший елемент.
+ * - Корисно для підсумовування, об’єднання слів чи створення об’єктів із масиву.
+
+TODO: Синтаксис:
+array.reduce((accumulator, element, index, array) => {
+    Оновлюємо accumulator
+}, initialValue);
  * - callback(accumulator, element, index, array) — функція, яка викликається для кожного елемента:
  *   - accumulator — проміжний результат, що зберігає значення між викликами.
  *   - element — поточний елемент масиву.
  *   - index — індекс поточного елемента (необов’язковий).
  *   - array — сам масив (необов’язковий).
- * - initialValue — початкове значення для accumulator (необов’язковий параметр).
- * - Не змінює оригінальний масив.
- * - Використовується для підсумовування, знаходження максимального значення, зведення масиву в об’єкт тощо.
 
-TODO: Синтаксис:
-array.reduce((accumulator, element, index, array) => {
-  Оновлення accumulator на основі element
-}, initialValue);
-
-TODO: Приклади:
-let numbers = [1, 2, 3, 4, 5];
+TODO: Приклад 1. Сума чисел
+let numbers = [1, 2, 3];
 let sum = numbers.reduce((acc, num) => acc + num, 0);
-console.log(sum); // Виводить: 15 (1 + 2 + 3 + 4 + 5)
+console.log(sum); // Виводить: 6
+console.log(numbers); // Виводить: [1, 2, 3]
 
-let max = numbers.reduce((acc, num) => (num > acc ? num : acc), numbers[0]);
-console.log(max); // Виводить: 5 (максимальне число)
-
-let words = ['Hello', 'World'];
+TODO: Приклад 2. Об’єднання слів
+let words = ['Hi', 'there'];
 let sentence = words.reduce((acc, word) => acc + ' ' + word);
-console.log(sentence); // Виводить: "Hello World"
+console.log(sentence); // Виводить: 'Hi there'
 
-let products = [
-  { name: 'Laptop', price: 1000 },
-  { name: 'Mouse', price: 50 },
-  { name: 'Keyboard', price: 150 }
-];
-let totalPrice = products.reduce((acc, product) => acc + product.price, 0);
-console.log(totalPrice); // Виводить: 1200 (сума всіх цін)
-
-let letters = ['a', 'b', 'c', 'a', 'b', 'a'];
+TODO: Приклад 3. Підрахунок букв
+let letters = ['a', 'b', 'a'];
 let count = letters.reduce((acc, letter) => {
   acc[letter] = (acc[letter] || 0) + 1;
   return acc;
 }, {});
-console.log(count); // Виводить: { a: 3, b: 2, c: 1 }
+console.log(count); // Виводить: { a: 2, b: 1 }
 */
 /* //! toSorted (Сортування масиву без зміни оригіналу)
-TODO: Метод toSorted() створює новий відсортований масив, не змінюючи вихідний.
- * - array.toSorted(compareFunction) — повертає новий масив з елементами, відсортованими за переданою функцією порівняння.
+TODO: Метод масиву, який створює новий відсортований масив, не змінюючи вихідний.
+ * - array.toSorted(compareFunction) — повертає новий масив, відсортований за правилом із compareFunction.
+ * - Не впливає на оригінальний масив, на відміну від sort().
+ * - Якщо compareFunction не вказано, сортує елементи як рядки за Unicode.
+ * - Корисно для впорядкування чисел чи слів із збереженням початкового порядку.
+ * - Функція порівняння: a - b для зростання, b - a для спадання.
+
+TODO: Синтаксис:
+array.toSorted((a, b) => {
+    Логіка сортування
+});
  * - compareFunction(a, b) — функція порівняння, яка визначає порядок сортування:
  *   - Повертає від’ємне число, якщо a має бути перед b.
  *   - Повертає позитивне число, якщо a має бути після b.
  *   - Повертає 0, якщо порядок не змінюється.
- * - Якщо compareFunction не передано, елементи сортуються як рядки за Unicode.
- * - Оригінальний масив не змінюється (на відміну від sort()).
- * - Корисно, якщо потрібно зберегти вихідний масив недоторканим.
 
-TODO: Синтаксис:
-array.toSorted((a, b) => {
-  Логіка сортування
-});
+TODO: Приклад 1. Сортування чисел
+let numbers = [3, 1, 4];
+let sorted = numbers.toSorted((a, b) => a - b);
+console.log(sorted); // Виводить: [1, 3, 4]
+console.log(numbers); // Виводить: [3, 1, 4]
 
-TODO: Приклади:
-let numbers = [5, 3, 8, 1, 2];
-let sortedNumbers = numbers.toSorted((a, b) => a - b);
-console.log(sortedNumbers); // Виводить: [1, 2, 3, 5, 8]
-console.log(numbers); // Виводить: [5, 3, 8, 1, 2] (не змінився)
+TODO: Приклад 2. Сортування слів
+let fruits = ['banana', 'apple'];
+let alphabet = fruits.toSorted();
+console.log(alphabet); // Виводить: ['apple', 'banana']
 
-let words = ['banana', 'apple', 'Cherry'];
-let sortedWords = words.toSorted();
-console.log(sortedWords); // Виводить: ["Cherry", "apple", "banana"] (сортує як рядки за Unicode)
-
-let users = [
-  { name: 'Anna', age: 25 },
-  { name: 'Bob', age: 22 },
-  { name: 'Charlie', age: 30 }
-];
-let sortedUsers = users.toSorted((a, b) => a.age - b.age);
-console.log(sortedUsers);
-/* Виводить:
-[
-  { name: 'Bob', age: 22 },
-  { name: 'Anna', age: 25 },
-  { name: 'Charlie', age: 30 }
-]
+TODO: Приклад 3. Сортування за спаданням
+let values = [5, 2, 8];
+let descending = values.toSorted((a, b) => b - a);
+console.log(descending); // Виводить: [8, 5, 2]
 */
 //#endregion
