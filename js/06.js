@@ -313,6 +313,35 @@ for (let num = 5; num <= 15; num++) {
 //#endregion
 
 //#region //? Цикли (Практика)
+/* //! Increment (Префіксний і постфіксний інкремент)
+TODO: Показати різницю між префіксним і постфіксним інкрементом.
+ * - Дано число num = 5.
+ * - Застосувати ++num (префікс) і num++ (постфікс).
+ * - Вивести значення num і результат операції в консоль.
+ * - Нічого не повертає, лише демонструє поведінку.
+ * - Корисно для розуміння роботи інкременту.
+
+TODO: Task
+function incrementExamples() {
+}
+
+incrementExamples(); // Виводить: num: 6, prefix: 6, num: 6, postfix: 5
+
+TODO: Answer - Var 1 (з префіксом і постфіксом)
+function incrementExamples() {
+  let num = 5;
+  const prefix = ++num;
+  console.log('num:', num);      // 6
+  console.log('prefix:', prefix); // 6
+
+  num = 5;
+  const postfix = num++;
+  console.log('num:', num);       // 6
+  console.log('postfix:', postfix); // 5
+}
+
+incrementExamples(); // Виводить: num: 6, prefix: 6, num: 6, postfix: 5
+*/
 /* //! for (Виведення парних чисел у зворотному порядку)
 TODO: Функція, яка виводить парні числа від 20 до 2 у спадному порядку.
  * - Перебирає числа від 20 до 2 включно з кроком -2.
@@ -417,6 +446,53 @@ console.log(printEvenNumbers(3, 15)); // 4, 6, 8, 10, 12, 14
 console.log(printEvenNumbers(6, 6)); // 6
 console.log(printEvenNumbers(7, 7)); // ''
 
+*/
+/* //! while/do/for (Трикутник із зірочок)
+TODO: Вивести трикутник із зірочок від 1 до 7 рядків.
+ * - Кожен рядок містить кількість зірочок, що дорівнює номеру рядка (1, 2, ..., 7).
+ * - Використовувати цикл для додавання зірочок.
+ * - Виводити кожен рядок у консоль.
+ * - Нічого не повертає, лише виводить результат.
+ * - Корисно для створення простих візуальних патернів.
+
+TODO: Task
+function printTriangle() {
+}
+
+printTriangle(); // Виводить: *, **, ***, ****, *****, ******, *******
+
+TODO: Answer - Var 1 (з while)
+function printTriangle() {
+  let str = '*';
+  while (str.length < 8) {
+    console.log(str);
+    str += '*';
+  }
+}
+
+printTriangle(); // Виводить: *, **, ***, ****, *****, ******, *******
+
+TODO: Answer - Var 2 (з do...while)
+function printTriangle() {
+  let str = '*';
+  do {
+    console.log(str);
+    str += '*';
+  } while (str.length < 8);
+}
+
+printTriangle(); // Виводить: *, **, ***, ****, *****, ******, *******
+
+TODO: Answer - Var 3 (з for)
+function printTriangle() {
+  let str = '*';
+  for (let i = 0; i < 7; i++) {
+    console.log(str);
+    str += '*';
+  }
+}
+
+printTriangle(); // Виводить: *, **, ***, ****, *****, ******, *******
 */
 /* //! for...of (Сума квадратів чисел)
 TODO: Функція, яка підносить у квадрат кожне число масиву і повертає суму результатів.
