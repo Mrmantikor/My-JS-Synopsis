@@ -447,6 +447,65 @@ console.log(printEvenNumbers(6, 6)); // 6
 console.log(printEvenNumbers(7, 7)); // ''
 
 */
+/* //! for (Перевірка паліндрому)
+TODO: Перевірити, чи є рядок паліндромом, ігноруючи пробіли та регістр.
+ * - Дано рядок, який може містити пробіли та літери в різному регістрі.
+ * - Видалити пробіли та привести рядок до нижнього регістру.
+ * - Порівняти рядок із його зворотною версією.
+ * - Повернути true, якщо рядок є паліндромом, і false, якщо ні.
+ * - Корисно для перевірки симетричності тексту.
+
+TODO: Task
+const str = 'Я несу гусеня';
+function isPalindrom(string) {
+}
+
+console.log(isPalindrom(str)); // Виводить: true
+
+TODO: Answer - Var 1 (з циклом від початку)
+const str = 'Я несу гусеня';
+function isPalindrom(string) {
+  const newStr = string.replaceAll(' ', '').toLowerCase();
+  let reversedString = '';
+  for (let i = 0; i < newStr.length; i++) {
+    reversedString += newStr[newStr.length - 1 - i];
+  }
+  console.log(newStr);         // янесугусеня
+  console.log(reversedString); // янесугусеня
+  return newStr === reversedString;
+}
+
+console.log(isPalindrom(str)); // Виводить: true
+
+TODO: Answer - Var 2 (з циклом від кінця)
+const str = 'Я несу гусеня';
+function isPalindrom(string) {
+  const newStr = string.replaceAll(' ', '').toLowerCase();
+  let reversedString = '';
+  for (let i = newStr.length - 1; i >= 0; i--) {
+    reversedString += newStr[i];
+  }
+  console.log(newStr);         // янесугусеня
+  console.log(reversedString); // янесугусеня
+  return newStr === reversedString;
+}
+
+console.log(isPalindrom(str)); // Виводить: true
+
+TODO: Answer - Var 3 (з перевіркою половини)
+const str = 'Я несу гусеня';
+function isPalindrom(string) {
+  const newStr = string.replaceAll(' ', '').toLowerCase();
+  for (let i = 0; i < Math.floor(newStr.length / 2); i++) {
+    if (newStr[i] !== newStr[newStr.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrom(str)); // Виводить: true
+*/
 /* //! while/do/for (Трикутник із зірочок)
 TODO: Вивести трикутник із зірочок від 1 до 7 рядків.
  * - Кожен рядок містить кількість зірочок, що дорівнює номеру рядка (1, 2, ..., 7).
