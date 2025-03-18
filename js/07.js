@@ -457,5 +457,56 @@ fn1(() => fn2(fn3)); // Передаємо стрілочну функцію я�
 // #endregion
 
 //#region //? Function (Практика)
+/* //! processNumber (Обробка числа через колбек-функцію)
+TODO: Функція, яка приймає число та колбек-функцію, передає число в колбек та виводить результат.
+ * - Використовує передану функцію для обробки числа.
+ * - Викликається з різними колбек-функціями для різних операцій.
+ * - Дозволяє динамічно змінювати логіку обробки числа.
+ * - Використання колбеків спрощує код і робить його гнучкішим.
+ * - Допомагає краще зрозуміти принцип роботи колбек-функцій у JavaScript.
+
+TODO: Task
+function processNumber(number, callback) {
+}
+
+console.log(processNumber(5, double)); // 10
+console.log(processNumber(4, double)); // 8
+console.log(processNumber(5, square)); // 25
+console.log(processNumber(3, square)); // 9
+
+TODO: Answer
+function processNumber(number, callback) {
+  // Реалізація функції
+}
+
+function double(num) {
+  // Колбек для подвоєння числа
+}
+
+function square(num) {
+  // Колбек для зведення в квадрат
+}
+
+console.log(processNumber(5, double)); // 10
+console.log(processNumber(4, double)); // 8
+console.log(processNumber(5, square)); // 25
+console.log(processNumber(3, square)); // 9
+*/
 
 //#endregion
+function processNumber(number, callback) {
+  return callback(number); // Передаем число в переданный колбэк и возвращаем результат
+}
+
+function double(num) {
+  return num * 2;
+}
+
+function square(num) {
+  return num * num;
+}
+
+console.log(processNumber(5, double)); // 10
+console.log(processNumber(4, double)); // 8
+console.log(processNumber(5, square)); // 25
+console.log(processNumber(3, square)); // 9
